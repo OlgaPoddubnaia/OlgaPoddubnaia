@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Calculator divide and multiply tests">
+    <test name="2 tests to run">
+        <classes>
+            <class name="hw1.multiplyAndDivideOperations.TestDivide"/>
+            <class name="hw1.multiplyAndDivideOperations.TestMultiply"/>
+        </classes>
+    </test>
+</suite>

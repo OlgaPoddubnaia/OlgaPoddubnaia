@@ -1,0 +1,12 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="All tests for calculator">
+    <test name="4 tests to run">
+        <classes>
+            <class name="hw1.addAndSubtractOperation.TestAdd"/>
+            <class name="hw1.addAndSubtractOperation.TestSubtract"/>
+            <class name="hw1.multiplyAndDivideOperations.TestDivide"/>
+            <class name="hw1.multiplyAndDivideOperations.TestMultiply"/>
+        </classes>
+    </test>
+</suite>
