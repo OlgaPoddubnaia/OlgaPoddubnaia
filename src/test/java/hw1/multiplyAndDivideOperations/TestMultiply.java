@@ -20,7 +20,7 @@ public class TestMultiply extends AbstractCalculatorTest {
 
     @Test(dataProvider = "multiplyDataSet")
     public void testDataProviderMultiply(double a, double b, double expected) {
-        double actual = calculator.mult(a,b);
-        assertEquals(actual, expected, 0.00001);
+        double actual = calculator.mult(a, b);
+        assertEquals(actual, expected, 0.001);
     }
 }
