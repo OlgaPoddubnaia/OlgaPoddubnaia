@@ -35,7 +35,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw1/AllTestsTestsForCalculator.xml
+                <suite.file>${project.basedir}/src/test/resources/hw1/AllTestsForCalculator.xml
                 </suite.file>
             </properties>
         </profile>
@@ -46,7 +46,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw1/MultiplyAndSubtractTestsForCalculator.xml
+                <suite.file>${project.basedir}/src/test/resources/hw1/MultiplyAndDivideTestsForCalculator.xml
                 </suite.file>
             </properties>
         </profile>
