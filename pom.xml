@@ -24,7 +24,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw1/MultiplyAndDivideTestsForCalculator.xml
+                <suite.file>${project.basedir}/src/test/resources/hw1/AddAndSubtractTestsForCalculator.xml
                 </suite.file>
             </properties>
         </profile>
