@@ -1,33 +1,17 @@
 package hw2.exercise1;
 
-//import hw2.AbstractForExercises.AbstractTests;
+import hw2.AbstractForExercises.AbstractTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
-import java.util.concurrent.TimeUnit;
+public class Exercise_1SeleniumHQTest extends AbstractTests {
 
-public class Exercise_1SeleniumHQTest {
-
-
-    //extends AbstractTests !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    private WebDriver driver;
-    private final String URL = "https://jdi-testing.github.io/jdi-light/index.html";
-
-    @BeforeMethod
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-    }//комментарии!
 
     @Test
     public void softAssertTests() {
@@ -48,6 +32,7 @@ public class Exercise_1SeleniumHQTest {
         searchPassword.sendKeys("Jdi1234");
         WebElement searchLoginButton = driver.findElement(By.id("login-button"));
         searchLoginButton.click();
+        softAssert.assertFalse((driver.findElement(By.id("login-button"))).isDisplayed());
 
         //step#4
         softAssert.assertTrue((driver.findElement(By.cssSelector("#user-name"))).isDisplayed());
@@ -137,16 +122,4 @@ public class Exercise_1SeleniumHQTest {
         softAssert.assertAll();
     }
 
-    /////нужно убрать!!!!!!
-    @AfterMethod
-    public void closeBrowser() {
-        driver.quit();
-    }
-
-
-    private static WebElement waitForElementLocatedBy(WebDriver driver, By by) {
-        WebElement searchInput = new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.presenceOfElementLocated(by));
-        return searchInput;
-    }
 }
