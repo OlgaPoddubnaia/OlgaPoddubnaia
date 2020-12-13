@@ -1,5 +1,4 @@
-/*
-package hw2.AbstractForExercises;
+package hw2.exercise2;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,9 +7,12 @@ import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class AbstractTests {
+public class Exercise_2SeleniumHQTest {
 
-    protected WebDriver driver;
+
+    //extends AbstractTests !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    private WebDriver driver;
+    private final String URL = "https://jdi-testing.github.io/jdi-light/index.html";
 
     @BeforeMethod
     public void setUp() {
@@ -19,12 +21,12 @@ public abstract class AbstractTests {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-    }
+    }//комментарии!
 
-
+    /////нужно убрать!!!!!!
     @AfterMethod
     public void closeBrowser() {
         driver.quit();
     }
+
 }
-*/
