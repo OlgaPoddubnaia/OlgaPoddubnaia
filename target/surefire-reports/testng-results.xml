@@ -2,306 +2,72 @@
 <testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Calculator add and subtract tests" duration-ms="301" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+  <suite name="Exercise 1 and Exercise 2 tests" duration-ms="80833" started-at="2020-12-14T15:09:40 MSK" finished-at="2020-12-14T15:11:01 MSK">
     <groups>
     </groups>
-    <test name="Add Test" duration-ms="131" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-      <class name="hw1.addAndSubtractOperation.TestAdd">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="setUp" is-config="true" duration-ms="16" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+    <test name="Exercise 1" duration-ms="56225" started-at="2020-12-14T15:09:40 MSK" finished-at="2020-12-14T15:10:37 MSK">
+      <class name="hw2.exercise1.Exercise_1SeleniumHQTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:hw2.exercise1.Exercise_1SeleniumHQTest@29ee9faa]" name="setUp" is-config="true" duration-ms="22739" started-at="2020-12-14T15:09:40 MSK" finished-at="2020-12-14T15:10:03 MSK">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testDataProviderAdd(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="testDataProviderAdd" duration-ms="16" started-at="2020-12-09T21:00:41 MSK" data-provider="addDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[4.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[9.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[13.0]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="softAssertTests()[pri:0, instance:hw2.exercise1.Exercise_1SeleniumHQTest@29ee9faa]" name="softAssertTests" duration-ms="31487" started-at="2020-12-14T15:10:03 MSK" finished-at="2020-12-14T15:10:35 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDataProviderAdd -->
-        <test-method status="PASS" signature="testDataProviderAdd(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="testDataProviderAdd" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="addDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-2.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[-99.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[-101.0]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- softAssertTests -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:hw2.exercise1.Exercise_1SeleniumHQTest@29ee9faa]" name="closeBrowser" is-config="true" duration-ms="1852" started-at="2020-12-14T15:10:35 MSK" finished-at="2020-12-14T15:10:37 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDataProviderAdd -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="setUp" is-config="true" duration-ms="15" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- hw2.exercise1.Exercise_1SeleniumHQTest -->
+    </test> <!-- Exercise 1 -->
+    <test name="Exercise 2" duration-ms="23985" started-at="2020-12-14T15:10:37 MSK" finished-at="2020-12-14T15:11:01 MSK">
+      <class name="hw2.exercise2.Exercise_2SeleniumHQTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="setUp" is-config="true" duration-ms="7304" started-at="2020-12-14T15:10:37 MSK" finished-at="2020-12-14T15:10:45 MSK">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testDataProviderAdd(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="testDataProviderAdd" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="addDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1.2]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[8.2]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="openSiteByURL()[pri:1, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="openSiteByURL" duration-ms="7395" started-at="2020-12-14T15:10:45 MSK" finished-at="2020-12-14T15:10:52 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDataProviderAdd -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- openSiteByURL -->
+        <test-method status="PASS" signature="checkBrowserTitle()[pri:2, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="checkBrowserTitle" duration-ms="13" started-at="2020-12-14T15:10:52 MSK" finished-at="2020-12-14T15:10:52 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- checkBrowserTitle -->
+        <test-method status="PASS" signature="performLogin()[pri:3, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="performLogin" duration-ms="651" started-at="2020-12-14T15:10:52 MSK" finished-at="2020-12-14T15:10:53 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- performLogin -->
+        <test-method status="PASS" signature="checkUserLoggedAndDisplayed()[pri:4, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="checkUserLoggedAndDisplayed" duration-ms="104" started-at="2020-12-14T15:10:53 MSK" finished-at="2020-12-14T15:10:53 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- checkUserLoggedAndDisplayed -->
+        <test-method status="PASS" signature="openThroughServiceDifElemPage()[pri:5, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="openThroughServiceDifElemPage" duration-ms="3735" started-at="2020-12-14T15:10:53 MSK" finished-at="2020-12-14T15:10:56 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="testDataProviderAdd(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="testDataProviderAdd" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="addDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-3.4]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[-62.1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[-65.5]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- openThroughServiceDifElemPage -->
+        <test-method status="PASS" signature="checkWaterWindBoxes()[pri:6, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="checkWaterWindBoxes" duration-ms="524" started-at="2020-12-14T15:10:56 MSK" finished-at="2020-12-14T15:10:57 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDataProviderAdd -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- checkWaterWindBoxes -->
+        <test-method status="PASS" signature="checkRadio()[pri:7, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="checkRadio" duration-ms="137" started-at="2020-12-14T15:10:57 MSK" finished-at="2020-12-14T15:10:57 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="testDataProviderAdd(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="testDataProviderAdd" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="addDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-9.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[9.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[0.0]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- checkRadio -->
+        <test-method status="PASS" signature="selectDropdownYellow()[pri:8, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="selectDropdownYellow" duration-ms="312" started-at="2020-12-14T15:10:57 MSK" finished-at="2020-12-14T15:10:57 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDataProviderAdd -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- selectDropdownYellow -->
+        <test-method status="PASS" signature="softAsserts()[pri:9, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="softAsserts" duration-ms="2425" started-at="2020-12-14T15:10:57 MSK" finished-at="2020-12-14T15:11:00 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestAdd@36d4b5c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
+        </test-method> <!-- softAsserts -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:hw2.exercise2.Exercise_2SeleniumHQTest@5e3a8624]" name="closeBrowser" is-config="true" duration-ms="1374" started-at="2020-12-14T15:11:00 MSK" finished-at="2020-12-14T15:11:01 MSK">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- hw1.addAndSubtractOperation.TestAdd -->
-    </test> <!-- Add Test -->
-    <test name="Subtract test" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-      <class name="hw1.addAndSubtractOperation.TestSubtract">
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="testDataProviderSubtraction(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="testDataProviderSubtraction" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="subtractDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[9.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[0.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProviderSubtraction -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="testDataProviderSubtraction(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="testDataProviderSubtraction" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="subtractDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[4.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[9.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[-5.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProviderSubtraction -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="testDataProviderSubtraction(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="testDataProviderSubtraction" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="subtractDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1.2]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[5.8]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProviderSubtraction -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="testDataProviderSubtraction(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="testDataProviderSubtraction" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="subtractDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-2.0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[-99.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[97.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProviderSubtraction -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="testDataProviderSubtraction(double, double, double)[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="testDataProviderSubtraction" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" data-provider="subtractDataSet" finished-at="2020-12-09T21:00:41 MSK">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[-3.4]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[-62.1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[58.7]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDataProviderSubtraction -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="setUp" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:hw1.addAndSubtractOperation.TestSubtract@c038203]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-12-09T21:00:41 MSK" finished-at="2020-12-09T21:00:41 MSK">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- hw1.addAndSubtractOperation.TestSubtract -->
-    </test> <!-- Subtract test -->
-  </suite> <!-- Calculator add and subtract tests -->
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- hw2.exercise2.Exercise_2SeleniumHQTest -->
+    </test> <!-- Exercise 2 -->
+  </suite> <!-- Exercise 1 and Exercise 2 tests -->
 </testng-results>

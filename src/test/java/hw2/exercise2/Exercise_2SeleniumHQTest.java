@@ -1,6 +1,6 @@
 package hw2.exercise2;
 
-import hw2.AbstractForExercises.AbstractTests;
+import hw2.abstractForExercises.AbstractTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;

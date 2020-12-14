@@ -1,5 +1,3 @@
-hw1\multiplyAndDivideOperations\TestMultiply.class
-hw1\multiplyAndDivideOperations\TestDivide.class
-hw1\abstractCalculator\AbstractCalculatorTest.class
-hw1\addAndSubtractOperation\TestAdd.class
-hw1\addAndSubtractOperation\TestSubtract.class
+hw2\abstractForExercises\AbstractTests.class
+hw2\exercise2\Exercise_2SeleniumHQTest.class
+hw2\exercise1\Exercise_1SeleniumHQTest.class

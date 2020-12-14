@@ -1,4 +1,4 @@
-package hw2.AbstractForExercises;
+package hw2.abstractForExercises;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
