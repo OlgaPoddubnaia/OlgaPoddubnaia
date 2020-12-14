@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 
 public class Exercise_2SeleniumHQTest extends AbstractTests {
 
+    //step#1 Open test site by URL
 
     @Test(priority = 1)
     public void openSiteByURL() {
@@ -17,10 +18,14 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
         Assert.assertEquals(driver.getCurrentUrl(), URL);
     }
 
+    //step#2 Assert Browser title
+
     @Test(priority = 2)
     public void checkBrowserTitle() {
         Assert.assertEquals(driver.getTitle(), "Home Page");
     }
+
+    //step#3 Perform login
 
     @Test(priority = 3)
     public void performLogin() {
@@ -40,6 +45,9 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
                 .id("login-button"))).isDisplayed());
     }
 
+    /*step#4 Assert User name in the left-top side of screen that
+    user is loggined*/
+
     @Test(priority = 4)
     public void checkUserLoggedAndDisplayed() {
         Assert.assertTrue((driver.findElement(By
@@ -48,6 +56,8 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
                 .cssSelector("#user-name"))
                 .getText(), "ROMAN IOVLEV");
     }
+
+    //step#5 Open through the header menu Service -> Different Elements Page
 
     @Test(priority = 5)
     public void openThroughServiceDifElemPage() {
@@ -59,22 +69,30 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
                 "https://jdi-testing.github.io/jdi-light/different-elements.html");
     }
 
+    //step#6 Select checkboxes
+
     @Test(priority = 6)
     public void checkWaterWindBoxes() {
+        SoftAssert softAssert = new SoftAssert();
+
         WebElement waterBox = driver.findElement(By
                 .cssSelector("label:nth-child(1) > input[type=checkbox]"));
         waterBox.click();
-        Assert.assertTrue(waterBox.isSelected());
+        softAssert.assertTrue(waterBox.isSelected());
         waterBox.click();
-        Assert.assertFalse(waterBox.isSelected());
+        softAssert.assertFalse(waterBox.isSelected());
 
         WebElement windBox = driver.findElement(By
                 .cssSelector("label:nth-child(3) > input[type=checkbox]"));
         windBox.click();
-        Assert.assertTrue(windBox.isSelected());
+        softAssert.assertTrue(windBox.isSelected());
         windBox.click();
-        Assert.assertFalse(windBox.isSelected());
+        softAssert.assertFalse(windBox.isSelected());
+
+        softAssert.assertAll();
     }
+
+    //step#7 Select radio
 
     @Test(priority = 7)
     public void checkRadio() {
@@ -84,6 +102,8 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
         selenRadio.click();
         Assert.assertTrue(selenRadio.isSelected());
     }
+
+    //step#8 Select in dropdown
 
     @Test(priority = 8)
     public void selectDropdownYellow() {
@@ -95,6 +115,14 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
         yellow.click();
         Assert.assertTrue(yellow.isSelected());
     }
+
+   /*step#9 Assert that
+    •	for each checkbox there is an individual log row and value is
+     corresponded to the status of checkbox
+    •	for radio button there is a log row and value is corresponded
+     to the status of radio button
+    •	for dropdown there is a log row and value is corresponded to
+    the selected value.*/
 
     @Test(priority = 9)
     public void softAsserts() {
