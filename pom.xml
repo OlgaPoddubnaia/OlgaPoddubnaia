@@ -80,6 +80,24 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/test/resources/lib/calculator-1.0.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
