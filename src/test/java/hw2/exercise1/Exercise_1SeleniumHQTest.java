@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
+import java.util.List;
+
 public class Exercise_1SeleniumHQTest extends AbstractTests {
 
 
@@ -38,7 +40,7 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
         softAssert.assertFalse((driver.findElement(By
                 .id("login-button"))).isDisplayed());
 
-        //step#4 Assert Username is loggined
+        //step#4 Assert Username is logged
         softAssert.assertTrue((driver.findElement(By
                 .cssSelector("#user-name"))).isDisplayed());
         softAssert.assertEquals(driver.findElement(By
@@ -47,68 +49,44 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
 
         /*step#5 Assert that there are 4 items on the header
          section are displayed and they have proper texts*/
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector(".m-l8 > li:nth-child(1) > a"))).isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector(".m-l8 > li:nth-child(1) > a"))
-                .getText(), "HOME");
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector(".m-l8 > li:nth-child(2) > a"))).isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector(".m-l8 > li:nth-child(2) > a"))
-                .getText(), "CONTACT FORM");
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector(".m-l8 > li.dropdown > a"))).isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector(".m-l8 > li.dropdown > a"))
-                .getText(), "SERVICE");
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector(".m-l8 > li:nth-child(4) > a"))).isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector(".m-l8 > li:nth-child(4) > a"))
-                .getText(), "METALS & COLORS");
+        List<WebElement> headerSection = driver.findElements(By
+                .cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8>li"));
+        softAssert.assertTrue(headerSection.get(0).isDisplayed());
+        softAssert.assertEquals(headerSection.get(0).getText(), "HOME");
+        softAssert.assertTrue(headerSection.get(1).isDisplayed());
+        softAssert.assertEquals(headerSection.get(1).getText(), "CONTACT FORM");
+        softAssert.assertTrue(headerSection.get(2).isDisplayed());
+        softAssert.assertEquals(headerSection.get(2).getText(), "SERVICE");
+        softAssert.assertTrue(headerSection.get(3).isDisplayed());
+        softAssert.assertEquals(headerSection.get(3).getText(), "METALS & COLORS");
 
         /*step#6	Assert that there are 4 images on the Index Page
-         and they are displayed	4 images	Images are displayed*/
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("div:nth-child(1) > div > div > span"))).isDisplayed());
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("div:nth-child(2) > div > div > span"))).isDisplayed());
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("div:nth-child(3) > div > div > span"))).isDisplayed());
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("div:nth-child(4) > div > div > span"))).isDisplayed());
+         and they are displayed	*/
+        List<WebElement> imagesOnIndexPage = driver.findElements(By
+                .cssSelector("div.benefit-icon>span"));
+        softAssert.assertTrue(imagesOnIndexPage.get(0).isDisplayed());
+        softAssert.assertTrue(imagesOnIndexPage.get(1).isDisplayed());
+        softAssert.assertTrue(imagesOnIndexPage.get(2).isDisplayed());
+        softAssert.assertTrue(imagesOnIndexPage.get(3).isDisplayed());
 
         /*step#7 Assert that there are 4 texts on the Index Page under
          icons and they have proper text*/
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("div.row.clerafix.benefits > div:nth-child(1) > div > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("div.row.clerafix.benefits > div:nth-child(1) > div > span"))
+        List<WebElement> textsOnIndexPage = driver.findElements(By
+                .cssSelector("span.benefit-txt"));
+        softAssert.assertTrue(textsOnIndexPage.get(0).isDisplayed());
+        softAssert.assertTrue(textsOnIndexPage.get(1).isDisplayed());
+        softAssert.assertTrue(textsOnIndexPage.get(2).isDisplayed());
+        softAssert.assertTrue(textsOnIndexPage.get(3).isDisplayed());
+
+        softAssert.assertEquals(textsOnIndexPage.get(0)
                 .getText(), "To include good practices\n" +
                 "and ideas from successful\n" +
                 "EPAM project");
-
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("div div:nth-child(2) > div > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("div div:nth-child(2) > div > span"))
+        softAssert.assertEquals(textsOnIndexPage.get(1)
                 .getText(), "To be flexible and\n" + "customizable");
-
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("div:nth-child(3) > div > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("div:nth-child(3) > div > span"))
+        softAssert.assertEquals(textsOnIndexPage.get(2)
                 .getText(), "To be multiplatform");
-
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector(" div:nth-child(4) > div > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector(" div:nth-child(4) > div > span"))
+        softAssert.assertEquals(textsOnIndexPage.get(3)
                 .getText(), "Already have good base\n" +
                 "(about 20 internal and\n" +
                 "some external projects),\n" +
@@ -131,34 +109,23 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
 
         /*step#11 Assert that there are 5 items in the Left
       Section are displayed and they have proper text*/
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("li.active > a > span"))).isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("li.active > a > span"))
+        List<WebElement> itemsOnLeftSection = driver.
+                findElements(By.cssSelector("ul.sidebar-menu>li"));
+        softAssert.assertTrue(itemsOnLeftSection.get(0).isDisplayed());
+        softAssert.assertTrue(itemsOnLeftSection.get(1).isDisplayed());
+        softAssert.assertTrue(itemsOnLeftSection.get(2).isDisplayed());
+        softAssert.assertTrue(itemsOnLeftSection.get(3).isDisplayed());
+        softAssert.assertTrue(itemsOnLeftSection.get(4).isDisplayed());
+
+        softAssert.assertEquals(itemsOnLeftSection.get(0)
                 .getText(), "Home");
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(2) > a > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(2) > a > span"))
+        softAssert.assertEquals(itemsOnLeftSection.get(1)
                 .getText(), "Contact form");
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(3) > a > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(3) > a > span"))
+        softAssert.assertEquals(itemsOnLeftSection.get(2)
                 .getText(), "Service");
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(4) > a > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(4) > a > span"))
+        softAssert.assertEquals(itemsOnLeftSection.get(3)
                 .getText(), "Metals & Colors");
-        softAssert.assertTrue((driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(5) > a > span")))
-                .isDisplayed());
-        softAssert.assertEquals(driver.findElement(By
-                .cssSelector("#mCSB_1_container > ul > li:nth-child(5) > a > span"))
+        softAssert.assertEquals(itemsOnLeftSection.get(4)
                 .getText(), "Elements packs");
 
         //run all soft asserts
