@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 
-public class LoginTest extends AbstractTests{
+public class LoginTest extends AbstractTests {
 
     @BeforeMethod
-    public void performLogin(){
+    public void performLogin() {
         SoftAssert softAssert = new SoftAssert();
 
         //step#1 Open test site by URL
@@ -23,7 +23,7 @@ public class LoginTest extends AbstractTests{
         //step#3 Perform login
 
         WebElement searchButton = driver.findElement(By
-                .cssSelector("//a[@class='dropdown-toggle' and @href='#']"));
+                .xpath("//a[@class='dropdown-toggle' and @href='#']"));
         searchButton.click();
         WebElement searchUserName = waitForElementLocatedBy(driver,
                 By.cssSelector("#name"));
