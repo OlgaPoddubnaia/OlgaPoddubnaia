@@ -27,7 +27,7 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
 
         //step#3 Perform login
         WebElement searchButton = driver.findElement(By
-                .cssSelector(".navbar-nav.navbar-right > li > a"));
+                .xpath("//a[@class='dropdown-toggle' and @href='#']"));
         searchButton.click();
         WebElement searchUserName = waitForElementLocatedBy(driver,
                 By.cssSelector("#name"));
