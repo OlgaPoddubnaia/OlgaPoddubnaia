@@ -1,6 +1,6 @@
 package hw2.exercise1;
 
-import hw2.abstractForExercises.AbstractTests;
+import hw2.baseTestsForExercises.AbstractTests;
 import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebElement;
@@ -104,8 +104,8 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
 
         //step#10 Switch to original window back
         driver.switchTo().defaultContent();
-        softAssert.assertTrue(driver.findElement(By
-                .className("wrapper")).isDisplayed());
+        softAssert.assertFalse(driver.findElement(By
+                .cssSelector("#frame-button")).isDisplayed());
 
         /*step#11 Assert that there are 5 items in the Left
       Section are displayed and they have proper text*/

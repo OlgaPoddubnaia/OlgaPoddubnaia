@@ -1,120 +1,62 @@
 package hw2.exercise2;
 
-import hw2.abstractForExercises.AbstractTests;
+import hw2.baseTestsForExercises.LoginTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.util.List;
 
-public class Exercise_2SeleniumHQTest extends AbstractTests {
 
-    //step#1 Open test site by URL
+public class Exercise_2SeleniumHQTest extends LoginTest {
 
-    @Test(priority = 1)
-    public void openSiteByURL() {
-        driver.get(URL);
-        Assert.assertEquals(driver.getCurrentUrl(), URL);
-    }
+    @Test
+    public void softAssertTests() {
 
-    //step#2 Assert Browser title
-
-    @Test(priority = 2)
-    public void checkBrowserTitle() {
-        Assert.assertEquals(driver.getTitle(), "Home Page");
-    }
-
-    //step#3 Perform login
-
-    @Test(priority = 3)
-    public void performLogin() {
-        WebElement searchButton = driver.findElement(By
-                .cssSelector(".navbar-nav.navbar-right > li > a"));
-        searchButton.click();
-        WebElement searchUserName = waitForElementLocatedBy(driver,
-                By.cssSelector("#name"));
-        searchUserName.sendKeys("Roman");
-        WebElement searchPassword = waitForElementLocatedBy(driver,
-                By.cssSelector("#password"));
-        searchPassword.sendKeys("Jdi1234");
-        WebElement searchLoginButton = driver.findElement(By
-                .id("login-button"));
-        searchLoginButton.click();
-        Assert.assertFalse((driver.findElement(By
-                .id("login-button"))).isDisplayed());
-    }
-
-    /*step#4 Assert User name in the left-top side of screen that
-    user is loggined*/
-
-    @Test(priority = 4)
-    public void checkUserLoggedAndDisplayed() {
-        Assert.assertTrue((driver.findElement(By
-                .cssSelector("#user-name"))).isDisplayed());
-        Assert.assertEquals(driver.findElement(By
-                .cssSelector("#user-name"))
-                .getText(), "ROMAN IOVLEV");
-    }
-
-    //step#5 Open through the header menu Service -> Different Elements Page
-
-    @Test(priority = 5)
-    public void openThroughServiceDifElemPage() {
-        driver.findElement(By.cssSelector(".m-l8 > li.dropdown > a"))
-                .click();
-        driver.findElement(By.cssSelector(" li.dropdown.open > ul > li:nth-child(8) > a"))
-                .click();
-        Assert.assertEquals(driver.getCurrentUrl(),
-                "https://jdi-testing.github.io/jdi-light/different-elements.html");
-    }
-
-    //step#6 Select checkboxes
-
-    @Test(priority = 6)
-    public void checkWaterWindBoxes() {
         SoftAssert softAssert = new SoftAssert();
 
-        WebElement waterBox = driver.findElement(By
-                .cssSelector("label:nth-child(1) > input[type=checkbox]"));
-        waterBox.click();
-        softAssert.assertTrue(waterBox.isSelected());
-        waterBox.click();
-        softAssert.assertFalse(waterBox.isSelected());
+        //step#5 Open through the header menu Service -> Different Elements Page
 
-        WebElement windBox = driver.findElement(By
-                .cssSelector("label:nth-child(3) > input[type=checkbox]"));
-        windBox.click();
-        softAssert.assertTrue(windBox.isSelected());
-        windBox.click();
-        softAssert.assertFalse(windBox.isSelected());
+        List<WebElement> headerSection = driver.findElements(By
+                .cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8>li"));
+        headerSection.get(2).click();
+        List<WebElement> serviceDropdown = driver.findElements(By
+                .cssSelector("ul.dropdown-menu>li"));
+        serviceDropdown.get(7).click();
+        softAssert.assertEquals(driver.getCurrentUrl(),
+                "https://jdi-testing.github.io/jdi-light/different-elements.html");
 
-        softAssert.assertAll();
-    }
+        //step#6 Select checkboxes
 
-    //step#7 Select radio
+        List<WebElement> checkboxes = driver.findElements(By
+                .cssSelector("label.label-checkbox>input"));
+        softAssert.assertFalse(checkboxes.get(0).isSelected());
+        checkboxes.get(0).click();
+        softAssert.assertTrue(checkboxes.get(0).isSelected());
+        checkboxes.get(0).click();
+        softAssert.assertFalse(checkboxes.get(2).isSelected());
+        checkboxes.get(2).click();
+        softAssert.assertTrue(checkboxes.get(2).isSelected());
+        checkboxes.get(2).click();
 
-    @Test(priority = 7)
-    public void checkRadio() {
-        WebElement selenRadio = driver.findElement(By
-                .cssSelector(" label:nth-child(4) > input[type=radio]"));
-        Assert.assertFalse(selenRadio.isSelected());
-        selenRadio.click();
-        Assert.assertTrue(selenRadio.isSelected());
-    }
+        //step#7 Select radio
 
-    //step#8 Select in dropdown
+        List<WebElement> radios = driver.findElements(By
+                .cssSelector("label.label-radio>input"));
+        softAssert.assertFalse(radios.get(3).isSelected());
+        radios.get(3).click();
+        softAssert.assertTrue(radios.get(3).isSelected());
 
-    @Test(priority = 8)
-    public void selectDropdownYellow() {
+        //step#8 Select in dropdown
+
         WebElement searchDropdown = driver.findElement(By
                 .cssSelector("div.colors > select"));
         searchDropdown.click();
-        WebElement yellow = driver.findElement(By
-                .cssSelector("option:nth-child(4)"));
-        yellow.click();
-        Assert.assertTrue(yellow.isSelected());
-    }
+        List<WebElement> colors = driver.findElements(By
+                .cssSelector("select.uui-form-element>option"));
+        colors.get(3).click();
+        softAssert.assertTrue(colors.get(3).isSelected());
 
    /*step#9 Assert that
     •	for each checkbox there is an individual log row and value is
@@ -124,143 +66,81 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
     •	for dropdown there is a log row and value is corresponded to
     the selected value.*/
 
-    @Test(priority = 9)
-    public void softAsserts() {
-
-        SoftAssert softAssert = new SoftAssert();
-
         //checkboxes names are corresponded to expected
 
-        softAssert.assertEquals(driver.findElement(By.
-                cssSelector("div.main-content > div > div:nth-child(2) > label:nth-child(1)"))
-                .getText(), "Water");
-
-        softAssert.assertEquals(driver.findElement(By.
-                cssSelector(" div:nth-child(2) > label:nth-child(2)"))
-                .getText(), "Earth");
-
-        softAssert.assertEquals(driver.findElement(By.
-                cssSelector("div:nth-child(2) > label:nth-child(3)"))
-                .getText(), "Wind");
-
-        softAssert.assertEquals(driver.findElement(By.
-                cssSelector("div:nth-child(2) > label:nth-child(4)"))
-                .getText(), "Fire");
+        List<WebElement> checkboxesNames = driver.findElements(By
+                .className("label-checkbox"));
+        softAssert.assertEquals(checkboxesNames.get(0).getText(), "Water");
+        softAssert.assertEquals(checkboxesNames.get(1).getText(), "Earth");
+        softAssert.assertEquals(checkboxesNames.get(2).getText(), "Wind");
+        softAssert.assertEquals(checkboxesNames.get(3).getText(), "Fire");
 
         //checkbox status
 
-        WebElement waterBox = driver.findElement(By
-                .cssSelector("label:nth-child(1) > input[type=checkbox]"));
-        waterBox.click();
-        softAssert.assertTrue(waterBox.isSelected());
-        waterBox.click();
-        softAssert.assertFalse(waterBox.isSelected());
+        checkboxes.get(0).click();
+        softAssert.assertTrue(checkboxes.get(0).isSelected());
+        checkboxes.get(0).click();
+        softAssert.assertFalse(checkboxes.get(0).isSelected());
 
-        WebElement windBox = driver.findElement(By
-                .cssSelector("label:nth-child(3) > input[type=checkbox]"));
-        windBox.click();
-        softAssert.assertTrue(windBox.isSelected());
-        windBox.click();
-        softAssert.assertFalse(windBox.isSelected());
+        checkboxes.get(1).click();
+        softAssert.assertTrue(checkboxes.get(1).isSelected());
+        checkboxes.get(1).click();
+        softAssert.assertFalse(checkboxes.get(1).isSelected());
 
-        WebElement earthBox = driver.findElement(By
-                .cssSelector(" label:nth-child(2) > input[type=checkbox]"));
-        earthBox.click();
-        softAssert.assertTrue(earthBox.isSelected());
-        earthBox.click();
-        softAssert.assertFalse(earthBox.isSelected());
+        checkboxes.get(2).click();
+        softAssert.assertTrue(checkboxes.get(2).isSelected());
+        checkboxes.get(2).click();
+        softAssert.assertFalse(checkboxes.get(2).isSelected());
 
-        WebElement fireBox = driver.findElement(By
-                .cssSelector("label:nth-child(4) > input[type=checkbox]"));
-        fireBox.click();
-        softAssert.assertTrue(fireBox.isSelected());
-        fireBox.click();
-        softAssert.assertFalse(fireBox.isSelected());
+        checkboxes.get(3).click();
+        softAssert.assertTrue(checkboxes.get(3).isSelected());
+        checkboxes.get(3).click();
+        softAssert.assertFalse(checkboxes.get(3).isSelected());
 
         //check radio buttons statuses
 
-        WebElement goldRadio = driver.findElement(By
-                .cssSelector(" label:nth-child(1) > input[type=radio]"));
-        softAssert.assertFalse(goldRadio.isSelected());
-        goldRadio.click();
-        softAssert.assertTrue(goldRadio.isSelected());
+        softAssert.assertFalse(radios.get(0).isSelected());
+        radios.get(0).click();
+        softAssert.assertTrue(radios.get(0).isSelected());
 
-        WebElement silverRadio = driver.findElement(By
-                .cssSelector("label:nth-child(2) > input[type=radio]"));
-        softAssert.assertFalse(silverRadio.isSelected());
-        silverRadio.click();
-        softAssert.assertTrue(silverRadio.isSelected());
+        softAssert.assertFalse(radios.get(1).isSelected());
+        radios.get(1).click();
+        softAssert.assertTrue(radios.get(1).isSelected());
 
-        WebElement bronzeRadio = driver.findElement(By
-                .cssSelector("label:nth-child(3) > input[type=radio]"));
-        softAssert.assertFalse(bronzeRadio.isSelected());
-        bronzeRadio.click();
-        softAssert.assertTrue(bronzeRadio.isSelected());
+        softAssert.assertFalse(radios.get(2).isSelected());
+        radios.get(2).click();
+        softAssert.assertTrue(radios.get(2).isSelected());
 
-        WebElement selenRadio = driver.findElement(By
-                .cssSelector(" label:nth-child(4) > input[type=radio]"));
-        softAssert.assertFalse(selenRadio.isSelected());
-        selenRadio.click();
-        softAssert.assertTrue(selenRadio.isSelected());
+        softAssert.assertFalse(radios.get(3).isSelected());
+        radios.get(3).click();
+        softAssert.assertTrue(radios.get(3).isSelected());
 
         //check radio buttons names
 
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("div:nth-child(3) > label:nth-child(1)"))
-                .getText()), "Gold");
-
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("div:nth-child(3) > label:nth-child(2)"))
-                .getText()), "Silver");
-
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("div:nth-child(3) > label:nth-child(3)"))
-                .getText()), "Bronze");
-
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("div:nth-child(3) > label:nth-child(4)"))
-                .getText()), "Selen");
+        List<WebElement> radiosNames = driver.findElements(By
+                .className("label-radio"));
+        softAssert.assertEquals(radiosNames.get(0).getText(), "Gold");
+        softAssert.assertEquals(radiosNames.get(1).getText(), "Silver");
+        softAssert.assertEquals(radiosNames.get(2).getText(), "Bronze");
+        softAssert.assertEquals(radiosNames.get(3).getText(), "Selen");
 
         //check dropdown names
 
-        WebElement searchDropdown = driver.findElement(By
-                .cssSelector("div.colors > select"));
+        searchDropdown.click();
+        colors.get(0).click();
+        softAssert.assertEquals(colors.get(0).getText(), "Red");
 
         searchDropdown.click();
-        WebElement yellow = driver.findElement(By
-                .cssSelector("option:nth-child(4)"));
-        yellow.click();
-        softAssert.assertTrue(yellow.isSelected());
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("option:nth-child(4)"))
-                .getText()), "Yellow");
+        colors.get(1).click();
+        softAssert.assertEquals(colors.get(1).getText(), "Green");
 
         searchDropdown.click();
-        WebElement red = driver.findElement(By
-                .cssSelector("option:nth-child(1)"));
-        red.click();
-        softAssert.assertTrue(red.isSelected());
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("option:nth-child(1)"))
-                .getText()), "Red");
+        colors.get(2).click();
+        softAssert.assertEquals(colors.get(2).getText(), "Blue");
 
         searchDropdown.click();
-        WebElement green = driver.findElement(By
-                .cssSelector("option:nth-child(2)"));
-        green.click();
-        softAssert.assertTrue(green.isSelected());
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("option:nth-child(2)"))
-                .getText()), "Green");
-
-        searchDropdown.click();
-        WebElement blue = driver.findElement(By
-                .cssSelector("option:nth-child(3)"));
-        blue.click();
-        softAssert.assertTrue(blue.isSelected());
-        softAssert.assertEquals((driver.findElement(By
-                .cssSelector("option:nth-child(3)"))
-                .getText()), "Blue");
+        colors.get(3).click();
+        softAssert.assertEquals(colors.get(3).getText(), "Yellow");
 
         //assert All
         softAssert.assertAll();
