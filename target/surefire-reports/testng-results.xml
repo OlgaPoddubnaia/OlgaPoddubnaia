@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Exercise 1 and Exercise 2 tests" duration-ms="64311" started-at="2020-12-17T23:35:15 MSK" finished-at="2020-12-17T23:36:19 MSK">
+    <groups>
+    </groups>
+    <test name="Exercise 1" duration-ms="47389" started-at="2020-12-17T23:35:15 MSK" finished-at="2020-12-17T23:36:02 MSK">
+      <class name="hw2.exercise1.Exercise_1SeleniumHQTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:hw2.exercise1.Exercise_1SeleniumHQTest@29ee9faa]" name="setUp" is-config="true" duration-ms="12782" started-at="2020-12-17T23:35:15 MSK" finished-at="2020-12-17T23:35:27 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="softAssertTests()[pri:0, instance:hw2.exercise1.Exercise_1SeleniumHQTest@29ee9faa]" name="softAssertTests" duration-ms="33731" started-at="2020-12-17T23:35:28 MSK" finished-at="2020-12-17T23:36:01 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- softAssertTests -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:hw2.exercise1.Exercise_1SeleniumHQTest@29ee9faa]" name="closeBrowser" is-config="true" duration-ms="823" started-at="2020-12-17T23:36:01 MSK" finished-at="2020-12-17T23:36:02 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- hw2.exercise1.Exercise_1SeleniumHQTest -->
+    </test> <!-- Exercise 1 -->
+    <test name="Exercise 2" duration-ms="16628" started-at="2020-12-17T23:36:02 MSK" finished-at="2020-12-17T23:36:19 MSK">
+      <class name="hw2.exercise2.Exercise_2SeleniumHQTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:hw2.exercise2.Exercise_2SeleniumHQTest@1bce4f0a]" name="setUp" is-config="true" duration-ms="6698" started-at="2020-12-17T23:36:02 MSK" finished-at="2020-12-17T23:36:09 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="performLogin()[pri:0, instance:hw2.exercise2.Exercise_2SeleniumHQTest@1bce4f0a]" name="performLogin" is-config="true" duration-ms="4987" started-at="2020-12-17T23:36:09 MSK" finished-at="2020-12-17T23:36:14 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- performLogin -->
+        <test-method status="PASS" signature="softAssertTests()[pri:0, instance:hw2.exercise2.Exercise_2SeleniumHQTest@1bce4f0a]" name="softAssertTests" duration-ms="4183" started-at="2020-12-17T23:36:14 MSK" finished-at="2020-12-17T23:36:18 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- softAssertTests -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:hw2.exercise2.Exercise_2SeleniumHQTest@1bce4f0a]" name="closeBrowser" is-config="true" duration-ms="757" started-at="2020-12-17T23:36:18 MSK" finished-at="2020-12-17T23:36:19 MSK">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- hw2.exercise2.Exercise_2SeleniumHQTest -->
+    </test> <!-- Exercise 2 -->
+  </suite> <!-- Exercise 1 and Exercise 2 tests -->
+</testng-results>
