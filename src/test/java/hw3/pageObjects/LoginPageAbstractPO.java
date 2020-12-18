@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends PageObject {
+public class LoginPageAbstractPO extends AbstractPage {
 
-    public LoginPage(WebDriver driver) {
+    public LoginPageAbstractPO(WebDriver driver) {
         super(driver);
     }
 
@@ -30,11 +30,12 @@ public class LoginPage extends PageObject {
         return driver.getTitle();
     }
 
-    public void logOnSite(String login,String password){
+    public LoginPageAbstractPO logOnSite(String login, String password){
         searchButton.click();
         searchUserName.sendKeys(login);
         searchPassword.sendKeys(password);
         searchLoginButton.click();
+        return this;
     }
 
     public boolean loginButtonIsDisplayed(){

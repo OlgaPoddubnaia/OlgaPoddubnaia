@@ -3,10 +3,13 @@ package hw3.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class PageObject {
+public abstract class AbstractPage {
+
     protected WebDriver driver;
 
-    public PageObject(WebDriver driver) {
+    //protected abstract AbstractPage openPage();
+
+    public AbstractPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

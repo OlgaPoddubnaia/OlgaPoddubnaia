@@ -4,9 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomeLoggedPage extends PageObject {
+public class HomeLoggedPageAbstractPO extends AbstractPage {
 
-    public HomeLoggedPage(WebDriver driver) {
+    public HomeLoggedPageAbstractPO(WebDriver driver) {
         super(driver);
     }
 
