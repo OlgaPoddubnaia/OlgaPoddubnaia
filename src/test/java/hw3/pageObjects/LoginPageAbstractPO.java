@@ -9,7 +9,7 @@ public class LoginPageAbstractPO extends AbstractPage {
     public LoginPageAbstractPO(WebDriver driver) {
         super(driver);
     }
-
+// поменять локатор, изменить метод на vois
     @FindBy(css = ".navbar-nav.navbar-right > li > a")
     private WebElement searchButton;
 

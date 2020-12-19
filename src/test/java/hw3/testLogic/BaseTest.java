@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeTest;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest extends Properties{
+    // добавить alwaysRun=true?
+
     protected WebDriver driver;
 
     @BeforeTest

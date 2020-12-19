@@ -9,7 +9,7 @@ public class HomeLoggedPageAbstractPO extends AbstractPage {
     public HomeLoggedPageAbstractPO(WebDriver driver) {
         super(driver);
     }
-
+// поменять локаторы! разбить страницу
     @FindBy(css = "#user-name")
     public WebElement userName;
 
