@@ -11,15 +11,16 @@ import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest extends Properties{
-    // добавить alwaysRun=true?
+public class BaseTest  extends ForProperties{
 
-    protected WebDriver driver;
+    protected final String DRIVER_TYPE = "webdriver.chrome.driver";
+    protected final String DRIVER_STORAGE_URL = "C:\\SeleniumDrivers\\chromedriver.exe";
+    protected final String DIFFERENT_ELEMENTS_URL =
+            "https://jdi-testing.github.io/jdi-light/different-elements.html";
 
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver",
-                "C:\\SeleniumDrivers\\chromedriver.exe");
+        System.setProperty(DRIVER_TYPE, DRIVER_STORAGE_URL);
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
@@ -31,6 +32,7 @@ public class BaseTest extends Properties{
         driver.quit();
         driver = null;
     }
+//еренести в отдельный класс?
     protected static WebElement waitForElementLocatedBy(WebDriver driver, By by) {
         WebElement searchInput = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(by));

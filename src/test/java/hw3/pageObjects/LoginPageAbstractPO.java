@@ -9,38 +9,39 @@ public class LoginPageAbstractPO extends AbstractPage {
     public LoginPageAbstractPO(WebDriver driver) {
         super(driver);
     }
-// поменять локатор, изменить метод на vois
-    @FindBy(css = ".navbar-nav.navbar-right > li > a")
+
+    @FindBy(xpath = "//a[@class='dropdown-toggle' and @href='#']")
     private WebElement searchButton;
 
     @FindBy(css = "#name")
-    private WebElement searchUserName;
+    private WebElement searchUserNameField;
 
     @FindBy(css = "#password")
-    private WebElement searchPassword;
+    private WebElement searchPasswordField;
 
     @FindBy(id = "login-button")
     private WebElement searchLoginButton;
 
-    public String currentUrl(){
-        return driver.getCurrentUrl();
-    }
+    @FindBy(css = "#user-name")
+    private WebElement userName;
 
-    public String getTitle() {
-        return driver.getTitle();
-    }
 
-    public LoginPageAbstractPO logOnSite(String login, String password){
+    public void logOnSite(String login, String password) {
         searchButton.click();
-        searchUserName.sendKeys(login);
-        searchPassword.sendKeys(password);
+        searchUserNameField.sendKeys(login);
+        searchPasswordField.sendKeys(password);
         searchLoginButton.click();
-        return this;
     }
 
-    public boolean loginButtonIsDisplayed(){
-       return searchLoginButton.isDisplayed();
+    public boolean loginButtonIsDisplayed() {
+        return searchLoginButton.isDisplayed();
     }
 
+    public void userNameCompare() {
+        userName.getText();
+    }
 
+    public boolean doesUserNameDisplayed() {
+        return userName.isDisplayed();
+    }
 }
