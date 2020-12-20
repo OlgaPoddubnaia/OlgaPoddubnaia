@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -17,36 +18,22 @@ public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
     private List<WebElement> headerSection;
 
 
-    public void getHomeFromHeaderText() {
-        headerSection.get(0).getText();
+    public void getTextOfItemFromHeader(String home, String contactForm,
+                                        String service, String metalsAndColors) {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(headerSection.get(0).getText(), home);
+        softAssert.assertEquals(headerSection.get(1).getText(), contactForm);
+        softAssert.assertEquals(headerSection.get(2).getText(), service);
+        softAssert.assertEquals(headerSection.get(3).getText(), metalsAndColors);
+        softAssert.assertAll();
     }
 
-    public boolean doesHomeFromHeaderDisplayed() {
-        return headerSection.get(0).isDisplayed();
+    public void doesItemsFromHeaderDisplayed() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(headerSection.get(0).isDisplayed());
+        softAssert.assertTrue(headerSection.get(1).isDisplayed());
+        softAssert.assertTrue(headerSection.get(2).isDisplayed());
+        softAssert.assertTrue(headerSection.get(3).isDisplayed());
+        softAssert.assertAll();
     }
-
-    public void getTextContactFormFromHeader() {
-        headerSection.get(1).getText();
-    }
-
-    public boolean doesContactFormFromHeaderDisplayed() {
-        return headerSection.get(1).isDisplayed();
-    }
-
-    public void getTextServiceFromHeader() {
-        headerSection.get(2).getText();
-    }
-
-    public boolean doesServiceFromHeaderDisplayed() {
-        return headerSection.get(2).isDisplayed();
-    }
-
-    public void getTextMetalsAndColorsFromHeader() {
-        headerSection.get(3).getText();
-    }
-
-    public boolean doesMetalsAndColorsFromHeaderDisplayed() {
-        return headerSection.get(3).isDisplayed();
-    }
-
 }

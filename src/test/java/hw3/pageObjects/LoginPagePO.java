@@ -3,10 +3,11 @@ package hw3.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
-public class LoginPageAbstractPO extends AbstractPage {
+public class LoginPagePO extends AbstractPage {
 
-    public LoginPageAbstractPO(WebDriver driver) {
+    public LoginPagePO(WebDriver driver) {
         super(driver);
     }
 
@@ -33,15 +34,15 @@ public class LoginPageAbstractPO extends AbstractPage {
         searchLoginButton.click();
     }
 
-    public boolean loginButtonIsDisplayed() {
-        return searchLoginButton.isDisplayed();
+    public void doesLoginButtonDisplayed() {
+        Assert.assertFalse(searchLoginButton.isDisplayed());
     }
 
-    public void userNameCompare() {
-        userName.getText();
+    public void userNameCompare(String name) {
+        Assert.assertEquals(userName.getText(), name);
     }
 
-    public boolean doesUserNameDisplayed() {
-        return userName.isDisplayed();
+    public void doesUserNameDisplayed() {
+        Assert.assertTrue(userName.isDisplayed());
     }
 }

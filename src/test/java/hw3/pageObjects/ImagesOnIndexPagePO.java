@@ -1,10 +1,10 @@
 package hw3.pageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -17,20 +17,12 @@ public class ImagesOnIndexPagePO extends AbstractPage {
     @FindBy(how = How.CSS, using = "div.benefit-icon>span")
     private List<WebElement> imagesOnIndexPage;
 
-    public boolean doesImageOneFromIndexPageDisplayed() {
-        return imagesOnIndexPage.get(0).isDisplayed();
+    public void doesImagesFromIndexPageDisplayed() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(imagesOnIndexPage.get(0).isDisplayed());
+        softAssert.assertTrue(imagesOnIndexPage.get(1).isDisplayed());
+        softAssert.assertTrue(imagesOnIndexPage.get(2).isDisplayed());
+        softAssert.assertTrue(imagesOnIndexPage.get(3).isDisplayed());
+        softAssert.assertAll();
     }
-
-    public boolean doesImageTwoFromIndexPageDisplayed() {
-        return imagesOnIndexPage.get(1).isDisplayed();
-    }
-
-    public boolean doesImageThreeFromIndexPageDisplayed() {
-        return imagesOnIndexPage.get(2).isDisplayed();
-    }
-
-    public boolean doesImageFourFromIndexPageDisplayed() {
-        return imagesOnIndexPage.get(3).isDisplayed();
-    }
-
 }
