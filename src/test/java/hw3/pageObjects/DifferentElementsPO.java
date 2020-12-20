@@ -42,7 +42,6 @@ public class DifferentElementsPO extends AbstractPage {
         softAssert.assertAll();
     }
 
-
     public void checkDoesWindWaterCheckboxesSelected() {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(checkboxes.get(0).isSelected());
@@ -55,6 +54,4 @@ public class DifferentElementsPO extends AbstractPage {
         checkboxes.get(2).click();
         softAssert.assertAll();
     }
-
-
 }

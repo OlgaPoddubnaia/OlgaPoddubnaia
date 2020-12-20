@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Exercise 1 and Exercise 2 tests from homework #3">
+    <test name="Exercise 1">
+        <classes>
+            <class name="hw3.testLogic.Exercise_1SeleniumPOTest"/>
+        </classes>
+    </test>
+
+    <test name="Exercise 2">
+        <classes>
+            <class name="hw3.testLogic.Exercise_2SeleniumPOTest"/>
+        </classes>
+    </test>
+</suite>

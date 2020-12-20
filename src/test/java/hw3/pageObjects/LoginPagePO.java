@@ -26,7 +26,6 @@ public class LoginPagePO extends AbstractPage {
     @FindBy(css = "#user-name")
     private WebElement userName;
 
-
     public void logOnSite(String login, String password) {
         searchButton.click();
         searchUserNameField.sendKeys(login);
