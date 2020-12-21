@@ -13,6 +13,8 @@ public class Exercise_2SeleniumPOTest extends BaseTest {
         HeaderMenuOfHomePageAfterLoginPO headerMenuOfHomePageAfterLoginPO =
                 new HeaderMenuOfHomePageAfterLoginPO(driver);
         DifferentElementsPO differentElementsPO = new DifferentElementsPO(driver);
+        LogRowsOnDifferentElementsPagePO logRowsOnDifferentElementsPagePO =
+                new LogRowsOnDifferentElementsPagePO(driver);
         SoftAssert softAssert = new SoftAssert();
 
         homePagePO.openPage(ConfProperties.getProperty("URL"));
@@ -28,8 +30,9 @@ public class Exercise_2SeleniumPOTest extends BaseTest {
         differentElementsPO.checkDoesWindWaterCheckboxesSelected();
         differentElementsPO.checkDoesSelenRadioSelected();
         differentElementsPO.checkDoesYellowInDropdownSelected();
-
+        logRowsOnDifferentElementsPagePO.doesLogRowsDisplayedAndCorrespondedToCheckboxes();
+        logRowsOnDifferentElementsPagePO.doesLogRowsDisplayedAndCorrespondedToRadios();
+        logRowsOnDifferentElementsPagePO.doesLorRowsDisplayedAndCorrespondedToDropdowns();
         softAssert.assertAll();
-
     }
 }

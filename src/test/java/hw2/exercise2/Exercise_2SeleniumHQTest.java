@@ -68,79 +68,52 @@ public class Exercise_2SeleniumHQTest extends LoginTest {
 
         //checkboxes names are corresponded to expected
 
-        List<WebElement> checkboxesNames = driver.findElements(By
-                .className("label-checkbox"));
-        softAssert.assertEquals(checkboxesNames.get(0).getText(), "Water");
-        softAssert.assertEquals(checkboxesNames.get(1).getText(), "Earth");
-        softAssert.assertEquals(checkboxesNames.get(2).getText(), "Wind");
-        softAssert.assertEquals(checkboxesNames.get(3).getText(), "Fire");
-
-        //checkbox status
-
         checkboxes.get(0).click();
-        softAssert.assertTrue(checkboxes.get(0).isSelected());
-        checkboxes.get(0).click();
-        softAssert.assertFalse(checkboxes.get(0).isSelected());
-
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Water')" +
+                " and contains(text(),'true')]")).isDisplayed());
         checkboxes.get(1).click();
-        softAssert.assertTrue(checkboxes.get(1).isSelected());
-        checkboxes.get(1).click();
-        softAssert.assertFalse(checkboxes.get(1).isSelected());
-
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Earth')" +
+                " and contains(text(),'true')]")).isDisplayed());
         checkboxes.get(2).click();
-        softAssert.assertTrue(checkboxes.get(2).isSelected());
-        checkboxes.get(2).click();
-        softAssert.assertFalse(checkboxes.get(2).isSelected());
-
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Wind')" +
+                " and contains(text(),'true')]")).isDisplayed());
         checkboxes.get(3).click();
-        softAssert.assertTrue(checkboxes.get(3).isSelected());
-        checkboxes.get(3).click();
-        softAssert.assertFalse(checkboxes.get(3).isSelected());
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Fire')" +
+                " and contains(text(),'true')]")).isDisplayed());
 
         //check radio buttons statuses
 
-        softAssert.assertFalse(radios.get(0).isSelected());
         radios.get(0).click();
-        softAssert.assertTrue(radios.get(0).isSelected());
-
-        softAssert.assertFalse(radios.get(1).isSelected());
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'metal')" +
+                " and contains(text(),'Gold')]")).isDisplayed());
         radios.get(1).click();
-        softAssert.assertTrue(radios.get(1).isSelected());
-
-        softAssert.assertFalse(radios.get(2).isSelected());
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'metal')" +
+                " and contains(text(),'Silver')]")).isDisplayed());
         radios.get(2).click();
-        softAssert.assertTrue(radios.get(2).isSelected());
-
-        softAssert.assertFalse(radios.get(3).isSelected());
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'metal')" +
+                " and contains(text(),'Bronze')]")).isDisplayed());
         radios.get(3).click();
-        softAssert.assertTrue(radios.get(3).isSelected());
-
-        //check radio buttons names
-
-        List<WebElement> radiosNames = driver.findElements(By
-                .className("label-radio"));
-        softAssert.assertEquals(radiosNames.get(0).getText(), "Gold");
-        softAssert.assertEquals(radiosNames.get(1).getText(), "Silver");
-        softAssert.assertEquals(radiosNames.get(2).getText(), "Bronze");
-        softAssert.assertEquals(radiosNames.get(3).getText(), "Selen");
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'metal')" +
+                " and contains(text(),'Selen')]")).isDisplayed());
 
         //check dropdown names
 
         searchDropdown.click();
         colors.get(0).click();
-        softAssert.assertEquals(colors.get(0).getText(), "Red");
-
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Colors')" +
+                " and contains(text(),'Red')]")).isDisplayed());
         searchDropdown.click();
         colors.get(1).click();
-        softAssert.assertEquals(colors.get(1).getText(), "Green");
-
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Colors')" +
+                " and contains(text(),'Green')]")).isDisplayed());
         searchDropdown.click();
         colors.get(2).click();
-        softAssert.assertEquals(colors.get(2).getText(), "Blue");
-
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Colors')" +
+                " and contains(text(),'Blue')]")).isDisplayed());
         searchDropdown.click();
         colors.get(3).click();
-        softAssert.assertEquals(colors.get(3).getText(), "Yellow");
+        softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Colors')" +
+                " and contains(text(),'Yellow')]")).isDisplayed());
 
         //assert All
         softAssert.assertAll();
