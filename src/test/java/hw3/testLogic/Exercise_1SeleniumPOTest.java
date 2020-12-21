@@ -16,7 +16,7 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
         ImagesOnIndexPagePO imagesOnIndexPagePO = new ImagesOnIndexPagePO(driver);
         TextsUnderImagesOnIndexPagePO textsUnderImagesOnIndexPagePO =
                 new TextsUnderImagesOnIndexPagePO(driver);
-        IframePage iframePage = new IframePage(driver);
+        IframePagePO iframePagePO = new IframePagePO(driver);
         LeftSectionOnHomePagePO leftSectionOnHomePagePO =
                 new LeftSectionOnHomePagePO(driver);
         SoftAssert softAssert = new SoftAssert();
@@ -42,11 +42,11 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
                 "(about 20 internal and\n" +
                 "some external projects),\n" +
                 "wish to get more…";
-        textsUnderImagesOnIndexPagePO.getTextUnderFirstImage(firstText,
+        textsUnderImagesOnIndexPagePO.doesTextsUnderIconsEqualToExpected(firstText,
                 secondText, thirdText, fourthText);
         homePagePO.doesIframeExistsOnHomePage();
         homePagePO.switchToFrame();
-        iframePage.doesFrameButtonOnFramePageDisplayed();
+        iframePagePO.doesFrameButtonOnFramePageDisplayed();
         homePagePO.switchToHomePage();
         leftSectionOnHomePagePO.doesLeftSectionItemsOnHomePageDisplayed();
         leftSectionOnHomePagePO.doesLeftSectionItemsOnHomePageHaveProperTexts("Home",

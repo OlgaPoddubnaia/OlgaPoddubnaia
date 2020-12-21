@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class IframePage extends AbstractPage {
+public class IframePagePO extends AbstractPage {
 
-    public IframePage(WebDriver driver) {
+    public IframePagePO(WebDriver driver) {
         super(driver);
     }
 

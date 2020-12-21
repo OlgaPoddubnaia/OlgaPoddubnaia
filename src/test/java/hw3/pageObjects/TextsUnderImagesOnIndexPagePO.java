@@ -1,6 +1,5 @@
 package hw3.pageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,8 +17,8 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
     private List<WebElement> textsOnIndexPage;
 
 
-    public void getTextUnderFirstImage(String firstText, String secondText,
-                                       String thirdText, String fourthText) {
+    public void doesTextsUnderIconsEqualToExpected(String firstText, String secondText,
+                                                   String thirdText, String fourthText) {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(textsOnIndexPage.get(0).getText(), firstText);
         softAssert.assertEquals(textsOnIndexPage.get(1).getText(), secondText);
@@ -35,30 +34,5 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
         softAssert.assertTrue(textsOnIndexPage.get(2).isDisplayed());
         softAssert.assertTrue(textsOnIndexPage.get(3).isDisplayed());
         softAssert.assertAll();
-    }
-
-
-    public void getTextUnderSecondImage() {
-        textsOnIndexPage.get(1).getText();
-    }
-
-    public boolean doesTextUnderSecondImageDisplayed() {
-        return textsOnIndexPage.get(1).isDisplayed();
-    }
-
-    public void getTextUnderThirdImage() {
-        textsOnIndexPage.get(2).getText();
-    }
-
-    public boolean doesTextUnderThirdImageDisplayed() {
-        return textsOnIndexPage.get(2).isDisplayed();
-    }
-
-    public void getTextUnderFourthImage() {
-        textsOnIndexPage.get(3).getText();
-    }
-
-    public boolean doesTextUnderFourthImageDisplayed() {
-        return textsOnIndexPage.get(3).isDisplayed();
     }
 }

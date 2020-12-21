@@ -81,13 +81,10 @@ public class LogRowsOnDifferentElementsPagePO extends AbstractPage {
         SoftAssert softAssert = new SoftAssert();
         radios.get(0).click();
         softAssert.assertTrue(goldMetalLogRow.isDisplayed());
-
         radios.get(1).click();
         softAssert.assertTrue(silverMetalLogRow.isDisplayed());
-
         radios.get(2).click();
         softAssert.assertTrue(bronzeMetalLogRow.isDisplayed());
-
         radios.get(3).click();
         softAssert.assertTrue(selenMetalLogRow.isDisplayed());
         softAssert.assertAll();
@@ -95,24 +92,18 @@ public class LogRowsOnDifferentElementsPagePO extends AbstractPage {
 
     public void doesLorRowsDisplayedAndCorrespondedToDropdowns() {
         SoftAssert softAssert = new SoftAssert();
-
         searchDropdown.click();
         colors.get(0).click();
         softAssert.assertTrue(redDropdownLogRow.isDisplayed());
-
         searchDropdown.click();
         colors.get(1).click();
         softAssert.assertTrue(greenDropdownLogRow.isDisplayed());
-
         searchDropdown.click();
         colors.get(2).click();
         softAssert.assertTrue(blueDropdownLogRow.isDisplayed());
-
         searchDropdown.click();
         colors.get(3).click();
         softAssert.assertTrue(yellowDropdownLogRow.isDisplayed());
-
-
         softAssert.assertAll();
     }
 }
