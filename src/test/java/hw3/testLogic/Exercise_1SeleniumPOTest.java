@@ -4,6 +4,8 @@ import hw3.pageObjects.*;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
+
 
 public class Exercise_1SeleniumPOTest extends BaseTest {
 
@@ -21,37 +23,35 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
                 new LeftSectionOnHomePagePO(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePagePO.openPage(ConfProperties.getProperty("URL"));
-        homePagePO.currentUrl(ConfProperties.getProperty("URL"));
-        homePagePO.getTitle("Home Page");
-        loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"), ConfProperties.getProperty("PASSWORD"));
+        homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
+        homePagePO.shouldHaveUrl(ConfProperties.getProperty("URL"));
+        homePagePO.shouldHaveTitle("Home Page");
+        loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"),
+                ConfProperties.getProperty("PASSWORD"));
         loginPage.isLoginButtonDisplayed();
         loginPage.isUserNameDisplayed();
         loginPage.userNameCompare(ConfProperties.getProperty("LOGGED_USER_NAME"));
         headerMenuOfHomePageAfterLoginPO.isItemsFromHeaderDisplayed();
-        headerMenuOfHomePageAfterLoginPO.getTextOfItemFromHeader("HOME",
-                "CONTACT FORM", "SERVICE", "METALS & COLORS");
+        String[] properHeaderTexts = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
+        headerMenuOfHomePageAfterLoginPO.isItemFromHeaderHasAProperText(properHeaderTexts);
         imagesOnIndexPagePO.isImagesFromIndexPageDisplayed();
         textsUnderImagesOnIndexPagePO.isTextUnderImagesDisplayed();
-        String firstText = "To include good practices\n" +
-                "and ideas from successful\n" +
-                "EPAM project";
-        String secondText = "To be flexible and\n" + "customizable";
-        String thirdText = "To be multiplatform";
-        String fourthText = "Already have good base\n" +
-                "(about 20 internal and\n" +
-                "some external projects),\n" +
-                "wish to get more…";
-        textsUnderImagesOnIndexPagePO.isTextsUnderIconsEqualToExpected(firstText,
-                secondText, thirdText, fourthText);
+        ArrayList<String> properTextsUnderIcons = new ArrayList<>();
+        properTextsUnderIcons.add("To include good practices\n" +
+                "and ideas from successful\nEPAM project");
+        properTextsUnderIcons.add("To be flexible and\ncustomizable");
+        properTextsUnderIcons.add("To be multiplatform");
+        properTextsUnderIcons.add("Already have good base\n(about 20 internal and\n" +
+                "some external projects),\nwish to get more…");
+        textsUnderImagesOnIndexPagePO.isTextsUnderIconsEqualToExpected(properTextsUnderIcons);
         homePagePO.isIframeExistsOnHomePage();
         homePagePO.switchToFrame();
         iframePagePO.isFrameButtonOnFramePageDisplayed();
         homePagePO.switchToHomePage();
         leftSectionOnHomePagePO.isLeftSectionItemsOnHomePageDisplayed();
-        leftSectionOnHomePagePO.isLeftSectionItemsOnHomePageHaveProperTexts("Home",
-                "Contact form", "Service", "Metals & Colors",
-                "Elements packs");
+        String[] properLeftSectionTexts = {"Home", "Contact form", "Service",
+                "Metals & Colors", "Elements packs"};
+        leftSectionOnHomePagePO.isLeftSectionItemsOnHomePageHaveProperTexts(properLeftSectionTexts);
         softAssert.assertAll();
     }
 }

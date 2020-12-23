@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
@@ -17,13 +18,12 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
         super(driver);
     }
 
-    public void isTextsUnderIconsEqualToExpected(String firstText, String secondText,
-                                                 String thirdText, String fourthText) {
+    public void isTextsUnderIconsEqualToExpected( ArrayList<String> properTextsUnderIcons) {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(textsOnIndexPage.get(0).getText(), firstText);
-        softAssert.assertEquals(textsOnIndexPage.get(1).getText(), secondText);
-        softAssert.assertEquals(textsOnIndexPage.get(2).getText(), thirdText);
-        softAssert.assertEquals(textsOnIndexPage.get(3).getText(), fourthText);
+        softAssert.assertEquals(textsOnIndexPage.get(0).getText(), properTextsUnderIcons.get(0));
+        softAssert.assertEquals(textsOnIndexPage.get(1).getText(), properTextsUnderIcons.get(1));
+        softAssert.assertEquals(textsOnIndexPage.get(2).getText(), properTextsUnderIcons.get(2));
+        softAssert.assertEquals(textsOnIndexPage.get(3).getText(), properTextsUnderIcons.get(3));
         softAssert.assertAll();
     }
 

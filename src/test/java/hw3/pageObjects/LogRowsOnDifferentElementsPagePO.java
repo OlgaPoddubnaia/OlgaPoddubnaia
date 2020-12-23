@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
-import java.util.List;
 
 public class LogRowsOnDifferentElementsPagePO extends AbstractPage {
 

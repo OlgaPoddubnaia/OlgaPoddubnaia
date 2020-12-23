@@ -27,11 +27,13 @@ public class DifferentElementsPO extends AbstractPage {
         super(driver);
     }
 
+
     public void isYellowInDropdownSelected() {
         dropdown.click();
         colorsInDropdown.get(3).click();
         Assert.assertTrue(colorsInDropdown.get(3).isSelected());
     }
+
 
     public void isSelenRadioSelected() {
         SoftAssert softAssert = new SoftAssert();
@@ -48,4 +50,5 @@ public class DifferentElementsPO extends AbstractPage {
         softAssert.assertTrue(checkboxes.get(2).isSelected());
         softAssert.assertAll();
     }
+
 }

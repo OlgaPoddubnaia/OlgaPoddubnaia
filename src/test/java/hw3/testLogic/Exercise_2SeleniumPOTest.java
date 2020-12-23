@@ -17,10 +17,11 @@ public class Exercise_2SeleniumPOTest extends BaseTest {
                 new LogRowsOnDifferentElementsPagePO(driver);
         SoftAssert softAssert = new SoftAssert();
 
-        homePagePO.openPage(ConfProperties.getProperty("URL"));
-        homePagePO.currentUrl(ConfProperties.getProperty("URL"));
-        homePagePO.getTitle("Home Page");
-        loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"), ConfProperties.getProperty("PASSWORD"));
+        homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
+        homePagePO.shouldHaveUrl(ConfProperties.getProperty("URL"));
+        homePagePO.shouldHaveTitle("Home Page");
+        loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"),
+                ConfProperties.getProperty("PASSWORD"));
         loginPage.isLoginButtonDisplayed();
         loginPage.isUserNameDisplayed();
         loginPage.userNameCompare(ConfProperties.getProperty("LOGGED_USER_NAME"));

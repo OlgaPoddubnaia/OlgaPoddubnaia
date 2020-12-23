@@ -19,10 +19,9 @@ public class ImagesOnIndexPagePO extends AbstractPage {
 
     public void isImagesFromIndexPageDisplayed() {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(imagesOnIndexPage.get(0).isDisplayed());
-        softAssert.assertTrue(imagesOnIndexPage.get(1).isDisplayed());
-        softAssert.assertTrue(imagesOnIndexPage.get(2).isDisplayed());
-        softAssert.assertTrue(imagesOnIndexPage.get(3).isDisplayed());
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertTrue(imagesOnIndexPage.get(i).isDisplayed());
+        }
         softAssert.assertAll();
     }
 }

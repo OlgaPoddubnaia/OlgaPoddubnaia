@@ -27,13 +27,12 @@ public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
         Assert.assertEquals(driver.getCurrentUrl(), differentElementsURL);
     }
 
-    public void getTextOfItemFromHeader(String home, String contactForm,
-                                        String service, String metalsAndColors) {
+    public void isItemFromHeaderHasAProperText(String[] properText) {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(headerSection.get(0).getText(), home);
-        softAssert.assertEquals(headerSection.get(1).getText(), contactForm);
-        softAssert.assertEquals(headerSection.get(2).getText(), service);
-        softAssert.assertEquals(headerSection.get(3).getText(), metalsAndColors);
+        softAssert.assertEquals(headerSection.get(0).getText(), properText[0]);
+        softAssert.assertEquals(headerSection.get(1).getText(), properText[1]);
+        softAssert.assertEquals(headerSection.get(2).getText(), properText[2]);
+        softAssert.assertEquals(headerSection.get(3).getText(), properText[3]);
         softAssert.assertAll();
     }
 

@@ -28,14 +28,13 @@ public class LeftSectionOnHomePagePO extends AbstractPage {
     }
 
     public void isLeftSectionItemsOnHomePageHaveProperTexts
-            (String home, String contactForm, String service,
-             String metalsAndColors, String elementsPack) {
+            (String[] properLeftSectionTexts) {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(leftSectionOnHomePage.get(0).getText(), home);
-        softAssert.assertEquals(leftSectionOnHomePage.get(1).getText(), contactForm);
-        softAssert.assertEquals(leftSectionOnHomePage.get(2).getText(), service);
-        softAssert.assertEquals(leftSectionOnHomePage.get(3).getText(), metalsAndColors);
-        softAssert.assertEquals(leftSectionOnHomePage.get(4).getText(), elementsPack);
+        softAssert.assertEquals(leftSectionOnHomePage.get(0).getText(), properLeftSectionTexts[0]);
+        softAssert.assertEquals(leftSectionOnHomePage.get(1).getText(), properLeftSectionTexts[1]);
+        softAssert.assertEquals(leftSectionOnHomePage.get(2).getText(), properLeftSectionTexts[2]);
+        softAssert.assertEquals(leftSectionOnHomePage.get(3).getText(), properLeftSectionTexts[3]);
+        softAssert.assertEquals(leftSectionOnHomePage.get(4).getText(), properLeftSectionTexts[4]);
         softAssert.assertAll();
     }
 }

@@ -14,15 +14,15 @@ public class HomePagePO extends AbstractPage {
         super(driver);
     }
 
-    public void openPage(String URL) {
+    public void openPageByUrl(String URL) {
         driver.get(URL);
     }
 
-    public void currentUrl(String URL) {
+    public void shouldHaveUrl(String URL) {
         Assert.assertEquals(driver.getCurrentUrl(), URL);
     }
 
-    public void getTitle(String title) {
+    public void shouldHaveTitle(String title) {
         Assert.assertEquals(driver.getTitle(), title);
     }
 

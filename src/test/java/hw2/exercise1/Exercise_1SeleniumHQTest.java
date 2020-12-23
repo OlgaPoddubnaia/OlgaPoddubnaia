@@ -65,7 +65,6 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
                 .cssSelector("div.benefit-icon>span"));
         for (int i = 0; i < 4; i++) {
             softAssert.assertTrue(imagesOnIndexPage.get(i).isDisplayed());
-
         }
 
         /*step#7 Assert that there are 4 texts on the Index Page under
@@ -74,7 +73,6 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
                 .cssSelector("span.benefit-txt"));
         for (int i = 0; i < 4; i++) {
             softAssert.assertTrue(textsOnIndexPage.get(i).isDisplayed());
-
         }
 
         ArrayList<String> properTextsUnderIcons = new ArrayList<>();
@@ -111,7 +109,6 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
                 findElements(By.cssSelector("ul.sidebar-menu>li"));
         for (int i = 0; i < 5; i++) {
             softAssert.assertTrue(itemsOnLeftSection.get(i).isDisplayed());
-
         }
         String[] properLeftSectionTexts = {"Home", "Contact form", "Service",
                 "Metals & Colors", "Elements packs"};

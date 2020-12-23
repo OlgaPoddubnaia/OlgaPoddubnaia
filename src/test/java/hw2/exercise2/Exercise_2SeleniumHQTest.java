@@ -15,19 +15,17 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
     @Test
     public void softAssertTests() {
 
+        //creating soft assert
         SoftAssert softAssert = new SoftAssert();
 
         //step#1 Open test site by URL
-
         driver.get(URL);
         softAssert.assertEquals(driver.getCurrentUrl(), URL);
 
         //step#2 Assert Browser title
-
         softAssert.assertEquals(driver.getTitle(), "Home Page");
 
         //step#3 Perform login
-
         WebElement searchButton = driver.findElement(By
                 .xpath("//a[@class='dropdown-toggle' and @href='#']"));
         searchButton.click();
@@ -45,7 +43,6 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
 
     /*step#4 Assert User name in the left-top side of screen that
     user is loggined*/
-
         softAssert.assertTrue((driver.findElement(By
                 .cssSelector("#user-name"))).isDisplayed());
         softAssert.assertEquals(driver.findElement(By
@@ -53,7 +50,6 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
                 .getText(), "ROMAN IOVLEV");
 
         //step#5 Open through the header menu Service -> Different Elements Page
-
         List<WebElement> headerSection = driver.findElements(By
                 .cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8>li"));
         WebElement serviceHeaderDropdown = headerSection.get(2);
@@ -66,7 +62,6 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
                 "https://jdi-testing.github.io/jdi-light/different-elements.html");
 
         //step#6 Select checkboxes
-
         List<WebElement> checkboxes = driver.findElements(By
                 .cssSelector("label.label-checkbox>input"));
         WebElement waterCheckbox = checkboxes.get(0);
@@ -77,7 +72,6 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
         softAssert.assertTrue(windCheckbox.isSelected());
 
         //step#7 Select radio
-
         List<WebElement> radios = driver.findElements(By
                 .cssSelector("label.label-radio>input"));
         WebElement selenRadio = radios.get(3);
@@ -85,7 +79,6 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
         softAssert.assertTrue(selenRadio.isSelected());
 
         //step#8 Select in dropdown
-
         WebElement searchDropdown = driver.findElement(By
                 .cssSelector("div.colors > select"));
         searchDropdown.click();
@@ -105,19 +98,16 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
     the selected value.*/
 
         //checkboxes names are corresponded to expected
-
         softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Water')" +
                 " and contains(text(),'true')]")).isDisplayed());
         softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Wind')" +
                 " and contains(text(),'true')]")).isDisplayed());
 
         //check radio buttons statuses
-
         softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'metal')" +
                 " and contains(text(),'Selen')]")).isDisplayed());
 
         //check dropdown names
-
         softAssert.assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Colors')" +
                 " and contains(text(),'Yellow')]")).isDisplayed());
 
