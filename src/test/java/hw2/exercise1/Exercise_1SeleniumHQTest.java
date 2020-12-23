@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Exercise_1SeleniumHQTest extends AbstractTests {
@@ -50,46 +51,44 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
          section are displayed and they have proper texts*/
         List<WebElement> headerSection = driver.findElements(By
                 .cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8>li"));
-        softAssert.assertTrue(headerSection.get(0).isDisplayed());
-        softAssert.assertEquals(headerSection.get(0).getText(), "HOME");
-        softAssert.assertTrue(headerSection.get(1).isDisplayed());
-        softAssert.assertEquals(headerSection.get(1).getText(), "CONTACT FORM");
-        softAssert.assertTrue(headerSection.get(2).isDisplayed());
-        softAssert.assertEquals(headerSection.get(2).getText(), "SERVICE");
-        softAssert.assertTrue(headerSection.get(3).isDisplayed());
-        softAssert.assertEquals(headerSection.get(3).getText(), "METALS & COLORS");
+        String[] properHeaderTexts = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertTrue(headerSection.get(i).isDisplayed());
+        }
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertEquals(headerSection.get(i).getText(), properHeaderTexts[i]);
+        }
 
         /*step#6	Assert that there are 4 images on the Index Page
          and they are displayed	*/
         List<WebElement> imagesOnIndexPage = driver.findElements(By
                 .cssSelector("div.benefit-icon>span"));
-        softAssert.assertTrue(imagesOnIndexPage.get(0).isDisplayed());
-        softAssert.assertTrue(imagesOnIndexPage.get(1).isDisplayed());
-        softAssert.assertTrue(imagesOnIndexPage.get(2).isDisplayed());
-        softAssert.assertTrue(imagesOnIndexPage.get(3).isDisplayed());
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertTrue(imagesOnIndexPage.get(i).isDisplayed());
+
+        }
 
         /*step#7 Assert that there are 4 texts on the Index Page under
          icons and they have proper text*/
         List<WebElement> textsOnIndexPage = driver.findElements(By
                 .cssSelector("span.benefit-txt"));
-        softAssert.assertTrue(textsOnIndexPage.get(0).isDisplayed());
-        softAssert.assertTrue(textsOnIndexPage.get(1).isDisplayed());
-        softAssert.assertTrue(textsOnIndexPage.get(2).isDisplayed());
-        softAssert.assertTrue(textsOnIndexPage.get(3).isDisplayed());
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertTrue(textsOnIndexPage.get(i).isDisplayed());
 
-        softAssert.assertEquals(textsOnIndexPage.get(0)
-                .getText(), "To include good practices\n" +
-                "and ideas from successful\n" +
-                "EPAM project");
-        softAssert.assertEquals(textsOnIndexPage.get(1)
-                .getText(), "To be flexible and\n" + "customizable");
-        softAssert.assertEquals(textsOnIndexPage.get(2)
-                .getText(), "To be multiplatform");
-        softAssert.assertEquals(textsOnIndexPage.get(3)
-                .getText(), "Already have good base\n" +
-                "(about 20 internal and\n" +
-                "some external projects),\n" +
-                "wish to get more…");
+        }
+
+        ArrayList<String> properTextsUnderIcons = new ArrayList<>();
+        properTextsUnderIcons.add("To include good practices\n" +
+                "and ideas from successful\nEPAM project");
+        properTextsUnderIcons.add("To be flexible and\ncustomizable");
+        properTextsUnderIcons.add("To be multiplatform");
+        properTextsUnderIcons.add("Already have good base\n(about 20 internal and\n" +
+                "some external projects),\nwish to get more…");
+
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertEquals(textsOnIndexPage.get(i).getText(),
+                    properTextsUnderIcons.get(i));
+        }
 
         //step #8 Assert that there is the iframe with “Frame Button” exist
         softAssert.assertTrue((driver.findElement(By
@@ -110,22 +109,16 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
       Section are displayed and they have proper text*/
         List<WebElement> itemsOnLeftSection = driver.
                 findElements(By.cssSelector("ul.sidebar-menu>li"));
-        softAssert.assertTrue(itemsOnLeftSection.get(0).isDisplayed());
-        softAssert.assertTrue(itemsOnLeftSection.get(1).isDisplayed());
-        softAssert.assertTrue(itemsOnLeftSection.get(2).isDisplayed());
-        softAssert.assertTrue(itemsOnLeftSection.get(3).isDisplayed());
-        softAssert.assertTrue(itemsOnLeftSection.get(4).isDisplayed());
+        for (int i = 0; i < 5; i++) {
+            softAssert.assertTrue(itemsOnLeftSection.get(i).isDisplayed());
 
-        softAssert.assertEquals(itemsOnLeftSection.get(0)
-                .getText(), "Home");
-        softAssert.assertEquals(itemsOnLeftSection.get(1)
-                .getText(), "Contact form");
-        softAssert.assertEquals(itemsOnLeftSection.get(2)
-                .getText(), "Service");
-        softAssert.assertEquals(itemsOnLeftSection.get(3)
-                .getText(), "Metals & Colors");
-        softAssert.assertEquals(itemsOnLeftSection.get(4)
-                .getText(), "Elements packs");
+        }
+        String[] properLeftSectionTexts = {"Home", "Contact form", "Service",
+                "Metals & Colors", "Elements packs"};
+        for (int i = 0; i < 5; i++) {
+            softAssert.assertEquals(itemsOnLeftSection.get(i)
+                    .getText(), properLeftSectionTexts[i]);
+        }
 
         //run all soft asserts
         softAssert.assertAll();
