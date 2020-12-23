@@ -25,14 +25,14 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
         homePagePO.currentUrl(ConfProperties.getProperty("URL"));
         homePagePO.getTitle("Home Page");
         loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"), ConfProperties.getProperty("PASSWORD"));
-        loginPage.doesLoginButtonDisplayed();
-        loginPage.doesUserNameDisplayed();
+        loginPage.isLoginButtonDisplayed();
+        loginPage.isUserNameDisplayed();
         loginPage.userNameCompare(ConfProperties.getProperty("LOGGED_USER_NAME"));
-        headerMenuOfHomePageAfterLoginPO.doesItemsFromHeaderDisplayed();
+        headerMenuOfHomePageAfterLoginPO.isItemsFromHeaderDisplayed();
         headerMenuOfHomePageAfterLoginPO.getTextOfItemFromHeader("HOME",
                 "CONTACT FORM", "SERVICE", "METALS & COLORS");
-        imagesOnIndexPagePO.doesImagesFromIndexPageDisplayed();
-        textsUnderImagesOnIndexPagePO.doesTextUnderImagesDisplayed();
+        imagesOnIndexPagePO.isImagesFromIndexPageDisplayed();
+        textsUnderImagesOnIndexPagePO.isTextUnderImagesDisplayed();
         String firstText = "To include good practices\n" +
                 "and ideas from successful\n" +
                 "EPAM project";
@@ -42,14 +42,14 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
                 "(about 20 internal and\n" +
                 "some external projects),\n" +
                 "wish to get more…";
-        textsUnderImagesOnIndexPagePO.doesTextsUnderIconsEqualToExpected(firstText,
+        textsUnderImagesOnIndexPagePO.isTextsUnderIconsEqualToExpected(firstText,
                 secondText, thirdText, fourthText);
-        homePagePO.doesIframeExistsOnHomePage();
+        homePagePO.isIframeExistsOnHomePage();
         homePagePO.switchToFrame();
-        iframePagePO.doesFrameButtonOnFramePageDisplayed();
+        iframePagePO.isFrameButtonOnFramePageDisplayed();
         homePagePO.switchToHomePage();
-        leftSectionOnHomePagePO.doesLeftSectionItemsOnHomePageDisplayed();
-        leftSectionOnHomePagePO.doesLeftSectionItemsOnHomePageHaveProperTexts("Home",
+        leftSectionOnHomePagePO.isLeftSectionItemsOnHomePageDisplayed();
+        leftSectionOnHomePagePO.isLeftSectionItemsOnHomePageHaveProperTexts("Home",
                 "Contact form", "Service", "Metals & Colors",
                 "Elements packs");
         softAssert.assertAll();

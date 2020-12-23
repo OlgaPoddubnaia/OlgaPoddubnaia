@@ -14,7 +14,7 @@ public class IframePagePO extends AbstractPage {
         super(driver);
     }
 
-    public void doesFrameButtonOnFramePageDisplayed() {
+    public void isFrameButtonOnFramePageDisplayed() {
         Assert.assertTrue(frameButtonOnIframePage.isDisplayed());
     }
 }

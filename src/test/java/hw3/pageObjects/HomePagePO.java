@@ -26,7 +26,7 @@ public class HomePagePO extends AbstractPage {
         Assert.assertEquals(driver.getTitle(), title);
     }
 
-    public void doesIframeExistsOnHomePage() {
+    public void isIframeExistsOnHomePage() {
         Assert.assertTrue(iframeOnHomePage.isDisplayed());
     }
 
@@ -36,6 +36,6 @@ public class HomePagePO extends AbstractPage {
 
     public void switchToHomePage() {
         driver.switchTo().defaultContent();
-        doesIframeExistsOnHomePage();
+        isIframeExistsOnHomePage();
     }
 }

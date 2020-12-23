@@ -17,7 +17,7 @@ public class ImagesOnIndexPagePO extends AbstractPage {
         super(driver);
     }
 
-    public void doesImagesFromIndexPageDisplayed() {
+    public void isImagesFromIndexPageDisplayed() {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(imagesOnIndexPage.get(0).isDisplayed());
         softAssert.assertTrue(imagesOnIndexPage.get(1).isDisplayed());

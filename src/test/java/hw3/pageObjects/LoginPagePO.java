@@ -33,7 +33,7 @@ public class LoginPagePO extends AbstractPage {
         searchLoginButton.click();
     }
 
-    public void doesLoginButtonDisplayed() {
+    public void isLoginButtonDisplayed() {
         Assert.assertFalse(searchLoginButton.isDisplayed());
     }
 
@@ -41,7 +41,7 @@ public class LoginPagePO extends AbstractPage {
         Assert.assertEquals(userName.getText(), name);
     }
 
-    public void doesUserNameDisplayed() {
+    public void isUserNameDisplayed() {
         Assert.assertTrue(userName.isDisplayed());
     }
 }

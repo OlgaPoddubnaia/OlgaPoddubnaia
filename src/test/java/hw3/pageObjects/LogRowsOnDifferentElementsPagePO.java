@@ -27,18 +27,18 @@ public class LogRowsOnDifferentElementsPagePO extends AbstractPage {
         super(driver);
     }
 
-    public void doesLogRowsDisplayedAndCorrespondedToCheckboxes() {
+    public void isLogRowsDisplayedAndCorrespondedToCheckboxes() {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(waterCheckboxLogRow.isDisplayed());
         softAssert.assertTrue(windCheckboxLogRow.isDisplayed());
         softAssert.assertAll();
     }
 
-    public void doesLogRowsDisplayedAndCorrespondedToRadios() {
+    public void isLogRowsDisplayedAndCorrespondedToRadios() {
         Assert.assertTrue(selenMetalLogRow.isDisplayed());
     }
 
-    public void doesLorRowsDisplayedAndCorrespondedToDropdowns() {
+    public void isLorRowsDisplayedAndCorrespondedToDropdowns() {
         Assert.assertTrue(yellowDropdownLogRow.isDisplayed());
     }
 }

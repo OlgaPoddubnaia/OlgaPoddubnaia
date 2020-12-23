@@ -21,18 +21,18 @@ public class Exercise_2SeleniumPOTest extends BaseTest {
         homePagePO.currentUrl(ConfProperties.getProperty("URL"));
         homePagePO.getTitle("Home Page");
         loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"), ConfProperties.getProperty("PASSWORD"));
-        loginPage.doesLoginButtonDisplayed();
-        loginPage.doesUserNameDisplayed();
+        loginPage.isLoginButtonDisplayed();
+        loginPage.isUserNameDisplayed();
         loginPage.userNameCompare(ConfProperties.getProperty("LOGGED_USER_NAME"));
 
         headerMenuOfHomePageAfterLoginPO.openDifferentElementsPage(
                 ConfProperties.getProperty("DIFFERENT_ELEMENTS_URL"));
-        differentElementsPO.checkDoesWindWaterCheckboxesSelected();
-        differentElementsPO.checkDoesSelenRadioSelected();
-        differentElementsPO.checkDoesYellowInDropdownSelected();
-        logRowsOnDifferentElementsPagePO.doesLogRowsDisplayedAndCorrespondedToCheckboxes();
-        logRowsOnDifferentElementsPagePO.doesLogRowsDisplayedAndCorrespondedToRadios();
-        logRowsOnDifferentElementsPagePO.doesLorRowsDisplayedAndCorrespondedToDropdowns();
+        differentElementsPO.isWindWaterCheckboxesSelected();
+        differentElementsPO.isSelenRadioSelected();
+        differentElementsPO.isYellowInDropdownSelected();
+        logRowsOnDifferentElementsPagePO.isLogRowsDisplayedAndCorrespondedToCheckboxes();
+        logRowsOnDifferentElementsPagePO.isLogRowsDisplayedAndCorrespondedToRadios();
+        logRowsOnDifferentElementsPagePO.isLorRowsDisplayedAndCorrespondedToDropdowns();
         softAssert.assertAll();
     }
 }

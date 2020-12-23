@@ -17,8 +17,8 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
         super(driver);
     }
 
-    public void doesTextsUnderIconsEqualToExpected(String firstText, String secondText,
-                                                   String thirdText, String fourthText) {
+    public void isTextsUnderIconsEqualToExpected(String firstText, String secondText,
+                                                 String thirdText, String fourthText) {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(textsOnIndexPage.get(0).getText(), firstText);
         softAssert.assertEquals(textsOnIndexPage.get(1).getText(), secondText);
@@ -27,7 +27,7 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
         softAssert.assertAll();
     }
 
-    public void doesTextUnderImagesDisplayed() {
+    public void isTextUnderImagesDisplayed() {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(textsOnIndexPage.get(0).isDisplayed());
         softAssert.assertTrue(textsOnIndexPage.get(1).isDisplayed());

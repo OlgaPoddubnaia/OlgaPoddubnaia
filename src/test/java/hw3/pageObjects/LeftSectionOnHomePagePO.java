@@ -17,7 +17,7 @@ public class LeftSectionOnHomePagePO extends AbstractPage {
         super(driver);
     }
 
-    public void doesLeftSectionItemsOnHomePageDisplayed() {
+    public void isLeftSectionItemsOnHomePageDisplayed() {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(leftSectionOnHomePage.get(0).isDisplayed());
         softAssert.assertTrue(leftSectionOnHomePage.get(1).isDisplayed());
@@ -27,7 +27,7 @@ public class LeftSectionOnHomePagePO extends AbstractPage {
         softAssert.assertAll();
     }
 
-    public void doesLeftSectionItemsOnHomePageHaveProperTexts
+    public void isLeftSectionItemsOnHomePageHaveProperTexts
             (String home, String contactForm, String service,
              String metalsAndColors, String elementsPack) {
         SoftAssert softAssert = new SoftAssert();

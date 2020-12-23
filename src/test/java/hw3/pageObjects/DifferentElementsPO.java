@@ -27,20 +27,20 @@ public class DifferentElementsPO extends AbstractPage {
         super(driver);
     }
 
-    public void checkDoesYellowInDropdownSelected() {
+    public void isYellowInDropdownSelected() {
         dropdown.click();
         colorsInDropdown.get(3).click();
         Assert.assertTrue(colorsInDropdown.get(3).isSelected());
     }
 
-    public void checkDoesSelenRadioSelected() {
+    public void isSelenRadioSelected() {
         SoftAssert softAssert = new SoftAssert();
         radios.get(3).click();
         softAssert.assertTrue(radios.get(3).isSelected());
         softAssert.assertAll();
     }
 
-    public void checkDoesWindWaterCheckboxesSelected() {
+    public void isWindWaterCheckboxesSelected() {
         SoftAssert softAssert = new SoftAssert();
         checkboxes.get(0).click();
         softAssert.assertTrue(checkboxes.get(0).isSelected());

@@ -37,7 +37,7 @@ public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
         softAssert.assertAll();
     }
 
-    public void doesItemsFromHeaderDisplayed() {
+    public void isItemsFromHeaderDisplayed() {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(headerSection.get(0).isDisplayed());
         softAssert.assertTrue(headerSection.get(1).isDisplayed());
