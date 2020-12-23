@@ -7,12 +7,12 @@ import org.testng.Assert;
 
 public class IframePagePO extends AbstractPage {
 
+    @FindBy(css = "#frame-button")
+    private WebElement frameButtonOnIframePage;
+
     public IframePagePO(WebDriver driver) {
         super(driver);
     }
-
-    @FindBy(css = "#frame-button")
-    private WebElement frameButtonOnIframePage;
 
     public void doesFrameButtonOnFramePageDisplayed() {
         Assert.assertTrue(frameButtonOnIframePage.isDisplayed());

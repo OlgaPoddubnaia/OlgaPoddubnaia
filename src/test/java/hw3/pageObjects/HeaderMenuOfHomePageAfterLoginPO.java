@@ -11,23 +11,21 @@ import java.util.List;
 
 public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
 
-    public HeaderMenuOfHomePageAfterLoginPO(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(how = How.CSS, using = "ul.uui-navigation.nav.navbar-nav.m-l8>li")
     private List<WebElement> headerSection;
 
     @FindBy(how = How.CSS, using = "ul.dropdown-menu>li")
     private List<WebElement> serviceDropdown;
 
+    public HeaderMenuOfHomePageAfterLoginPO(WebDriver driver) {
+        super(driver);
+    }
 
     public void openDifferentElementsPage(String differentElementsURL) {
         headerSection.get(2).click();
         serviceDropdown.get(7).click();
         Assert.assertEquals(driver.getCurrentUrl(), differentElementsURL);
     }
-
 
     public void getTextOfItemFromHeader(String home, String contactForm,
                                         String service, String metalsAndColors) {

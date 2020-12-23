@@ -7,10 +7,6 @@ import org.testng.Assert;
 
 public class LoginPagePO extends AbstractPage {
 
-    public LoginPagePO(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(xpath = "//a[@class='dropdown-toggle' and @href='#']")
     private WebElement searchButton;
 
@@ -25,6 +21,10 @@ public class LoginPagePO extends AbstractPage {
 
     @FindBy(css = "#user-name")
     private WebElement userName;
+
+    public LoginPagePO(WebDriver driver) {
+        super(driver);
+    }
 
     public void logOnSite(String login, String password) {
         searchButton.click();

@@ -11,10 +11,6 @@ import java.util.List;
 
 public class DifferentElementsPO extends AbstractPage {
 
-    public DifferentElementsPO(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(how = How.CSS, using = "label.label-checkbox>input")
     private List<WebElement> checkboxes;
 
@@ -27,6 +23,10 @@ public class DifferentElementsPO extends AbstractPage {
     @FindBy(css = "div.colors > select")
     private WebElement dropdown;
 
+    public DifferentElementsPO(WebDriver driver) {
+        super(driver);
+    }
+
     public void checkDoesYellowInDropdownSelected() {
         dropdown.click();
         colorsInDropdown.get(3).click();
@@ -35,7 +35,6 @@ public class DifferentElementsPO extends AbstractPage {
 
     public void checkDoesSelenRadioSelected() {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertFalse(radios.get(3).isSelected());
         radios.get(3).click();
         softAssert.assertTrue(radios.get(3).isSelected());
         softAssert.assertAll();
@@ -43,14 +42,10 @@ public class DifferentElementsPO extends AbstractPage {
 
     public void checkDoesWindWaterCheckboxesSelected() {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertFalse(checkboxes.get(0).isSelected());
         checkboxes.get(0).click();
         softAssert.assertTrue(checkboxes.get(0).isSelected());
-        checkboxes.get(0).click();
-        softAssert.assertFalse(checkboxes.get(2).isSelected());
         checkboxes.get(2).click();
         softAssert.assertTrue(checkboxes.get(2).isSelected());
-        checkboxes.get(2).click();
         softAssert.assertAll();
     }
 }

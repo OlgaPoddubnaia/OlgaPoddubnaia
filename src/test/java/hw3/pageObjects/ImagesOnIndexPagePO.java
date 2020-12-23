@@ -10,12 +10,12 @@ import java.util.List;
 
 public class ImagesOnIndexPagePO extends AbstractPage {
 
+    @FindBy(how = How.CSS, using = "div.benefit-icon>span")
+    private List<WebElement> imagesOnIndexPage;
+
     public ImagesOnIndexPagePO(WebDriver driver) {
         super(driver);
     }
-
-    @FindBy(how = How.CSS, using = "div.benefit-icon>span")
-    private List<WebElement> imagesOnIndexPage;
 
     public void doesImagesFromIndexPageDisplayed() {
         SoftAssert softAssert = new SoftAssert();

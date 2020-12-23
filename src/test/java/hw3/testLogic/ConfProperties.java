@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfProperties {
+
     protected static Properties property;
     protected static FileInputStream fis;
 

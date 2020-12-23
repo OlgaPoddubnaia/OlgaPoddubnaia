@@ -7,12 +7,12 @@ import org.testng.Assert;
 
 public class HomePagePO extends AbstractPage {
 
+    @FindBy(tagName = "iframe")
+    private WebElement iframeOnHomePage;
+
     public HomePagePO(WebDriver driver) {
         super(driver);
     }
-
-    @FindBy(tagName = "iframe")
-    private WebElement iframeOnHomePage;
 
     public void openPage(String URL) {
         driver.get(URL);

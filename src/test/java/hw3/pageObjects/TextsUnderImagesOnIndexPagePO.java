@@ -9,13 +9,13 @@ import org.testng.asserts.SoftAssert;
 import java.util.List;
 
 public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
-    public TextsUnderImagesOnIndexPagePO(WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(how = How.CSS, using = "span.benefit-txt")
     private List<WebElement> textsOnIndexPage;
 
+    public TextsUnderImagesOnIndexPagePO(WebDriver driver) {
+        super(driver);
+    }
 
     public void doesTextsUnderIconsEqualToExpected(String firstText, String secondText,
                                                    String thirdText, String fourthText) {

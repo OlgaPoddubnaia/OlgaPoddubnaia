@@ -12,7 +12,8 @@ import org.testng.annotations.BeforeTest;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest extends ConfProperties {
-    public WebDriver driver;
+
+    protected WebDriver driver;
 
     @BeforeTest
     public void setUp() {

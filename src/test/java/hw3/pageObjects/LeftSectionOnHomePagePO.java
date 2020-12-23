@@ -10,12 +10,12 @@ import java.util.List;
 
 public class LeftSectionOnHomePagePO extends AbstractPage {
 
+    @FindBy(how = How.CSS, using = "ul.sidebar-menu>li")
+    private List<WebElement> leftSectionOnHomePage;
+
     public LeftSectionOnHomePagePO(WebDriver driver) {
         super(driver);
     }
-
-    @FindBy(how = How.CSS, using = "ul.sidebar-menu>li")
-    private List<WebElement> leftSectionOnHomePage;
 
     public void doesLeftSectionItemsOnHomePageDisplayed() {
         SoftAssert softAssert = new SoftAssert();
