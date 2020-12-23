@@ -32,11 +32,5 @@ public abstract class AbstractTests {
         driver.quit();
         driver = null;
     }
-
-    protected  WebElement waitForElementLocatedBy( By by) {
-        WebElement searchInput = new WebDriverWait(driver, 10)
-                .until(ExpectedConditions.presenceOfElementLocated(by));
-        return searchInput;
-    }
 }
 

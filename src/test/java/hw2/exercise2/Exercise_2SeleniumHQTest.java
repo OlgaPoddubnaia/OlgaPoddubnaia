@@ -31,10 +31,10 @@ public class Exercise_2SeleniumHQTest extends AbstractTests {
         WebElement searchButton = driver.findElement(By
                 .xpath("//a[@class='dropdown-toggle' and @href='#']"));
         searchButton.click();
-        WebElement searchUserName = waitForElementLocatedBy(
+        WebElement searchUserName = driver.findElement(
                 By.cssSelector("#name"));
         searchUserName.sendKeys("Roman");
-        WebElement searchPassword = waitForElementLocatedBy(
+        WebElement searchPassword = driver.findElement(
                 By.cssSelector("#password"));
         searchPassword.sendKeys("Jdi1234");
         WebElement searchLoginButton = driver.findElement(By
