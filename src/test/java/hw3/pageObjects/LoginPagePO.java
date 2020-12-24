@@ -26,11 +26,20 @@ public class LoginPagePO extends AbstractPage {
         super(driver);
     }
 
-    public void logOnSite(String login, String password) {
+    public void searchButtonClick() {
         searchButton.click();
+    }
+
+    public void loginButtonClick() {
+        searchLoginButton.click();
+
+    }
+
+    public void logOnSite(String login, String password) {
+        searchButtonClick();
         searchUserNameField.sendKeys(login);
         searchPasswordField.sendKeys(password);
-        searchLoginButton.click();
+        loginButtonClick();
     }
 
     public void isLoginButtonDisplayed() {

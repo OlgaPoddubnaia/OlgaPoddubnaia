@@ -18,6 +18,8 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
         super(driver);
     }
 
+
+
     public void isTextsUnderIconsEqualToExpected( ArrayList<String> properTextsUnderIcons) {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(textsOnIndexPage.get(0).getText(), properTextsUnderIcons.get(0));

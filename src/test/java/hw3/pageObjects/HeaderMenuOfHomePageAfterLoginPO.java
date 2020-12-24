@@ -21,9 +21,17 @@ public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
         super(driver);
     }
 
-    public void openDifferentElementsPage(String differentElementsURL) {
+    public void serviceClick() {
         headerSection.get(2).click();
+    }
+
+    public void differentElementDropdownClick() {
         serviceDropdown.get(7).click();
+    }
+
+    public void openDifferentElementsPage(String differentElementsURL) {
+        serviceClick();
+        differentElementDropdownClick();
         Assert.assertEquals(driver.getCurrentUrl(), differentElementsURL);
     }
 
