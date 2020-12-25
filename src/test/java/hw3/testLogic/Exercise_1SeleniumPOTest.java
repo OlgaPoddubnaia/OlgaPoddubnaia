@@ -1,6 +1,5 @@
 package hw3.testLogic;
 
-import hw3.pageObjects.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -12,17 +11,6 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
 
     @Test
     public void Exercise1POTests() {
-        HomePagePO homePagePO = new HomePagePO(driver);
-        LoginPagePO loginPage = new LoginPagePO(driver);
-        HeaderMenuOfHomePageAfterLoginPO headerMenuOfHomePageAfterLoginPO =
-                new HeaderMenuOfHomePageAfterLoginPO(driver);
-        ImagesOnIndexPagePO imagesOnIndexPagePO = new ImagesOnIndexPagePO(driver);
-        TextsUnderImagesOnIndexPagePO textsUnderImagesOnIndexPagePO =
-                new TextsUnderImagesOnIndexPagePO(driver);
-        IframePagePO iframePagePO = new IframePagePO(driver);
-        LeftSectionOnHomePagePO leftSectionOnHomePagePO =
-                new LeftSectionOnHomePagePO(driver);
-        SoftAssert softAssert = new SoftAssert();
 
         homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
 
