@@ -13,7 +13,7 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
 
         //step#1 Open test site by URL
         homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
-        Assert.assertEquals(homePagePO.shouldHaveUrl(), ConfProperties
+        softAssert.assertEquals(homePagePO.shouldHaveUrl(), ConfProperties
                 .getProperty("URL"));
 
         //step#2 Assert Browser title
