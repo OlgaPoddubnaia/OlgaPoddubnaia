@@ -14,7 +14,6 @@ public class BaseTest extends ConfProperties {
     protected WebDriver driver;
     protected SoftAssert softAssert;
 
-
     protected HomePagePO homePagePO;
     protected LoginPagePO loginPage;
     protected HeaderMenuOfHomePageAfterLoginPO headerMenuOfHomePageAfterLoginPO;

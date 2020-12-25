@@ -2,7 +2,6 @@ package hw3.testLogic;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 public class Exercise_2SeleniumPOTest extends BaseTest {
 
@@ -21,11 +20,11 @@ public class Exercise_2SeleniumPOTest extends BaseTest {
 
         softAssert.assertFalse(loginPage.isLoginButtonDisplayed());
         softAssert.assertTrue(loginPage.isUserNameDisplayed());
-        softAssert.assertEquals(loginPage.getUserNameAfterLogin(),
+        Assert.assertEquals(loginPage.getUserNameAfterLogin(),
                 ConfProperties.getProperty("LOGGED_USER_NAME"));
 
         headerMenuOfHomePageAfterLoginPO.openDifferentElementsPage();
-        softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
+        Assert.assertEquals(headerMenuOfHomePageAfterLoginPO
                 .getDifferentElementsPageUrl(), ConfProperties
                 .getProperty("DIFFERENT_ELEMENTS_URL"));
 
