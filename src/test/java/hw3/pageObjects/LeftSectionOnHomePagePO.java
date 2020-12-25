@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -22,6 +21,6 @@ public class LeftSectionOnHomePagePO extends AbstractPage {
     }
 
     public String getTextFromLeftSectionItems(int i) {
-       return leftSectionOnHomePage.get(i).getText();
+        return leftSectionOnHomePage.get(i).getText();
     }
 }

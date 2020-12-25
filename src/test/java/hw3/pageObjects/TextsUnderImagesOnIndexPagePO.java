@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.testng.asserts.SoftAssert;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
@@ -17,7 +15,6 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
     public TextsUnderImagesOnIndexPagePO(WebDriver driver) {
         super(driver);
     }
-
 
     public String getTextsUnderIcons(int i) {
         return textsOnIndexPage.get(i).getText();

@@ -3,7 +3,6 @@ package hw3.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class LoginPagePO extends AbstractPage {
 
@@ -25,7 +24,6 @@ public class LoginPagePO extends AbstractPage {
     public LoginPagePO(WebDriver driver) {
         super(driver);
     }
-
 
     public void loginButtonClick() {
         searchLoginButton.click();

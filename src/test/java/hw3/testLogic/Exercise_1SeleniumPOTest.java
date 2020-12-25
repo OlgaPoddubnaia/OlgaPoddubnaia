@@ -1,6 +1,5 @@
 package hw3.testLogic;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -63,6 +62,7 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
         properTextsUnderIcons.add("To be multiplatform");
         properTextsUnderIcons.add("Already have good base\n(about 20 internal and\n" +
                 "some external projects),\nwish to get more…");
+
         for (int i = 0; i < 4; i++) {
             softAssert.assertEquals(textsUnderImagesOnIndexPagePO
                     .getTextsUnderIcons(i), properTextsUnderIcons.get(i));

@@ -3,9 +3,6 @@ package hw3.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
-
 
 public class LogRowsOnDifferentElementsPagePO extends AbstractPage {
 
@@ -24,7 +21,6 @@ public class LogRowsOnDifferentElementsPagePO extends AbstractPage {
     public LogRowsOnDifferentElementsPagePO(WebDriver driver) {
         super(driver);
     }
-
 
     public boolean isLogRowDisplayedAndCorrespondedToWaterCheckbox() {
         return waterCheckboxLogRow.isDisplayed();

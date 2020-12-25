@@ -33,7 +33,6 @@ public class BaseTest extends ConfProperties {
         driver.manage().window().maximize();
 
         softAssert = new SoftAssert();
-
         loginPage = new LoginPagePO(driver);
         homePagePO = new HomePagePO(driver);
         headerMenuOfHomePageAfterLoginPO = new HeaderMenuOfHomePageAfterLoginPO(driver);
