@@ -1,6 +1,7 @@
 package hw3.testLogic;
 
 import hw3.pageObjects.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -24,18 +25,39 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
 
         homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
-        homePagePO.shouldHaveUrl(ConfProperties.getProperty("URL"));
-        homePagePO.shouldHaveTitle("Home Page");
+
+        Assert.assertEquals(homePagePO.shouldHaveUrl(), ConfProperties
+                .getProperty("URL"));
+
+        softAssert.assertEquals(homePagePO.shouldHaveTitle(), "Home Page");
+
         loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"),
                 ConfProperties.getProperty("PASSWORD"));
-        loginPage.isLoginButtonDisplayed();
-        loginPage.isUserNameDisplayed();
-        loginPage.userNameCompare(ConfProperties.getProperty("LOGGED_USER_NAME"));
-        headerMenuOfHomePageAfterLoginPO.isItemsFromHeaderDisplayed();
+
+        softAssert.assertFalse(loginPage.isLoginButtonDisplayed());
+        softAssert.assertTrue(loginPage.isUserNameDisplayed());
+        softAssert.assertEquals(loginPage.getUserNameAfterLogin(),
+                ConfProperties.getProperty("LOGGED_USER_NAME"));
+
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertTrue(headerMenuOfHomePageAfterLoginPO
+                    .isItemsFromHeaderDisplayed(i));
+        }
+
         String[] properHeaderTexts = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
-        headerMenuOfHomePageAfterLoginPO.isItemFromHeaderHasAProperText(properHeaderTexts);
-        imagesOnIndexPagePO.isImagesFromIndexPageDisplayed();
-        textsUnderImagesOnIndexPagePO.isTextUnderImagesDisplayed();
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
+                    .getTextOfItemFromHeader(i), properHeaderTexts[i]);
+        }
+
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertTrue(imagesOnIndexPagePO.isImagesFromIndexPageDisplayed(i));
+        }
+
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertTrue(textsUnderImagesOnIndexPagePO.isTextUnderImagesDisplayed(i));
+        }
+
         ArrayList<String> properTextsUnderIcons = new ArrayList<>();
         properTextsUnderIcons.add("To include good practices\n" +
                 "and ideas from successful\nEPAM project");
@@ -43,15 +65,34 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
         properTextsUnderIcons.add("To be multiplatform");
         properTextsUnderIcons.add("Already have good base\n(about 20 internal and\n" +
                 "some external projects),\nwish to get more…");
-        textsUnderImagesOnIndexPagePO.isTextsUnderIconsEqualToExpected(properTextsUnderIcons);
-        homePagePO.isIframeExistsOnHomePage();
+        for (int i = 0; i < 4; i++) {
+            softAssert.assertEquals(textsUnderImagesOnIndexPagePO
+                    .getTextsUnderIcons(i), properTextsUnderIcons.get(i));
+        }
+
+        softAssert.assertTrue(homePagePO.isIframeDisplayedOnHomePage());
+
         homePagePO.switchToFrame();
-        iframePagePO.isFrameButtonOnFramePageDisplayed();
+
+        softAssert.assertTrue(iframePagePO.isFrameButtonOnFramePageDisplayed());
+
         homePagePO.switchToHomePage();
-        leftSectionOnHomePagePO.isLeftSectionItemsOnHomePageDisplayed();
+        softAssert.assertTrue(homePagePO.isIframeDisplayedOnHomePage());
+
+
+        for (int i = 0; i < 5; i++) {
+            softAssert.assertTrue(leftSectionOnHomePagePO
+                    .isLeftSectionItemsOnHomePageDisplayed(i));
+        }
+
+
         String[] properLeftSectionTexts = {"Home", "Contact form", "Service",
                 "Metals & Colors", "Elements packs"};
-        leftSectionOnHomePagePO.isLeftSectionItemsOnHomePageHaveProperTexts(properLeftSectionTexts);
+        for (int i = 0; i < 5; i++) {
+            softAssert.assertEquals(leftSectionOnHomePagePO
+                    .getTextFromLeftSectionItems(i), properLeftSectionTexts[i]);
+        }
+
         softAssert.assertAll();
     }
 }

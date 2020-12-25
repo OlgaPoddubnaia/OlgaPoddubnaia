@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -29,47 +27,38 @@ public class DifferentElementsPO extends AbstractPage {
         super(driver);
     }
 
-    public void clickDropdown() {
+    public void selectYellowInDropdown() {
         dropdown.click();
-    }
-
-    public void clickYellowInDropdown() {
         colors = new Select(driver.findElement(By
                 .cssSelector("select.uui-form-element")));
         colors.selectByVisibleText("Yellow");
     }
 
-    public void isYellowInDropdownSelected() {
-        clickDropdown();
-        clickYellowInDropdown();
-        Assert.assertEquals(colors.getFirstSelectedOption().getText(),
-                "Yellow");
+    public String getTextFromSelectedYellowInDropdown() {
+        return colors.getFirstSelectedOption().getText();
     }
 
-    public void radioSelenClick() {
+    public void selectRadioSelen() {
         radios.get(3).click();
     }
 
-    public void isSelenRadioSelected() {
-        radioSelenClick();
-        Assert.assertTrue(radios.get(3).isSelected());
+    public boolean isSelenRadioSelected() {
+        return radios.get(3).isSelected();
     }
 
-    public void windCheckboxClick() {
+    public void selectWindCheckbox() {
         checkboxes.get(0).click();
     }
 
-    public void waterCheckboxClick() {
+    public void selectWaterCheckbox() {
         checkboxes.get(2).click();
     }
 
-    public void isWindWaterCheckboxesSelected() {
-        SoftAssert softAssert = new SoftAssert();
-        windCheckboxClick();
-        softAssert.assertTrue(checkboxes.get(0).isSelected());
-        waterCheckboxClick();
-        softAssert.assertTrue(checkboxes.get(2).isSelected());
-        softAssert.assertAll();
+    public boolean isWindCheckboxSelected() {
+        return checkboxes.get(0).isSelected();
     }
 
+    public boolean isWaterCheckboxSelected() {
+        return checkboxes.get(2).isSelected();
+    }
 }

@@ -26,31 +26,27 @@ public class LoginPagePO extends AbstractPage {
         super(driver);
     }
 
-    public void searchButtonClick() {
-        searchButton.click();
-    }
 
     public void loginButtonClick() {
         searchLoginButton.click();
-
     }
 
     public void logOnSite(String login, String password) {
-        searchButtonClick();
+        searchButton.click();
         searchUserNameField.sendKeys(login);
         searchPasswordField.sendKeys(password);
         loginButtonClick();
     }
 
-    public void isLoginButtonDisplayed() {
-        Assert.assertFalse(searchLoginButton.isDisplayed());
+    public boolean isLoginButtonDisplayed() {
+        return searchLoginButton.isDisplayed();
     }
 
-    public void userNameCompare(String name) {
-        Assert.assertEquals(userName.getText(), name);
+    public String getUserNameAfterLogin() {
+        return userName.getText();
     }
 
-    public void isUserNameDisplayed() {
-        Assert.assertTrue(userName.isDisplayed());
+    public boolean isUserNameDisplayed() {
+        return userName.isDisplayed();
     }
 }

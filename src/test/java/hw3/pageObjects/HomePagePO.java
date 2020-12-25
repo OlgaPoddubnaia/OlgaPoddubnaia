@@ -3,7 +3,6 @@ package hw3.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class HomePagePO extends AbstractPage {
 
@@ -18,16 +17,16 @@ public class HomePagePO extends AbstractPage {
         driver.get(URL);
     }
 
-    public void shouldHaveUrl(String URL) {
-        Assert.assertEquals(driver.getCurrentUrl(), URL);
+    public String shouldHaveUrl() {
+        return driver.getCurrentUrl();
     }
 
-    public void shouldHaveTitle(String title) {
-        Assert.assertEquals(driver.getTitle(), title);
+    public String shouldHaveTitle() {
+        return driver.getTitle();
     }
 
-    public void isIframeExistsOnHomePage() {
-        Assert.assertTrue(iframeOnHomePage.isDisplayed());
+    public boolean isIframeDisplayedOnHomePage() {
+        return iframeOnHomePage.isDisplayed();
     }
 
     public void switchToFrame() {
@@ -36,6 +35,5 @@ public class HomePagePO extends AbstractPage {
 
     public void switchToHomePage() {
         driver.switchTo().defaultContent();
-        isIframeExistsOnHomePage();
     }
 }

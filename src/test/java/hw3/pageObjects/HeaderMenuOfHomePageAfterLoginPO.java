@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
 
 import java.util.List;
 
@@ -21,35 +19,20 @@ public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
         super(driver);
     }
 
-    public void serviceClick() {
+    public void openDifferentElementsPage() {
         headerSection.get(2).click();
-    }
-
-    public void differentElementDropdownClick() {
         serviceDropdown.get(7).click();
     }
 
-    public void openDifferentElementsPage(String differentElementsURL) {
-        serviceClick();
-        differentElementDropdownClick();
-        Assert.assertEquals(driver.getCurrentUrl(), differentElementsURL);
+    public String getDifferentElementsPageUrl() {
+        return driver.getCurrentUrl();
     }
 
-    public void isItemFromHeaderHasAProperText(String[] properText) {
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(headerSection.get(0).getText(), properText[0]);
-        softAssert.assertEquals(headerSection.get(1).getText(), properText[1]);
-        softAssert.assertEquals(headerSection.get(2).getText(), properText[2]);
-        softAssert.assertEquals(headerSection.get(3).getText(), properText[3]);
-        softAssert.assertAll();
+    public String getTextOfItemFromHeader(int i) {
+        return headerSection.get(i).getText();
     }
 
-    public void isItemsFromHeaderDisplayed() {
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(headerSection.get(0).isDisplayed());
-        softAssert.assertTrue(headerSection.get(1).isDisplayed());
-        softAssert.assertTrue(headerSection.get(2).isDisplayed());
-        softAssert.assertTrue(headerSection.get(3).isDisplayed());
-        softAssert.assertAll();
+    public boolean isItemsFromHeaderDisplayed(int i) {
+        return headerSection.get(i).isDisplayed();
     }
 }

@@ -3,7 +3,6 @@ package hw3.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class IframePagePO extends AbstractPage {
 
@@ -14,7 +13,7 @@ public class IframePagePO extends AbstractPage {
         super(driver);
     }
 
-    public void isFrameButtonOnFramePageDisplayed() {
-        Assert.assertTrue(frameButtonOnIframePage.isDisplayed());
+    public boolean isFrameButtonOnFramePageDisplayed() {
+        return frameButtonOnIframePage.isDisplayed();
     }
 }

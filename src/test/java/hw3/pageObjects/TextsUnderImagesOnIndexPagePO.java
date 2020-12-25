@@ -19,22 +19,11 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
     }
 
 
-
-    public void isTextsUnderIconsEqualToExpected( ArrayList<String> properTextsUnderIcons) {
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(textsOnIndexPage.get(0).getText(), properTextsUnderIcons.get(0));
-        softAssert.assertEquals(textsOnIndexPage.get(1).getText(), properTextsUnderIcons.get(1));
-        softAssert.assertEquals(textsOnIndexPage.get(2).getText(), properTextsUnderIcons.get(2));
-        softAssert.assertEquals(textsOnIndexPage.get(3).getText(), properTextsUnderIcons.get(3));
-        softAssert.assertAll();
+    public String getTextsUnderIcons(int i) {
+        return textsOnIndexPage.get(i).getText();
     }
 
-    public void isTextUnderImagesDisplayed() {
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(textsOnIndexPage.get(0).isDisplayed());
-        softAssert.assertTrue(textsOnIndexPage.get(1).isDisplayed());
-        softAssert.assertTrue(textsOnIndexPage.get(2).isDisplayed());
-        softAssert.assertTrue(textsOnIndexPage.get(3).isDisplayed());
-        softAssert.assertAll();
+    public boolean isTextUnderImagesDisplayed(int i) {
+        return textsOnIndexPage.get(i).isDisplayed();
     }
 }

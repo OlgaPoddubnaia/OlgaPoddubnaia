@@ -1,6 +1,7 @@
 package hw3.testLogic;
 
 import hw3.pageObjects.*;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -18,22 +19,47 @@ public class Exercise_2SeleniumPOTest extends BaseTest {
         SoftAssert softAssert = new SoftAssert();
 
         homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
-        homePagePO.shouldHaveUrl(ConfProperties.getProperty("URL"));
-        homePagePO.shouldHaveTitle("Home Page");
+
+        Assert.assertEquals(homePagePO.shouldHaveUrl(), ConfProperties
+                .getProperty("URL"));
+
+        softAssert.assertEquals(homePagePO.shouldHaveTitle(), "Home Page");
+
         loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"),
                 ConfProperties.getProperty("PASSWORD"));
-        loginPage.isLoginButtonDisplayed();
-        loginPage.isUserNameDisplayed();
-        loginPage.userNameCompare(ConfProperties.getProperty("LOGGED_USER_NAME"));
 
-        headerMenuOfHomePageAfterLoginPO.openDifferentElementsPage(
-                ConfProperties.getProperty("DIFFERENT_ELEMENTS_URL"));
-        differentElementsPO.isWindWaterCheckboxesSelected();
-        differentElementsPO.isSelenRadioSelected();
-        differentElementsPO.isYellowInDropdownSelected();
-        logRowsOnDifferentElementsPagePO.isLogRowsDisplayedAndCorrespondedToCheckboxes();
-        logRowsOnDifferentElementsPagePO.isLogRowsDisplayedAndCorrespondedToRadios();
-        logRowsOnDifferentElementsPagePO.isLorRowsDisplayedAndCorrespondedToDropdowns();
+        softAssert.assertFalse(loginPage.isLoginButtonDisplayed());
+        softAssert.assertTrue(loginPage.isUserNameDisplayed());
+        softAssert.assertEquals(loginPage.getUserNameAfterLogin(),
+                ConfProperties.getProperty("LOGGED_USER_NAME"));
+
+        headerMenuOfHomePageAfterLoginPO.openDifferentElementsPage();
+        softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
+                .getDifferentElementsPageUrl(), ConfProperties
+                .getProperty("DIFFERENT_ELEMENTS_URL"));
+
+        differentElementsPO.selectWindCheckbox();
+        softAssert.assertTrue(differentElementsPO.isWindCheckboxSelected());
+
+        differentElementsPO.selectWaterCheckbox();
+        softAssert.assertTrue(differentElementsPO.isWaterCheckboxSelected());
+
+        differentElementsPO.selectRadioSelen();
+        softAssert.assertTrue(differentElementsPO.isSelenRadioSelected());
+
+        differentElementsPO.selectYellowInDropdown();
+        softAssert.assertEquals(differentElementsPO
+                .getTextFromSelectedYellowInDropdown(), "Yellow");
+
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLogRowDisplayedAndCorrespondedToWaterCheckbox());
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLogRowDisplayedAndCorrespondedToWindCheckbox());
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLogRowsDisplayedAndCorrespondedToSelenRadio());
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLorRowDisplayedAndCorrespondedToYellowDropdown());
+
         softAssert.assertAll();
     }
 }

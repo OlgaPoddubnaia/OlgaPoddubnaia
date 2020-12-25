@@ -17,24 +17,11 @@ public class LeftSectionOnHomePagePO extends AbstractPage {
         super(driver);
     }
 
-    public void isLeftSectionItemsOnHomePageDisplayed() {
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(leftSectionOnHomePage.get(0).isDisplayed());
-        softAssert.assertTrue(leftSectionOnHomePage.get(1).isDisplayed());
-        softAssert.assertTrue(leftSectionOnHomePage.get(2).isDisplayed());
-        softAssert.assertTrue(leftSectionOnHomePage.get(3).isDisplayed());
-        softAssert.assertTrue(leftSectionOnHomePage.get(4).isDisplayed());
-        softAssert.assertAll();
+    public boolean isLeftSectionItemsOnHomePageDisplayed(int i) {
+        return leftSectionOnHomePage.get(i).isDisplayed();
     }
 
-    public void isLeftSectionItemsOnHomePageHaveProperTexts
-            (String[] properLeftSectionTexts) {
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(leftSectionOnHomePage.get(0).getText(), properLeftSectionTexts[0]);
-        softAssert.assertEquals(leftSectionOnHomePage.get(1).getText(), properLeftSectionTexts[1]);
-        softAssert.assertEquals(leftSectionOnHomePage.get(2).getText(), properLeftSectionTexts[2]);
-        softAssert.assertEquals(leftSectionOnHomePage.get(3).getText(), properLeftSectionTexts[3]);
-        softAssert.assertEquals(leftSectionOnHomePage.get(4).getText(), properLeftSectionTexts[4]);
-        softAssert.assertAll();
+    public String getTextFromLeftSectionItems(int i) {
+       return leftSectionOnHomePage.get(i).getText();
     }
 }
