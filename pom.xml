@@ -61,6 +61,17 @@
                 </suite.file>
             </properties>
         </profile>
+
+        <profile>
+            <id>homework3-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw3/Homework3Tests.xml
+                </suite.file>
+            </properties>
+        </profile>
     </profiles>
 
 
@@ -71,31 +82,21 @@
             <artifactId>testng</artifactId>
             <version>7.0.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>3.141.59</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.141.59</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-support</artifactId>
-            <version>3.141.59</version>
-            <scope>test</scope>
-        </dependency>
+      </dependency>
+      
         <dependency>
             <groupId>com.epam.tat.module4</groupId>
             <artifactId>calculator</artifactId>
             <version>{calculator.version}</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/test/resources/lib/calculator-1.0.jar</systemPath>
+        </dependency>
+      
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
