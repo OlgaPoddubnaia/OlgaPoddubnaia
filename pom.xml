@@ -82,8 +82,8 @@
             <artifactId>testng</artifactId>
             <version>7.0.0</version>
             <scope>test</scope>
-        </dependency>
-
+      </dependency>
+      
         <dependency>
             <groupId>com.epam.tat.module4</groupId>
             <artifactId>calculator</artifactId>
@@ -91,6 +91,7 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/test/resources/lib/calculator-1.0.jar</systemPath>
         </dependency>
+      
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>

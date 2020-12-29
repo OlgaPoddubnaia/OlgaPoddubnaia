@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class Exercise_1SeleniumHQTest extends AbstractTests {

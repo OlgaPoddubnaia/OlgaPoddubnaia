@@ -33,4 +33,3 @@ public abstract class AbstractTests {
         driver = null;
     }
 }
-
