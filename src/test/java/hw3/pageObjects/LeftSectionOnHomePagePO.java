@@ -16,6 +16,10 @@ public class LeftSectionOnHomePagePO extends AbstractPage {
         super(driver);
     }
 
+    public int leftSectionSize() {
+        return leftSectionOnHomePage.size();
+    }
+
     public boolean isLeftSectionItemsOnHomePageDisplayed(int i) {
         return leftSectionOnHomePage.get(i).isDisplayed();
     }

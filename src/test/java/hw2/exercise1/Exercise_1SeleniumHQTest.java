@@ -52,10 +52,8 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
         List<WebElement> headerSection = driver.findElements(By
                 .cssSelector("ul.uui-navigation.nav.navbar-nav.m-l8>li"));
         String[] properHeaderTexts = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < headerSection.size(); i++) {
             softAssert.assertTrue(headerSection.get(i).isDisplayed());
-        }
-        for (int i = 0; i < 4; i++) {
             softAssert.assertEquals(headerSection.get(i).getText(), properHeaderTexts[i]);
         }
 
@@ -63,7 +61,7 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
          and they are displayed	*/
         List<WebElement> imagesOnIndexPage = driver.findElements(By
                 .cssSelector("div.benefit-icon>span"));
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < imagesOnIndexPage.size(); i++) {
             softAssert.assertTrue(imagesOnIndexPage.get(i).isDisplayed());
         }
 
@@ -71,7 +69,7 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
          icons and they have proper text*/
         List<WebElement> textsOnIndexPage = driver.findElements(By
                 .cssSelector("span.benefit-txt"));
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < textsOnIndexPage.size(); i++) {
             softAssert.assertTrue(textsOnIndexPage.get(i).isDisplayed());
         }
 
@@ -83,7 +81,7 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
         properTextsUnderIcons.add("Already have good base\n(about 20 internal and\n" +
                 "some external projects),\nwish to get more…");
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < textsOnIndexPage.size(); i++) {
             softAssert.assertEquals(textsOnIndexPage.get(i).getText(),
                     properTextsUnderIcons.get(i));
         }
@@ -107,12 +105,12 @@ public class Exercise_1SeleniumHQTest extends AbstractTests {
       Section are displayed and they have proper text*/
         List<WebElement> itemsOnLeftSection = driver.
                 findElements(By.cssSelector("ul.sidebar-menu>li"));
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < itemsOnLeftSection.size(); i++) {
             softAssert.assertTrue(itemsOnLeftSection.get(i).isDisplayed());
         }
         String[] properLeftSectionTexts = {"Home", "Contact form", "Service",
                 "Metals & Colors", "Elements packs"};
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < itemsOnLeftSection.size(); i++) {
             softAssert.assertEquals(itemsOnLeftSection.get(i)
                     .getText(), properLeftSectionTexts[i]);
         }

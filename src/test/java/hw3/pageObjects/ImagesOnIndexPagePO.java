@@ -16,6 +16,10 @@ public class ImagesOnIndexPagePO extends AbstractPage {
         super(driver);
     }
 
+    public int imagesOnIndexPageSize() {
+        return imagesOnIndexPage.size();
+    }
+
     public boolean isImagesFromIndexPageDisplayed(int i) {
         return imagesOnIndexPage.get(i).isDisplayed();
     }

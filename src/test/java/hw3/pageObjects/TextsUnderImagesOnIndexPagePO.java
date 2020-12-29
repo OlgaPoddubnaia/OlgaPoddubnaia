@@ -16,6 +16,10 @@ public class TextsUnderImagesOnIndexPagePO extends AbstractPage {
         super(driver);
     }
 
+    public int textsUnderImagesSize() {
+        return textsOnIndexPage.size();
+    }
+
     public String getTextsUnderIcons(int i) {
         return textsOnIndexPage.get(i).getText();
     }

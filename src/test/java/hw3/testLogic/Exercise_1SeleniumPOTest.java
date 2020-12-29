@@ -30,27 +30,27 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
 
          /*step#5 Assert that there are 4 items on the header
          section are displayed and they have proper texts*/
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < headerMenuOfHomePageAfterLoginPO.headerSectionSize(); i++) {
             softAssert.assertTrue(headerMenuOfHomePageAfterLoginPO
                     .isItemsFromHeaderDisplayed(i));
         }
 
         String[] properHeaderTexts = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < headerMenuOfHomePageAfterLoginPO.headerSectionSize(); i++) {
             softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
                     .getTextOfItemFromHeader(i), properHeaderTexts[i]);
         }
 
          /*step#6	Assert that there are 4 images on the Index Page
          and they are displayed	*/
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < imagesOnIndexPagePO.imagesOnIndexPageSize(); i++) {
             softAssert.assertTrue(imagesOnIndexPagePO
                     .isImagesFromIndexPageDisplayed(i));
         }
 
         /*step#7 Assert that there are 4 texts on the Index Page under
          icons and they have proper text*/
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < textsUnderImagesOnIndexPagePO.textsUnderImagesSize(); i++) {
             softAssert.assertTrue(textsUnderImagesOnIndexPagePO
                     .isTextUnderImagesDisplayed(i));
         }
@@ -63,7 +63,7 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
         properTextsUnderIcons.add("Already have good base\n(about 20 internal and\n" +
                 "some external projects),\nwish to get more…");
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < textsUnderImagesOnIndexPagePO.textsUnderImagesSize(); i++) {
             softAssert.assertEquals(textsUnderImagesOnIndexPagePO
                     .getTextsUnderIcons(i), properTextsUnderIcons.get(i));
         }
@@ -82,14 +82,14 @@ public class Exercise_1SeleniumPOTest extends BaseTest {
 
         /*step#11 Assert that there are 5 items in the Left
       Section are displayed and they have proper text*/
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < leftSectionOnHomePagePO.leftSectionSize(); i++) {
             softAssert.assertTrue(leftSectionOnHomePagePO
                     .isLeftSectionItemsOnHomePageDisplayed(i));
         }
 
         String[] properLeftSectionTexts = {"Home", "Contact form", "Service",
                 "Metals & Colors", "Elements packs"};
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < leftSectionOnHomePagePO.leftSectionSize(); i++) {
             softAssert.assertEquals(leftSectionOnHomePagePO
                     .getTextFromLeftSectionItems(i), properLeftSectionTexts[i]);
         }

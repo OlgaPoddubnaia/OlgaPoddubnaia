@@ -28,6 +28,10 @@ public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
         return driver.getCurrentUrl();
     }
 
+    public int headerSectionSize() {
+        return headerSection.size();
+    }
+
     public String getTextOfItemFromHeader(int i) {
         return headerSection.get(i).getText();
     }
