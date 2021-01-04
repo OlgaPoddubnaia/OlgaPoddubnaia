@@ -15,6 +15,9 @@
         <testng.version>7.0.0</testng.version>
         <calculator.version>1.0</calculator.version>
         <surefire.version>2.19.1</surefire.version>
+        <aspectj.version>1.8.10</aspectj.version>
+        <allure.version>2.13.8</allure.version>
+        <allure-maven.version>2.10.0</allure-maven.version>
     </properties>
 
     <profiles>
@@ -82,8 +85,8 @@
             <artifactId>testng</artifactId>
             <version>7.0.0</version>
             <scope>test</scope>
-      </dependency>
-      
+        </dependency>
+
         <dependency>
             <groupId>com.epam.tat.module4</groupId>
             <artifactId>calculator</artifactId>
@@ -91,11 +94,18 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/src/test/resources/lib/calculator-1.0.jar</systemPath>
         </dependency>
-      
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -121,7 +131,22 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
             </plugin>
         </plugins>
     </build>
