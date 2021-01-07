@@ -4,6 +4,8 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
+import java.util.ArrayList;
+
 public class AssertionStep extends AbstractStep {
 
 
@@ -13,18 +15,107 @@ public class AssertionStep extends AbstractStep {
 
     @Step("Check opened page Url")
     public void checkUrl() {
-        softAssert=new SoftAssert();
+        softAssert = new SoftAssert();
         softAssert.assertEquals(homePagePO.shouldHaveUrl(), ConfProperties.getProperty("URL"));
         softAssert.assertAll();
     }
 
     @Step
     public void checkBrowserTitle() {
+        softAssert = new SoftAssert();
         softAssert.assertEquals(homePagePO.shouldHaveTitle(), "Home Page");
+        softAssert.assertAll();
     }
 
-//нужно ли проверять что зареганы?? кажется, что нет
-/*
-    softAssert.assertFalse(loginPage.isLoginButtonDisplayed());
-        softAssert.assertTrue(loginPage.isUserNameDisplayed());*/
+    @Step
+    public void checkIsUserLogged() {
+        softAssert = new SoftAssert();
+        softAssert.assertEquals(loginPage.getUserNameAfterLogin(),
+                ConfProperties.getProperty("LOGGED_USER_NAME"));
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void areItemsDisplayedAndHaveProperTexts() {
+        softAssert = new SoftAssert();
+        for (int i = 0; i < headerMenuOfHomePageAfterLoginPO.headerSectionSize(); i++) {
+            softAssert.assertTrue(headerMenuOfHomePageAfterLoginPO
+                    .isItemsFromHeaderDisplayed(i));
+        }
+
+        String[] properHeaderTexts = {"HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"};
+        for (int i = 0; i < headerMenuOfHomePageAfterLoginPO.headerSectionSize(); i++) {
+            softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
+                    .getTextOfItemFromHeader(i), properHeaderTexts[i]);
+        }
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void areImagesOnIndexPageDisplayed() {
+        softAssert = new SoftAssert();
+        for (int i = 0; i < imagesOnIndexPagePO.imagesOnIndexPageSize(); i++) {
+            softAssert.assertTrue(imagesOnIndexPagePO
+                    .isImagesFromIndexPageDisplayed(i));
+        }
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void areTextsOnIndexPageDisplayedAndHaveProperTexts() {
+        softAssert = new SoftAssert();
+        for (int i = 0; i < textsUnderImagesOnIndexPagePO.textsUnderImagesSize(); i++) {
+            softAssert.assertTrue(textsUnderImagesOnIndexPagePO
+                    .isTextUnderImagesDisplayed(i));
+        }
+
+        ArrayList<String> properTextsUnderIcons = new ArrayList<>();
+        properTextsUnderIcons.add("To include good practices\n" +
+                "and ideas from successful\nEPAM project");
+        properTextsUnderIcons.add("To be flexible and\ncustomizable");
+        properTextsUnderIcons.add("To be multiplatform");
+        properTextsUnderIcons.add("Already have good base\n(about 20 internal and\n" +
+                "some external projects),\nwish to get more…");
+
+        for (int i = 0; i < textsUnderImagesOnIndexPagePO.textsUnderImagesSize(); i++) {
+            softAssert.assertEquals(textsUnderImagesOnIndexPagePO
+                    .getTextsUnderIcons(i), properTextsUnderIcons.get(i));
+        }
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void isIframeExists() {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(homePagePO.isIframeDisplayedOnHomePage());
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void isFrameButtonOnIframe() {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(iframePagePO.isFrameButtonOnFramePageDisplayed());
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void areItemsInLeftSectionDisplayedAndHaveProperTexts() {
+        softAssert = new SoftAssert();
+        for (int i = 0; i < leftSectionOnHomePagePO.leftSectionSize(); i++) {
+            softAssert.assertTrue(leftSectionOnHomePagePO
+                    .isLeftSectionItemsOnHomePageDisplayed(i));
+        }
+
+        String[] properLeftSectionTexts = {"Home", "Contact form", "Service",
+                "Metals & Colors", "Elements packs"};
+        for (int i = 0; i < leftSectionOnHomePagePO.leftSectionSize(); i++) {
+            softAssert.assertEquals(leftSectionOnHomePagePO
+                    .getTextFromLeftSectionItems(i), properLeftSectionTexts[i]);
+        }
+        softAssert.assertAll();
+
+    }
+
+
 }
+

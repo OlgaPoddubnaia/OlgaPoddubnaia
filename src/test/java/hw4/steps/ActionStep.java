@@ -20,4 +20,14 @@ public class ActionStep extends AbstractStep {
                 ConfProperties.getProperty("PASSWORD"));
     }
 
+    @Step
+    public void switchToIframe(){
+        homePagePO.switchToFrame();
+    }
+
+    @Step
+    public void switchToHomepage(){
+        homePagePO.switchToHomePage();
+    }
+
 }
