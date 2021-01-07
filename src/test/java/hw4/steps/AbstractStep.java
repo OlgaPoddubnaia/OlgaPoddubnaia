@@ -3,7 +3,8 @@ package hw4.steps;
 import hw4.pages.*;
 import org.openqa.selenium.WebDriver;
 
-public abstract class AbstractStep {
+public abstract class AbstractStep extends ConfProperties {
+
     protected WebDriver driver;
 
     protected HomePagePO homePagePO;
