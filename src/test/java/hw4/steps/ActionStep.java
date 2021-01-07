@@ -14,5 +14,10 @@ public class ActionStep extends AbstractStep {
         homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
     }
 
+    @Step
+    public void userLogin() {
+        loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"),
+                ConfProperties.getProperty("PASSWORD"));
+    }
 
 }

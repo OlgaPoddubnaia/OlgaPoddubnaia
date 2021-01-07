@@ -2,10 +2,12 @@ package hw4.steps;
 
 import hw4.pages.*;
 import org.openqa.selenium.WebDriver;
+import org.testng.asserts.SoftAssert;
 
 public abstract class AbstractStep extends ConfProperties {
 
     protected WebDriver driver;
+    protected SoftAssert softAssert;
 
     protected HomePagePO homePagePO;
     protected LoginPagePO loginPage;
