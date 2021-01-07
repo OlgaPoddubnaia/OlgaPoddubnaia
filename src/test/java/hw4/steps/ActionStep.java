@@ -21,13 +21,36 @@ public class ActionStep extends AbstractStep {
     }
 
     @Step
-    public void switchToIframe(){
+    public void switchToIframe() {
         homePagePO.switchToFrame();
     }
 
     @Step
-    public void switchToHomepage(){
+    public void switchToHomepage() {
         homePagePO.switchToHomePage();
     }
+
+    @Step
+    public void openDifferentsElementsPage() {
+        headerMenuOfHomePageAfterLoginPO.openDifferentElementsPage();
+    }
+
+    @Step
+    public void selectWindWaterCheckboxes(){
+        differentElementsPO.selectWindCheckbox();
+        differentElementsPO.selectWaterCheckbox();
+    }
+
+    @Step
+    public void selectSelenRadio(){
+        differentElementsPO.selectRadioSelen();
+    }
+
+    @Step
+    public void selectYellowInDropdown(){
+        differentElementsPO.selectYellowInDropdown();
+    }
+
+
 
 }

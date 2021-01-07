@@ -116,6 +116,64 @@ public class AssertionStep extends AbstractStep {
 
     }
 
+    @Step
+    public void checkDifferentsElementsUrl() {
+        softAssert = new SoftAssert();
+        softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
+                .getDifferentElementsPageUrl(), hw3.testLogic.ConfProperties
+                .getProperty("DIFFERENT_ELEMENTS_URL"));
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void checkAreWindWaterCheckboxesSelected() {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(differentElementsPO.isWindCheckboxSelected());
+        softAssert.assertTrue(differentElementsPO.isWaterCheckboxSelected());
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void checkIsSelenSelected() {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(differentElementsPO.isSelenRadioSelected());
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void checkIsYellowInDropdownSelected() {
+        softAssert = new SoftAssert();
+        softAssert.assertEquals(differentElementsPO
+                .getTextFromSelectedYellowInDropdown(), "Yellow");
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void isLogRowsCorrespondedToWindWaterCheckboxes() {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLogRowDisplayedAndCorrespondedToWaterCheckbox());
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLogRowDisplayedAndCorrespondedToWindCheckbox());
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void isLogRowCorrespondedToSelenRadio() {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLogRowsDisplayedAndCorrespondedToSelenRadio());
+        softAssert.assertAll();
+    }
+
+    @Step
+    public void isLogRowCorrespondedToYellowInDropdown() {
+        softAssert = new SoftAssert();
+        softAssert.assertTrue(logRowsOnDifferentElementsPagePO
+                .isLorRowDisplayedAndCorrespondedToYellowDropdown());
+        softAssert.assertAll();
+    }
+
 
 }
 
