@@ -16,7 +16,8 @@ public class AssertionStep extends AbstractStep {
     @Step("Check opened page Url")
     public void checkUrl() {
         softAssert = new SoftAssert();
-        softAssert.assertEquals(homePagePO.shouldHaveUrl(), ConfProperties.getProperty("URL"));
+        softAssert.assertEquals(homePagePO.shouldHaveUrl(),
+                ConfProperties.getProperty("URL"));
         softAssert.assertAll();
     }
 
@@ -117,7 +118,7 @@ public class AssertionStep extends AbstractStep {
     }
 
     @Step
-    public void checkDifferentsElementsUrl() {
+    public void checkDifferentElementsUrl() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
                 .getDifferentElementsPageUrl(), hw3.testLogic.ConfProperties
@@ -144,7 +145,7 @@ public class AssertionStep extends AbstractStep {
     public void checkIsYellowInDropdownSelected() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(differentElementsPO
-                .getTextFromSelectedYellowInDropdown(), "Yellow");
+                .getTextFromSelectedYellowInDropdown(), "Yellow");;
         softAssert.assertAll();
     }
 

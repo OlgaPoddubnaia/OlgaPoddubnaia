@@ -31,6 +31,4 @@ public abstract class AbstractStep extends ConfProperties {
         logRowsOnDifferentElementsPagePO =
                 new LogRowsOnDifferentElementsPagePO(driver);
     }
-
-
 }

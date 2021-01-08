@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class Exercise_2JenkinsAllureTest extends AbstractBaseTest {
 
     @Test
-    public void Exercise1StepDesignTest() {
+    public void Exercise2StepDesignTest() {
         //step#1 Open test site by URL
         actionStep.openSiteByUrl();
         assertionStep.checkUrl();
@@ -25,7 +25,7 @@ public class Exercise_2JenkinsAllureTest extends AbstractBaseTest {
 
         //step#5 Open through the header menu Service -> Different Elements Page
         actionStep.openDifferentsElementsPage();
-        assertionStep.checkDifferentsElementsUrl();
+        assertionStep.checkDifferentElementsUrl();
 
         //step#6 Select checkboxes
         actionStep.selectWindWaterCheckboxes();

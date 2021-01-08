@@ -28,13 +28,14 @@ public class DifferentElementsPO extends AbstractPage {
     }
 
     public void selectYellowInDropdown() {
-        dropdown.click();
         colors = new Select(driver.findElement(By
                 .cssSelector("select.uui-form-element")));
         colors.selectByVisibleText("Yellow");
     }
 
     public String getTextFromSelectedYellowInDropdown() {
+        colors = new Select(driver.findElement(By
+                .cssSelector("select.uui-form-element")));
         return colors.getFirstSelectedOption().getText();
     }
 
