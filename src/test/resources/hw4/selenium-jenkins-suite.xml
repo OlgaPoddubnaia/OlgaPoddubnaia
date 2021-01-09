@@ -3,7 +3,7 @@
 <suite name="Exercise 1 (with fail and success tests) and Exercise 2  Selenium tests from homework №4">
 
     <listeners>
-        <listener class-name="hw4.listeners.AllureListener"></listener>
+        <listener class-name="hw4.listeners.AllureListener"/>
     </listeners>
 
     <test name="Exercise 1">

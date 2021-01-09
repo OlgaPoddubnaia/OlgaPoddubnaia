@@ -41,7 +41,7 @@ public class Exercise_1JenkinsAllureFailTest extends AbstractBaseTest {
 
         /*step#9 Switch to the iframe and check that there is
          “Frame Button” in the iframe*/
-        //actionStep.switchToIframe();
+        //deleted assertion step to switch to iframe
         assertionStep.isFrameButtonOnIframe();
 
         //step#10 Switch to original window back
@@ -50,6 +50,5 @@ public class Exercise_1JenkinsAllureFailTest extends AbstractBaseTest {
         /*step#11 Assert that there are 5 items in the Left
       Section are displayed and they have proper text*/
         assertionStep.areItemsInLeftSectionDisplayedAndHaveProperTexts();
-
     }
 }

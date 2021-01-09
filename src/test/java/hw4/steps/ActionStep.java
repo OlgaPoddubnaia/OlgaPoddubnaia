@@ -50,5 +50,4 @@ public class ActionStep extends AbstractStep {
     public void selectYellowInDropdown(){
         differentElementsPO.selectYellowInDropdown();
     }
-
 }

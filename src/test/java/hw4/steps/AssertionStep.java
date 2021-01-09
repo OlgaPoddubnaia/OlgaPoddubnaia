@@ -145,7 +145,7 @@ public class AssertionStep extends AbstractStep {
     public void checkIsYellowInDropdownSelected() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(differentElementsPO
-                .getTextFromSelectedYellowInDropdown(), "Yellow");;
+                .getTextFromSelectedYellowInDropdown(), "Yellow");
         softAssert.assertAll();
     }
 

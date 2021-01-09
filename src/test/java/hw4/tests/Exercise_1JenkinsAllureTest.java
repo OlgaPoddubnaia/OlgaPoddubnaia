@@ -50,6 +50,5 @@ public class Exercise_1JenkinsAllureTest extends AbstractBaseTest {
         /*step#11 Assert that there are 5 items in the Left
       Section are displayed and they have proper text*/
         assertionStep.areItemsInLeftSectionDisplayedAndHaveProperTexts();
-
     }
 }
