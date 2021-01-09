@@ -23,4 +23,10 @@
             <class name="hw4.tests.Exercise_1JenkinsAllureFailTest"/>
         </classes>
     </test>
+
+    <test name="Exercise 2 to fail">
+        <classes>
+            <class name="hw4.tests.Exercise_2JenkinsAllureFailTest"/>
+        </classes>
+    </test>
 </suite>
