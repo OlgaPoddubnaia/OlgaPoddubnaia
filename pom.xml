@@ -76,6 +76,17 @@
                 </suite.file>
             </properties>
         </profile>
+
+        <profile>
+            <id>homework4-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw4/selenium-jenkins-suite.xml
+                </suite.file>
+            </properties>
+        </profile>
     </profiles>
 
 

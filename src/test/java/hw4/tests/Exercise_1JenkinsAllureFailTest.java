@@ -5,7 +5,7 @@ import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
 @Feature("HW4 with step design pattern")
-@Story("Exercise 1 in step design pattern")
+@Story("Exercise 1 that should be failed in step design pattern")
 public class Exercise_1JenkinsAllureFailTest extends AbstractBaseTest {
 
     @Test
@@ -41,7 +41,7 @@ public class Exercise_1JenkinsAllureFailTest extends AbstractBaseTest {
 
         /*step#9 Switch to the iframe and check that there is
          “Frame Button” in the iframe*/
-        actionStep.switchToIframe();
+        //actionStep.switchToIframe();
         assertionStep.isFrameButtonOnIframe();
 
         //step#10 Switch to original window back
