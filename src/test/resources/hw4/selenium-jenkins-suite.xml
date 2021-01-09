@@ -1,6 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Exercise 1 (with fail and success tests) and Exercise 2  Selenium tests from homework №4">
+<suite name="Exercise 1 and Exercise 2 (both are with fail and success tests) jenkins tests from homework №4">
 
     <listeners>
         <listener class-name="hw4.listeners.AllureListener"/>

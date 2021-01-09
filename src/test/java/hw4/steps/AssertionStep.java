@@ -21,14 +21,14 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Assert Browser title to required")
     public void checkBrowserTitle() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(homePagePO.shouldHaveTitle(), "Home Page");
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check user's logged name")
     public void checkIsUserLogged() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(loginPage.getUserNameAfterLogin(),
@@ -36,7 +36,7 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step()
     public void areItemsDisplayedAndHaveProperTexts() {
         softAssert = new SoftAssert();
         for (int i = 0; i < headerMenuOfHomePageAfterLoginPO.headerSectionSize(); i++) {
@@ -174,7 +174,5 @@ public class AssertionStep extends AbstractStep {
                 .isLorRowDisplayedAndCorrespondedToYellowDropdown());
         softAssert.assertAll();
     }
-
-
 }
 

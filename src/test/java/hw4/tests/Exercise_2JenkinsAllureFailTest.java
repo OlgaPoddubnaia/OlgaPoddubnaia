@@ -53,6 +53,5 @@ public class Exercise_2JenkinsAllureFailTest extends AbstractBaseTest {
         assertionStep.isLogRowCorrespondedToSelenRadio();
         //check dropdown names
         assertionStep.isLogRowCorrespondedToYellowInDropdown();
-
     }
 }
