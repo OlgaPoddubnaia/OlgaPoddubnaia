@@ -14,40 +14,40 @@ public class ActionStep extends AbstractStep {
         homePagePO.openPageByUrl(ConfProperties.getProperty("URL"));
     }
 
-    @Step
+    @Step("Log user on site")
     public void userLogin() {
         loginPage.logOnSite(ConfProperties.getProperty("USER_NAME"),
                 ConfProperties.getProperty("PASSWORD"));
     }
 
-    @Step
+    @Step("Switch from home page to iframe")
     public void switchToIframe() {
         homePagePO.switchToFrame();
     }
 
-    @Step
+    @Step("Switch from home page to iframe")
     public void switchToHomepage() {
         homePagePO.switchToHomePage();
     }
 
-    @Step
-    public void openDifferentsElementsPage() {
+    @Step("Open different elements page")
+    public void openDifferentElementsPage() {
         headerMenuOfHomePageAfterLoginPO.openDifferentElementsPage();
     }
 
-    @Step
-    public void selectWindWaterCheckboxes(){
+    @Step("Select wind, water checkboxes on different elements page")
+    public void selectWindWaterCheckboxes() {
         differentElementsPO.selectWindCheckbox();
         differentElementsPO.selectWaterCheckbox();
     }
 
-    @Step
-    public void selectSelenRadio(){
+    @Step("Select selen radio on different elements page")
+    public void selectSelenRadio() {
         differentElementsPO.selectRadioSelen();
     }
 
-    @Step
-    public void selectYellowInDropdown(){
+    @Step("Select yellow in dropdown on different elements page")
+    public void selectYellowInDropdown() {
         differentElementsPO.selectYellowInDropdown();
     }
 }

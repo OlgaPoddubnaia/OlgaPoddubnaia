@@ -24,7 +24,7 @@ public class Exercise_2JenkinsAllureTest extends AbstractBaseTest {
         assertionStep.checkIsUserLogged();
 
         //step#5 Open through the header menu Service -> Different Elements Page
-        actionStep.openDifferentsElementsPage();
+        actionStep.openDifferentElementsPage();
         assertionStep.checkDifferentElementsUrl();
 
         //step#6 Select checkboxes

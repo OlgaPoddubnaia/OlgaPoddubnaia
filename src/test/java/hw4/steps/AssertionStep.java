@@ -36,7 +36,8 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step()
+    @Step("Check are items on the header menu of the home page displayed" +
+            " and have required text")
     public void areItemsDisplayedAndHaveProperTexts() {
         softAssert = new SoftAssert();
         for (int i = 0; i < headerMenuOfHomePageAfterLoginPO.headerSectionSize(); i++) {
@@ -52,7 +53,7 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check are images on index page displayed")
     public void areImagesOnIndexPageDisplayed() {
         softAssert = new SoftAssert();
         for (int i = 0; i < imagesOnIndexPagePO.imagesOnIndexPageSize(); i++) {
@@ -62,7 +63,7 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check are texts under images on index page displayed and have proper texts")
     public void areTextsOnIndexPageDisplayedAndHaveProperTexts() {
         softAssert = new SoftAssert();
         for (int i = 0; i < textsUnderImagesOnIndexPagePO.textsUnderImagesSize(); i++) {
@@ -85,21 +86,22 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check is Iframe on home page exists")
     public void isIframeExists() {
         softAssert = new SoftAssert();
         softAssert.assertTrue(homePagePO.isIframeDisplayedOnHomePage());
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check is Iframe button on Iframe page exists")
     public void isFrameButtonOnIframe() {
         softAssert = new SoftAssert();
         softAssert.assertTrue(iframePagePO.isFrameButtonOnFramePageDisplayed());
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check are items on left section of home page displayed " +
+            "and have proper texts")
     public void areItemsInLeftSectionDisplayedAndHaveProperTexts() {
         softAssert = new SoftAssert();
         for (int i = 0; i < leftSectionOnHomePagePO.leftSectionSize(); i++) {
@@ -117,7 +119,7 @@ public class AssertionStep extends AbstractStep {
 
     }
 
-    @Step
+    @Step("Check is different elements page opened")
     public void checkDifferentElementsUrl() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
@@ -126,7 +128,7 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check are wind, water checkboxes on different elements page selected")
     public void checkAreWindWaterCheckboxesSelected() {
         softAssert = new SoftAssert();
         softAssert.assertTrue(differentElementsPO.isWindCheckboxSelected());
@@ -134,14 +136,14 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check is selen radio on different elements page selected")
     public void checkIsSelenSelected() {
         softAssert = new SoftAssert();
         softAssert.assertTrue(differentElementsPO.isSelenRadioSelected());
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check is yellow in dropdown on different elements page selected")
     public void checkIsYellowInDropdownSelected() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(differentElementsPO
@@ -149,7 +151,8 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check are log rows on different elements page " +
+            "corresponded to selected checkboxes")
     public void isLogRowsCorrespondedToWindWaterCheckboxes() {
         softAssert = new SoftAssert();
         softAssert.assertTrue(logRowsOnDifferentElementsPagePO
@@ -159,7 +162,8 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check are log rows on different elements page " +
+            "corresponded to selected radio")
     public void isLogRowCorrespondedToSelenRadio() {
         softAssert = new SoftAssert();
         softAssert.assertTrue(logRowsOnDifferentElementsPagePO
@@ -167,7 +171,8 @@ public class AssertionStep extends AbstractStep {
         softAssert.assertAll();
     }
 
-    @Step
+    @Step("Check are log rows on different elements page " +
+            "corresponded to selected in dropdown")
     public void isLogRowCorrespondedToYellowInDropdown() {
         softAssert = new SoftAssert();
         softAssert.assertTrue(logRowsOnDifferentElementsPagePO

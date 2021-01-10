@@ -5,7 +5,7 @@ import io.qameta.allure.Story;
 import org.testng.annotations.Test;
 
 @Feature("HW4 with step design pattern")
-@Story("Exercise 2 in step design pattern")
+@Story("Exercise 2 that should be failed in step design pattern")
 public class Exercise_2JenkinsAllureFailTest extends AbstractBaseTest {
 
     @Test
@@ -24,11 +24,11 @@ public class Exercise_2JenkinsAllureFailTest extends AbstractBaseTest {
         assertionStep.checkIsUserLogged();
 
         //step#5 Open through the header menu Service -> Different Elements Page
-        actionStep.openDifferentsElementsPage();
+        actionStep.openDifferentElementsPage();
         assertionStep.checkDifferentElementsUrl();
 
         //step#6 Select checkboxes
-      //удаляю специально actionStep.selectWindWaterCheckboxes()
+        //удаляю специально actionStep.selectWindWaterCheckboxes()
         //удаляю специально assertionStep.checkAreWindWaterCheckboxesSelected();
 
         //step#7 Select radio
@@ -47,6 +47,7 @@ public class Exercise_2JenkinsAllureFailTest extends AbstractBaseTest {
     •	for dropdown there is a log row and value is corresponded to
     the selected value.*/
 
+        //тут тест должен упасть
         //checkboxes names are corresponded to expected
         assertionStep.isLogRowsCorrespondedToWindWaterCheckboxes();
         //check radio buttons statuses
