@@ -19,6 +19,7 @@
         <calculator.version>1.0</calculator.version>
         <aspectj.version>1.8.10</aspectj.version>
         <webdrivermanager.version>4.2.2</webdrivermanager.version>
+        <cucumber.version>6.9.1</cucumber.version>
 
         <!-- plugin versions -->
         <allure-maven.version>2.10.0</allure-maven.version>
@@ -146,6 +147,17 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
