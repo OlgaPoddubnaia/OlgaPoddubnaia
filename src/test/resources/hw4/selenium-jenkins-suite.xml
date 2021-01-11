@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Exercise 1 and Exercise 2 (both are with fail and success tests) jenkins tests from homework №4">
+
+    <listeners>
+        <listener class-name="hw4.listeners.AllureListener"/>
+    </listeners>
+
+    <test name="Exercise 1">
+        <classes>
+            <class name="hw4.tests.Exercise_1JenkinsAllureTest"/>
+        </classes>
+    </test>
+
+    <test name="Exercise 2">
+        <classes>
+            <class name="hw4.tests.Exercise_2JenkinsAllureTest"/>
+        </classes>
+    </test>
+
+    <test name="Exercise 1 to fail">
+        <classes>
+            <class name="hw4.tests.Exercise_1JenkinsAllureFailTest"/>
+        </classes>
+    </test>
+
+    <test name="Exercise 2 to fail">
+        <classes>
+            <class name="hw4.tests.Exercise_2JenkinsAllureFailTest"/>
+        </classes>
+    </test>
+</suite>
