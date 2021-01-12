@@ -12,6 +12,7 @@ public abstract class AbstractBaseStepDef extends ConfProperties {
     protected HeaderMenuOfHomePageAfterLoginPO headerMenuOfHomePageAfterLoginPO;
     protected DifferentElementsPO differentElementsPO;
     protected LogRowsOnDifferentElementsPagePO logRowsOnDifferentElementsPagePO;
+    protected UserTablePO userTablePO;
 
     protected AbstractBaseStepDef() {
         WebDriver driver = WebDriverSingleton.getDriver();
@@ -20,5 +21,6 @@ public abstract class AbstractBaseStepDef extends ConfProperties {
         headerMenuOfHomePageAfterLoginPO = new HeaderMenuOfHomePageAfterLoginPO(driver);
         differentElementsPO = new DifferentElementsPO(driver);
         logRowsOnDifferentElementsPagePO = new LogRowsOnDifferentElementsPagePO(driver);
+        userTablePO=new UserTablePO(driver);
     }
 }

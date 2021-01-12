@@ -1,6 +1,5 @@
 package hw5.steps;
 
-import hw4.steps.ConfProperties;
 import io.cucumber.java.en.Then;
 import org.testng.asserts.SoftAssert;
 
@@ -137,7 +136,7 @@ public class ThenStepDef extends AbstractBaseStepDef {
     }
 
     @Then("1 log row has \"Vip: condition changed to true\" text in log section")
-    public void checkIfLogRowDisplayed(){
+    public void checkIfLogRowDisplayed() {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(userTablePO.isLogRowDisplayed());
         softAssert.assertAll();

@@ -16,9 +16,5 @@ public class GivenStepDef extends AbstractBaseStepDef {
                 hw4.steps.ConfProperties.getProperty("PASSWORD"));
     }
 
-    @Given("I select 'vip' checkbox for \"Sergey Ivan\"")
-    public void selectVipCheckboxForSergeyIvan() {
-        userTablePO.selectVipCheckboxForSergeyIvan();
-    }
 
 }
