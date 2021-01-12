@@ -5,12 +5,13 @@ import hw5.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
-public abstract class AbstractBaseStepDef extends ConfProperties{
+public abstract class AbstractBaseStepDef extends ConfProperties {
 
     protected HomePagePO homePagePO;
     protected LoginPagePO loginPage;
     protected HeaderMenuOfHomePageAfterLoginPO headerMenuOfHomePageAfterLoginPO;
     protected DifferentElementsPO differentElementsPO;
+    protected LogRowsOnDifferentElementsPagePO logRowsOnDifferentElementsPagePO;
 
     protected AbstractBaseStepDef() {
         WebDriver driver = WebDriverSingleton.getDriver();
@@ -18,5 +19,6 @@ public abstract class AbstractBaseStepDef extends ConfProperties{
         loginPage = new LoginPagePO(driver);
         headerMenuOfHomePageAfterLoginPO = new HeaderMenuOfHomePageAfterLoginPO(driver);
         differentElementsPO = new DifferentElementsPO(driver);
+        logRowsOnDifferentElementsPagePO = new LogRowsOnDifferentElementsPagePO(driver);
     }
 }
