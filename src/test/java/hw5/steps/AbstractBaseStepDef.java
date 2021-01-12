@@ -5,7 +5,7 @@ import hw5.pages.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
-public abstract class AbstractBaseStepDef {
+public abstract class AbstractBaseStepDef extends ConfProperties{
 
     protected HomePagePO homePagePO;
     protected LoginPagePO loginPage;
