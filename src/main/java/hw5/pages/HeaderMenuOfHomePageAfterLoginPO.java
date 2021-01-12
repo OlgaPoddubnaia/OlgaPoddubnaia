@@ -24,6 +24,14 @@ public class HeaderMenuOfHomePageAfterLoginPO extends AbstractPage {
         serviceDropdown.get(7).click();
     }
 
+    public void clickServiceInDropdown(){
+        headerSection.get(2).click();
+    }
+
+    public void clickUserTableInDropdown() {
+        serviceDropdown.get(5).click();
+    }
+
     public String getDifferentElementsPageUrl() {
         return driver.getCurrentUrl();
     }

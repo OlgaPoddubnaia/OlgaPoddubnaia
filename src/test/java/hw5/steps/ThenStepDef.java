@@ -2,7 +2,6 @@ package hw5.steps;
 
 import hw4.steps.ConfProperties;
 import io.cucumber.java.en.Then;
-import io.qameta.allure.Step;
 import org.testng.asserts.SoftAssert;
 
 public class ThenStepDef extends AbstractBaseStepDef {
@@ -53,7 +52,7 @@ public class ThenStepDef extends AbstractBaseStepDef {
         softAssert.assertTrue(differentElementsPO.isSelenRadioSelected());
         softAssert.assertAll();
     }
-    
+
     @Then("Yellow in dropdown is selected")
     public void checkIsYellowInDropdownSelected() {
         SoftAssert softAssert = new SoftAssert();
@@ -62,9 +61,9 @@ public class ThenStepDef extends AbstractBaseStepDef {
         softAssert.assertAll();
     }
 
-@Then("Log rows are displayed and corresponded to checkboxes status")
+    @Then("Log rows are displayed and corresponded to checkboxes status")
     public void isLogRowsCorrespondedToWindWaterCheckboxes() {
-    SoftAssert softAssert = new SoftAssert();
+        SoftAssert softAssert = new SoftAssert();
         softAssert.assertTrue(logRowsOnDifferentElementsPagePO
                 .isLogRowDisplayedAndCorrespondedToWaterCheckbox());
         softAssert.assertTrue(logRowsOnDifferentElementsPagePO
@@ -87,9 +86,61 @@ public class ThenStepDef extends AbstractBaseStepDef {
                 .isLorRowDisplayedAndCorrespondedToYellowDropdown());
         softAssert.assertAll();
     }
-    
-    
-    
-    
-    
+
+    @Then("\"User Table\" page should be opened")
+    public void checkUserTableUrl() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(userTablePO.getUserTablePageUrl(), ConfProperties
+                .getProperty("USER_TABLE_URL"));
+        softAssert.assertAll();
+    }
+
+
+    @Then("6 Number Type Dropdowns should be displayed on Users Table on User Table Page")
+    public void areSixNumberTypeDropdownsDisplayed() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(userTablePO.areThereSixNumberTypeDropdowns());
+        for (int i = 0; i < userTablePO.numberTypeDropdownsSize(); i++) {
+            softAssert.assertTrue(userTablePO.areNumberTypeDropdownsDisplayed(i));
+        }
+        softAssert.assertAll();
+    }
+
+    @Then("6 Usernames should be displayed on Users Table on User Table Page")
+    public void areSixUsernamesDisplayed() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(userTablePO.areThereSixUsernames());
+        for (int i = 0; i < userTablePO.usernamesSize(); i++) {
+            softAssert.assertTrue(userTablePO.areUsernamesDisplayed(i));
+        }
+        softAssert.assertAll();
+    }
+
+    @Then("6 Description texts under images should be displayed on Users Table on User Table Page")
+    public void areSixDescriptionsDisplayed() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(userTablePO.areThereSixDescriptions());
+        for (int i = 0; i < userTablePO.descriptionsSize(); i++) {
+            softAssert.assertTrue(userTablePO.areDescriptionsDisplayed(i));
+        }
+        softAssert.assertAll();
+    }
+
+    @Then("6 checkboxes should be displayed on Users Table on User Table Page")
+    public void areSixCheckboxesDisplayed() {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(userTablePO.areThereSixCheckboxes());
+        for (int i = 0; i < userTablePO.checkboxesSize(); i++) {
+            softAssert.assertTrue(userTablePO.areCheckboxesDisplayed(i));
+        }
+        softAssert.assertAll();
+    }
+
+    @Then("1 log row has \"Vip: condition changed to true\" text in log section")
+    public void checkIfLogRowDisplayed(){
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(userTablePO.isLogRowDisplayed());
+        softAssert.assertAll();
+    }
+
 }

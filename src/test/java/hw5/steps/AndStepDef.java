@@ -5,11 +5,7 @@ import io.cucumber.java.en.And;
 
 public class AndStepDef extends AbstractBaseStepDef {
 
-    @And("I login as user \"Roman Iovlev\"")
-    public void userLogin() {
-        loginPage.logOnSite(hw4.steps.ConfProperties.getProperty("USER_NAME"),
-                ConfProperties.getProperty("PASSWORD"));
-    }
+
 
     @And("I open Different Elements page through the header menu->Service")
     public void openDifferentElementsPage() {
@@ -32,7 +28,10 @@ public class AndStepDef extends AbstractBaseStepDef {
         differentElementsPO.selectYellowInDropdown();
     }
 
-
+    @And("I click on \"User Table\" button in Service dropdown")
+    public void clickUserTableInDropdown() {
+        headerMenuOfHomePageAfterLoginPO.clickUserTableInDropdown();
+    }
 
 
 }
