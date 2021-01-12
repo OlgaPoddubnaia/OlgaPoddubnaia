@@ -4,7 +4,7 @@ Feature: Exercise 1 Homework5
     Given I open JDI GitHub site
     Then The site has proper Url
     Then The site has proper title
-    And I login on site
+    And I login as user "Roman Iovlev"
     Then Logged user name equals "Roman Iovlev"
     And I open Different Elements page through the header menu->Service
     Then The page has proper Url

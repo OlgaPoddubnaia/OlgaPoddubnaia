@@ -5,7 +5,7 @@ import io.cucumber.java.en.And;
 
 public class AndStepDef extends AbstractBaseStepDef {
 
-    @And("I login on site")
+    @And("I login as user \"Roman Iovlev\"")
     public void userLogin() {
         loginPage.logOnSite(hw4.steps.ConfProperties.getProperty("USER_NAME"),
                 ConfProperties.getProperty("PASSWORD"));
