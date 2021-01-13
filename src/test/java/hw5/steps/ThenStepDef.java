@@ -1,7 +1,11 @@
 package hw5.steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import org.testng.asserts.SoftAssert;
+
+import java.util.List;
+import java.util.Map;
 
 public class ThenStepDef extends AbstractBaseStepDef {
 
@@ -142,4 +146,27 @@ public class ThenStepDef extends AbstractBaseStepDef {
         softAssert.assertAll();
     }
 
+    @Then("droplist should contain values in column Type for user Roman")
+    public void dropListShouldContainValues(List<String> list) {
+        SoftAssert softAssert = new SoftAssert();
+        for (int i = 0; i < 3; i++) {
+            softAssert.assertEquals(userTablePO.getTextOfDroplistValues(i), list.get(i + 1));
+        }
+        softAssert.assertAll();
+    }
+
+    @Then("User table should contain following values:")
+    public void userTableShouldContainValues(DataTable dataTable) {
+        SoftAssert softAssert = new SoftAssert();
+        List<Map<String, String>> table = dataTable.asMaps(String.class, String.class);
+        for (int i = 0; i < table.size(); i++) {
+            softAssert.assertEquals(userTablePO.getTextOfUsername(i), table.get(i).get("User"));
+            softAssert.assertEquals(userTablePO.getTextOfDescriptions(i), table.get(i).get("Description"));
+            softAssert.assertEquals(userTablePO.getTextOfNumbers(i), table.get(i).get("Number"));
+           // softAssert.assertTrue(userTablePO.textOfNumbersContains(table.get(i).get("Number"), i));
+           // softAssert.assertTrue(userTablePO.textOfDescriptionsContains(table.get(i).get("Description"), i));
+            //softAssert.assertTrue(userTablePO.textOfUsernamesContains(table.get(i).get("User"), i));
+        }
+        softAssert.assertAll();
+    }
 }

@@ -1,6 +1,5 @@
 package hw5.steps;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
 public class GivenStepDef extends AbstractBaseStepDef {
@@ -14,6 +13,11 @@ public class GivenStepDef extends AbstractBaseStepDef {
     public void userLogin() {
         loginPage.logOnSite(hw4.steps.ConfProperties.getProperty("USER_NAME"),
                 hw4.steps.ConfProperties.getProperty("PASSWORD"));
+    }
+
+    @Given("Dropdown Values")
+    public String[] getDropdownText(String[] values) {
+     return  values;
     }
 
 

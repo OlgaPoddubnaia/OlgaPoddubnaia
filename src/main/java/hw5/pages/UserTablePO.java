@@ -21,10 +21,14 @@ public class UserTablePO extends AbstractPage {
     @FindBy(how = How.XPATH, using = "//*[@id='user-table']/descendant-or-self ::input")
     private List<WebElement> checkboxes;
 
-
-    @FindBy(how = How.XPATH, using = "//*[@class= 'panel-body-list logs']/" +
-            "descendant-or-self::*[contains(text(),'Vip: condition changed to true')]")
+    @FindBy(how = How.XPATH, using = "//li[contains(text(),'Vip: condition changed to true')]")
     private WebElement logRow;
+
+    @FindBy(how = How.XPATH, using = "//td[not(select/option or img or a)]")
+    private List<WebElement> numbers;
+
+    @FindBy(how = How.CSS, using = "select > option")
+    private List<WebElement> droplist;
 
     public UserTablePO(WebDriver driver) {
         super(driver);
@@ -89,4 +93,33 @@ public class UserTablePO extends AbstractPage {
     public boolean isLogRowDisplayed() {
         return logRow.isDisplayed();
     }
+
+    public String getTextOfDroplistValues(int i) {
+        return droplist.get(i).getText();
+    }
+
+   public String getTextOfUsername(int i) {
+        return usernames.get(i).getText();
+    }
+
+    public String getTextOfDescriptions(int i) {
+        return descriptions.get(i).getText().replaceAll("\n", "");
+    }
+
+    public String getTextOfNumbers(int i) {
+        return numbers.get(i).getText();
+    }
+
+
+/*   public boolean textOfNumbersContains(String properText, int i) {
+        return numbers.get(i).getText().contains(properText);
+    }*/
+/*
+    public boolean textOfDescriptionsContains(String properText, int i) {
+        return descriptions.get(i).getText().replaceAll("\n", "").contains(properText);
+    }*/
+
+ /*   public boolean textOfUsernamesContains(String properText, int i) {
+        return usernames.get(i).getText().contains(properText);
+    }*/
 }
