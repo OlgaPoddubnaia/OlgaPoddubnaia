@@ -98,28 +98,15 @@ public class UserTablePO extends AbstractPage {
         return droplist.get(i).getText();
     }
 
-   public String getTextOfUsername(int i) {
+    public String getTextOfUsername(int i) {
         return usernames.get(i).getText();
     }
 
     public String getTextOfDescriptions(int i) {
-        return descriptions.get(i).getText().replaceAll("\n", "");
+        return descriptions.get(i).getText().replace("\n", "");
     }
 
     public String getTextOfNumbers(int i) {
         return numbers.get(i).getText();
     }
-
-
-/*   public boolean textOfNumbersContains(String properText, int i) {
-        return numbers.get(i).getText().contains(properText);
-    }*/
-/*
-    public boolean textOfDescriptionsContains(String properText, int i) {
-        return descriptions.get(i).getText().replaceAll("\n", "").contains(properText);
-    }*/
-
- /*   public boolean textOfUsernamesContains(String properText, int i) {
-        return usernames.get(i).getText().contains(properText);
-    }*/
 }

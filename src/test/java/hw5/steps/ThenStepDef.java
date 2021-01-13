@@ -163,9 +163,6 @@ public class ThenStepDef extends AbstractBaseStepDef {
             softAssert.assertEquals(userTablePO.getTextOfUsername(i), table.get(i).get("User"));
             softAssert.assertEquals(userTablePO.getTextOfDescriptions(i), table.get(i).get("Description"));
             softAssert.assertEquals(userTablePO.getTextOfNumbers(i), table.get(i).get("Number"));
-           // softAssert.assertTrue(userTablePO.textOfNumbersContains(table.get(i).get("Number"), i));
-           // softAssert.assertTrue(userTablePO.textOfDescriptionsContains(table.get(i).get("Description"), i));
-            //softAssert.assertTrue(userTablePO.textOfUsernamesContains(table.get(i).get("User"), i));
         }
         softAssert.assertAll();
     }
