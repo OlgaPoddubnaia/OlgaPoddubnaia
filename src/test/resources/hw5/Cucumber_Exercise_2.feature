@@ -15,9 +15,9 @@ Feature: Exercise 2 Homework5
       | 1      | Roman            | Wolverine                        |
       | 2      | Sergey Ivan      | Spider Man                       |
       | 3      | Vladzimir        | Punisher                         |
-      | 4      | Helen Bennett    | Captain America some description |
-      | 5      | Yoshi Tannamuri  | Cyclope some description         |
-      | 6      | Giovanni Rovelli | Hulksome description             |
+      | 4      | Helen Bennett    | Captain America\nsome description |
+      | 5      | Yoshi Tannamuri  | Cyclope\nsome description         |
+      | 6      | Giovanni Rovelli | Hulk\nsome description             |
     And droplist should contain values in column Type for user Roman
       | Dropdown Values |
       | Admin           |

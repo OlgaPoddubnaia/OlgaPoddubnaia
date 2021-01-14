@@ -103,7 +103,7 @@ public class UserTablePO extends AbstractPage {
     }
 
     public String getTextOfDescriptions(int i) {
-        return descriptions.get(i).getText().replaceAll("\n", "");
+        return descriptions.get(i).getText();
     }
 
     public String getTextOfNumbers(int i) {
