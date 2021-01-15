@@ -141,6 +141,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.epam.jdi/jdi-light-html -->
+        <dependency>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light-html</artifactId>
+            <version>1.3.2</version>
+        </dependency>
     </dependencies>
 
     <build>
