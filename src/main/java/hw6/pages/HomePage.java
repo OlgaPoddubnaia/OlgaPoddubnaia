@@ -2,22 +2,31 @@ package hw6.pages;
 
 import com.epam.jdi.light.elements.common.Label;
 import com.epam.jdi.light.elements.composite.WebPage;
+import com.epam.jdi.light.ui.html.elements.common.Button;
 import hw6.entities.User;
 import hw6.forms.LoginFrom;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends WebPage {
 
     public LoginFrom loginForm;
 
-    @FindBy(id="user-name")
+    @FindBy(id = "user-name")
     public Label userName;
+
+    @FindBy(xpath = "//a[@class='dropdown-toggle' and @href='#']")
+    private Button searchButton;
+
+    @FindBy(id = "login-button")
+    public Button loginButton;
 
     public String getUserName() {
         return userName.getText();
     }
 
     public void login(User user) {
+        searchButton.click();
         loginForm.login(user);
     }
 }
