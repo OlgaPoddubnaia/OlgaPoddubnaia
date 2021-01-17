@@ -16,10 +16,10 @@ public class HomePage extends WebPage {
     public Label userName;
 
     @FindBy(xpath = "//a[@class='dropdown-toggle' and @href='#']")
-    private Button searchButton;
+    public Button searchButton;
 
-    @FindBy(id = "login-button")
-    public Button loginButton;
+    @FindBy(xpath = "//a[contains(text(),'Metals & Colors')]")
+    public Button metalsAndColorsOnHeaderMenu;
 
     public String getUserName() {
         return userName.getText();
@@ -29,4 +29,14 @@ public class HomePage extends WebPage {
         searchButton.click();
         loginForm.login(user);
     }
+
+    public void checkUserLoggedIn(User user) {
+        userName.is().text(user.getFullName());
+    }
+
+    public void openMetalsAndColorsPage(){
+        metalsAndColorsOnHeaderMenu.click();
+    }
+
+
 }

@@ -1,20 +1,29 @@
 package hw6;
 
-import hw6.entities.User;
-import hw6.pages.HomePage;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static hw6.JdiSite.*;
+import static hw6.entities.User.ROMAN;
 
 public class MetalsAndColorsTest extends AbstractBaseTest {
 
-    @Test
-    public void metalsAndColorsFormTest(){
-//
-        JdiSite.open();
-        //
-        JdiSite.login(User.ROMAN);
-        String actualFullName =JdiSite.getUserName();
-        Assert.assertEquals(actualFullName,User.ROMAN.getFullName());
+    @Test(priority = 1)
+    public void loginTest() {
 
+        open();
+
+        login(ROMAN);
+
+        homePage.checkUserLoggedIn(ROMAN);
+
+        //String actualFullName = getUserName();
+        //Assert.assertEquals(actualFullName, User.ROMAN.getFullName());
+        // homePage.userName.is().text(ROMAN.getFullName());
+    }
+
+    @Test(priority = 2)
+    public void isMetalsAndColorsPageOpenedTest() {
+        openMetalsAndColorsPage();
+        checkMetalsAndColorsPageUrl();
     }
 }
