@@ -1,5 +1,6 @@
 package hw6;
 
+import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import hw6.entities.User;
@@ -31,8 +32,7 @@ public class JdiSite {
     }
 
     public static void checkMetalsAndColorsPageUrl() {
-        metalsAndColorsPage.checkUrl("https://jdi-testing.github.io/jdi-light/metals-colors.html");
-
+      metalsAndColorsPage.checkMetalsAndColorsUrl();
     }
 
 }
