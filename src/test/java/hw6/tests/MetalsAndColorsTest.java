@@ -1,5 +1,6 @@
-package hw6;
+package hw6.tests;
 
+import hw6.data.ReadMetalsAndColorsDataSetJson;
 import org.testng.annotations.Test;
 
 import static hw6.JdiSite.*;
@@ -9,16 +10,9 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
 
     @Test(priority = 1)
     public void loginTest() {
-
         open();
-
         login(ROMAN);
-
         homePage.checkUserLoggedIn(ROMAN);
-
-        //String actualFullName = getUserName();
-        //Assert.assertEquals(actualFullName, User.ROMAN.getFullName());
-        // homePage.userName.is().text(ROMAN.getFullName());
     }
 
     @Test(priority = 2)
@@ -26,4 +20,12 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
         openMetalsAndColorsPage();
         checkMetalsAndColorsPageUrl();
     }
+
+    @Test(priority = 3,
+            dataProvider = "",
+            dataProviderClass = ReadMetalsAndColorsDataSetJson.class)
+    public void isMetalsAndColorsFormFilled() {
+
+    }
+
 }
