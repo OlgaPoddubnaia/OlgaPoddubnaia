@@ -4,9 +4,9 @@ import io.cucumber.java.en.When;
 
 public class WhenStepDef extends AbstractBaseStepDef {
 
-    @When("I click on \"Service\" button in Header")
-    public void clickServiceDropdown() {
-        headerMenuOfHomePageAfterLoginPO.clickServiceInDropdown();
+    @When("I click on {string} button in Header")
+    public void clickServiceDropdown(String serviceString) {
+        headerMenuOfHomePageAfterLoginPO.clickServiceInDropdown(serviceString);
     }
 
     @When("I open Different Elements page through the header menu->Service")
@@ -36,9 +36,9 @@ public class WhenStepDef extends AbstractBaseStepDef {
         userTablePO.selectVipCheckboxForSergeyIvan();
     }
 
-    @When("I click on \"User Table\" button in Service dropdown")
-    public void clickUserTableInDropdown() {
-        headerMenuOfHomePageAfterLoginPO.clickUserTableInDropdown();
+    @When("I click on {string} button in Service dropdown")
+    public void clickUserTableInDropdown(String categoryInDropdown) {
+        headerMenuOfHomePageAfterLoginPO.clickUserTableInDropdown(categoryInDropdown);
     }
 
 }

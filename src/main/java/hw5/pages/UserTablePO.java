@@ -21,8 +21,8 @@ public class UserTablePO extends AbstractPage {
     @FindBy(how = How.XPATH, using = "//*[@id='user-table']/descendant-or-self ::input")
     private List<WebElement> checkboxes;
 
-    @FindBy(how = How.XPATH, using = "//li[contains(text(),'Vip: condition changed to true')]")
-    private WebElement logRow;
+    @FindBy(how = How.XPATH, using = "//ul[@class='panel-body-list logs']/li[contains(text(),'')]")
+    private List<WebElement> logRows;
 
     @FindBy(how = How.XPATH, using = "//td[not(select/option or img or a)]")
     private List<WebElement> numbers;
@@ -46,8 +46,8 @@ public class UserTablePO extends AbstractPage {
         return numberTypeDropdowns.size();
     }
 
-    public boolean areThereSixNumberTypeDropdowns() {
-        return numberTypeDropdownsSize() == 6;
+    public boolean areThereSixNumberTypeDropdowns(int number) {
+        return numberTypeDropdownsSize() == number;
     }
 
     public boolean areUsernamesDisplayed(int i) {
@@ -58,8 +58,8 @@ public class UserTablePO extends AbstractPage {
         return usernames.size();
     }
 
-    public boolean areThereSixUsernames() {
-        return usernamesSize() == 6;
+    public boolean areThereSixUsernames(int numberOfUsernames) {
+        return usernamesSize() == numberOfUsernames;
     }
 
     public boolean areDescriptionsDisplayed(int i) {
@@ -70,8 +70,8 @@ public class UserTablePO extends AbstractPage {
         return descriptions.size();
     }
 
-    public boolean areThereSixDescriptions() {
-        return descriptionsSize() == 6;
+    public boolean areThereSixDescriptions(int numberOfDescriptions) {
+        return descriptionsSize() == numberOfDescriptions;
     }
 
     public boolean areCheckboxesDisplayed(int i) {
@@ -82,16 +82,29 @@ public class UserTablePO extends AbstractPage {
         return checkboxes.size();
     }
 
-    public boolean areThereSixCheckboxes() {
-        return checkboxesSize() == 6;
+    public boolean areThereSixCheckboxes(int numberOfCheckboxes) {
+        return checkboxesSize() == numberOfCheckboxes;
     }
 
     public void selectVipCheckboxForSergeyIvan() {
         checkboxes.get(1).click();
     }
 
-    public boolean isLogRowDisplayed() {
-        return logRow.isDisplayed();
+    public int logRowsSize() {
+        return logRows.size();
+    }
+
+    public boolean isThereOneLogRowOnPanel(int numberOfLogRows) {
+        return logRowsSize() == numberOfLogRows;
+    }
+
+    public boolean isLogRowsContainsText(String text) {
+        for (int i = 0; i < logRows.size(); i++) {
+            if (logRows.get(i).getText().contains(text)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public String getTextOfDroplistValues(int i) {
