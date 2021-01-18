@@ -33,11 +33,11 @@ public class ThenStepDef extends AbstractBaseStepDef {
                 .getDifferentElementsPageUrl(), properUrl);
     }
 
-    @Then("Wind, water checkboxes are selected")
-    public void checkAreWindWaterCheckboxesSelected() {
+    @Then("{string}, {string} checkboxes are selected")
+    public void checkAreWindWaterCheckboxesSelected(String wind,String water) {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(differentElementsPO.isWindCheckboxSelected());
-        softAssert.assertTrue(differentElementsPO.isWaterCheckboxSelected());
+        softAssert.assertTrue(differentElementsPO.isCheckboxSelected(wind));
+        softAssert.assertTrue(differentElementsPO.isCheckboxSelected(water));
         softAssert.assertAll();
     }
 

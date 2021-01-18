@@ -50,5 +50,4 @@ public class WebDriverFactory {
         WebDriverManager.operadriver().setup();
         return new OperaDriver();
     }
-
 }

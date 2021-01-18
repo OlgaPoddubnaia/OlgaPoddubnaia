@@ -14,6 +14,9 @@ public class DifferentElementsPO extends AbstractPage {
     @FindBy(how = How.CSS, using = "label.label-checkbox>input")
     private List<WebElement> checkboxes;
 
+    @FindBy(how = How.CSS, using = "label.label-checkbox")
+    private List<WebElement> checkboxesAsClass;
+
     @FindBy(how = How.CSS, using = "label.label-radio>input")
     private List<WebElement> radios;
 
@@ -49,23 +52,19 @@ public class DifferentElementsPO extends AbstractPage {
 
     public void selectCheckbox(String text) {
         for (int i = 0; i < checkboxes.size(); i++) {
-
-            if ( checkboxes.get(i).getAttribute("txt").contains(text)) {
+            if (checkboxesAsClass.get(i).getText().contains(text)) {
                 checkboxes.get(i).click();
             }
-        }/*  for (int i = 0; i < checkboxes.size(); i++) {
-            if (checkboxes.get(i).getText().contains(text)) {
-                checkboxes.get(i).click();
-            }
-        }*/
+        }
     }
 
 
-    public boolean isWindCheckboxSelected() {
-        return checkboxes.get(0).isSelected();
-    }
-
-    public boolean isWaterCheckboxSelected() {
-        return checkboxes.get(2).isSelected();
+    public boolean isCheckboxSelected(String text) {
+        for (int i = 0; i < checkboxes.size(); i++) {
+            if (checkboxesAsClass.get(i).getText().contains(text)) {
+                return checkboxes.get(i).isSelected();
+            }
+        }
+        return false;
     }
 }
