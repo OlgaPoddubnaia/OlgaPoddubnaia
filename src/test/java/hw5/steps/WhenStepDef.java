@@ -15,10 +15,10 @@ public class WhenStepDef extends AbstractBaseStepDef {
     }
 
 
-    @When("I select water, wind checkboxes")
-    public void selectWindWaterCheckboxes() {
-        differentElementsPO.selectWindCheckbox();
-        differentElementsPO.selectWaterCheckbox();
+    @When("I select {string}, {string} checkboxes")
+    public void selectWindWaterCheckboxes(String waterString, String windString) {
+        differentElementsPO.selectCheckbox(waterString);
+        differentElementsPO.selectCheckbox(windString);
     }
 
     @When("I select selen radio")

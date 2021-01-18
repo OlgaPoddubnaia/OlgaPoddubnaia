@@ -47,13 +47,19 @@ public class DifferentElementsPO extends AbstractPage {
         return radios.get(3).isSelected();
     }
 
-    public void selectWindCheckbox() {
-        checkboxes.get(0).click();
+    public void selectCheckbox(String text) {
+        for (int i = 0; i < checkboxes.size(); i++) {
+
+            if ( checkboxes.get(i).getAttribute("txt").contains(text)) {
+                checkboxes.get(i).click();
+            }
+        }/*  for (int i = 0; i < checkboxes.size(); i++) {
+            if (checkboxes.get(i).getText().contains(text)) {
+                checkboxes.get(i).click();
+            }
+        }*/
     }
 
-    public void selectWaterCheckbox() {
-        checkboxes.get(2).click();
-    }
 
     public boolean isWindCheckboxSelected() {
         return checkboxes.get(0).isSelected();

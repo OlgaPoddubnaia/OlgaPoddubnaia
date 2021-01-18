@@ -10,16 +10,15 @@ import java.util.Map;
 
 public class ThenStepDef extends AbstractBaseStepDef {
 
-    @Then("The site has proper Url")
-    public void checkUrl() {
-        Assert.assertEquals(homePagePO.shouldHaveUrl(),
-                ConfProperties.getProperty("URL"));
+    @Then("The site has proper Url {string}")
+    public void checkUrl(String properUrl) {
+        Assert.assertEquals(homePagePO.shouldHaveUrl(), properUrl);
 
     }
 
-    @Then("The site has proper title")
-    public void checkBrowserTitle() {
-        Assert.assertEquals(homePagePO.shouldHaveTitle(), "Home Page");
+    @Then("The site has title {string}")
+    public void checkBrowserTitle(String title) {
+        Assert.assertEquals(homePagePO.shouldHaveTitle(), title);
     }
 
     @Then("Logged user name equals \"Roman Iovlev\"")
@@ -28,11 +27,10 @@ public class ThenStepDef extends AbstractBaseStepDef {
                 ConfProperties.getProperty("LOGGED_USER_NAME"));
     }
 
-    @Then("The page has proper Url")
-    public void checkDifferentElementsUrl() {
+    @Then("The page has proper Url {string}")
+    public void checkDifferentElementsUrl(String properUrl) {
         Assert.assertEquals(headerMenuOfHomePageAfterLoginPO
-                .getDifferentElementsPageUrl(), hw5.steps.ConfProperties
-                .getProperty("DIFFERENT_ELEMENTS_URL"));
+                .getDifferentElementsPageUrl(), properUrl);
     }
 
     @Then("Wind, water checkboxes are selected")
