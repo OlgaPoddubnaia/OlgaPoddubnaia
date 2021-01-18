@@ -1,6 +1,6 @@
 package hw6.tests;
 
-import hw6.data.ReadMetalsAndColorsDataSetJson;
+import hw6.dataProvider.DataProviderForJson;
 import org.testng.annotations.Test;
 
 import static hw6.JdiSite.*;
@@ -22,8 +22,8 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
     }
 
     @Test(priority = 3,
-            dataProvider = "",
-            dataProviderClass = ReadMetalsAndColorsDataSetJson.class)
+            dataProvider = "dataFromJson",
+            dataProviderClass = DataProviderForJson.class)
     public void isMetalsAndColorsFormFilled() {
 
     }
