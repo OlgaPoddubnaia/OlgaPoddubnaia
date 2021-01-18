@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
+
 public class ReadMetalsAndColorsDataSetJson {
     InputStream inputStream = getClass().getClassLoader()
             .getResourceAsStream("src/test/java/hw6/data/ReadMetalsAndColorsDataSetJson.java");
