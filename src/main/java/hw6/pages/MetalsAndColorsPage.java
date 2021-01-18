@@ -1,5 +1,6 @@
 package hw6.pages;
 
+import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.elements.complex.Checklist;
 import com.epam.jdi.light.elements.complex.dropdown.Dropdown;
 import com.epam.jdi.light.elements.composite.WebPage;
@@ -10,6 +11,7 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.complex.DataListOptions;
 import com.epam.jdi.light.ui.html.elements.complex.MultiSelector;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
+
 
 @Url("metals-colors.html")
 @Title("Metal and Colors")
@@ -36,8 +38,19 @@ public class MetalsAndColorsPage extends WebPage {
     public static Checklist elements;
     public static Checklist elementsNoLocator;
 
+    @UI("[id=calculate-button]")
+    public Button calculateButton;
+
+    @UI("[id=submit-button]")
+    public Button submitButton;
+
+
     public void checkMetalsAndColorsUrl() {
         MetalsAndColorsPage.checkUrl("https://jdi-testing.github.io/jdi-light/metals-colors.html");
+    }
+
+    public void selcetSummary(int[] intSummary){
+        summary.select(intSummary);
     }
 
 }

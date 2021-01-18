@@ -32,4 +32,5 @@ public class JdiSite extends PageFactory {
         metalsAndColorsPage.checkMetalsAndColorsUrl();
     }
 
+
 }
