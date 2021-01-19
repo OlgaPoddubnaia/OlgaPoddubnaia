@@ -28,10 +28,12 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
                                             String color, String metals,
                                             String[] vegetables) {
         metalsAndColorsPage.selectSummary(summary);
+        calculateSummary();
         metalsAndColorsPage.selectColors(color);
         metalsAndColorsPage.selectMetals(metals);
-        metalsAndColorsPage.selectVegetables(vegetables);
+        // metalsAndColorsPage.selectVegetables(vegetables);
         metalsAndColorsPage.selectElements(elements);
+        submitMetalsAndColorsForm();
 
     }
 

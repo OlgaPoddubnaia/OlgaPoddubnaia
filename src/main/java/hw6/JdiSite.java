@@ -11,9 +11,11 @@ import hw6.pages.MetalsAndColorsPage;
 @JSite("https://jdi-testing.github.io/jdi-light/")
 public class JdiSite extends PageFactory {
 
-    @Url("index.html") @Title("Home Page")
+    @Url("index.html")
+    @Title("Home Page")
     public static HomePage homePage;
-    @Url("metals-colors.html") @Title("Metal and Colors")
+    @Url("metals-colors.html")
+    @Title("Metal and Colors")
     public static MetalsAndColorsPage metalsAndColorsPage;
 
     public static void open() {
@@ -36,5 +38,11 @@ public class JdiSite extends PageFactory {
         metalsAndColorsPage.checkMetalsAndColorsUrl();
     }
 
+    public static void submitMetalsAndColorsForm() {
+        metalsAndColorsPage.clickSubmitButton();
+    }
 
+    public static void calculateSummary(){
+        metalsAndColorsPage.clickCalculateButton();
+    }
 }

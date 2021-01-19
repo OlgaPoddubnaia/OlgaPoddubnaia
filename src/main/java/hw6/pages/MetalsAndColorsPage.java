@@ -3,6 +3,7 @@ package hw6.pages;
 import com.epam.jdi.light.elements.complex.Checklist;
 import com.epam.jdi.light.elements.complex.dropdown.Dropdown;
 import com.epam.jdi.light.elements.composite.WebPage;
+import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.JDropdown;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Button;
@@ -11,10 +12,10 @@ import com.epam.jdi.light.ui.html.elements.complex.MultiSelector;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
 
 
-
 public class MetalsAndColorsPage extends WebPage {
 
-    @UI("[class=radio]")
+
+    @FindBy(css = "p.radio > input")
     public static RadioButtons summary;
 
     @JDropdown(root = "div[ui=dropdown]",
@@ -31,7 +32,7 @@ public class MetalsAndColorsPage extends WebPage {
     public static MultiSelector vegetables;
 
 
-    @UI("[id=elements-checklist]")
+    @FindBy(css = "p.checkbox > input")
     public static Checklist elements;
     public static Checklist elementsNoLocator;
 
@@ -47,12 +48,15 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
     public void selectSummary(int[] intSummary) {
-        summary.select(intSummary);
-
+        for (int i = 0; i < intSummary.length; i++) {
+            summary.select(intSummary[i]);
+        }
     }
 
     public void selectElements(String[] intElements) {
-        elements.select(intElements);
+        for (int i = 0; i < intElements.length; i++) {
+            elements.select(intElements[i]);
+        }
     }
 
     public void selectColors(String stringColor) {
@@ -67,6 +71,14 @@ public class MetalsAndColorsPage extends WebPage {
 
     public void selectVegetables(String[] intVegetables) {
         vegetables.select(intVegetables);
+    }
+
+    public void clickCalculateButton() {
+        calculateButton.click();
+    }
+
+    public void clickSubmitButton() {
+        submitButton.click();
     }
 
 
