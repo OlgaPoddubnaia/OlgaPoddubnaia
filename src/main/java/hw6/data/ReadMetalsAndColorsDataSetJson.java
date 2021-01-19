@@ -3,6 +3,7 @@ package hw6.data;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.internal.bind.util.ISO8601Utils;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,9 +11,10 @@ import java.io.Reader;
 
 
 public class ReadMetalsAndColorsDataSetJson {
-    InputStream inputStream = getClass().getClassLoader()
-            .getResourceAsStream("src/test/java/hw6/data/ReadMetalsAndColorsDataSetJson.java");
     JsonParser jsonParser = new JsonParser();
+
+    InputStream inputStream = getClass().getClassLoader()
+            .getResourceAsStream("hw6/JDI_metalsColorsDataSet.json");
     Reader reader = new InputStreamReader(inputStream);
 
     JsonElement jsonElement = jsonParser.parse(reader);
