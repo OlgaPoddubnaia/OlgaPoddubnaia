@@ -24,15 +24,17 @@ public class MetalsAndColorsPage extends WebPage {
             expand = ".caret")
     public static Dropdown colors;
 
-    @UI("#metals")
-    public static DataListOptions metals;
+    @JDropdown(root = "div[ui=combobox]",
+            value = ".filter-option",
+            list = "li",
+            expand = ".caret")
+    public static Dropdown metals;
 
 
-   /* @UI("#vegetables")*/
-   @JDropdown(root = "div[ui=droplist]",
-           value = ".filter-option",
-           list = "li",
-           expand = ".caret")
+    @JDropdown(root = "div[ui=droplist]",
+            value = ".filter-option",
+            list = "li",
+            expand = ".caret")
     public static Dropdown vegetables;
 
 
@@ -54,15 +56,17 @@ public class MetalsAndColorsPage extends WebPage {
     public void selectSummary(int[] intSummary) {
         for (int i = 0; i < intSummary.length; i++) {
             summary.select(intSummary[i]);
-           // summary.is().selected(intSummary[i]);
+            // summary.is().selected(intSummary[i]);
+
         }
     }
 
     public void selectElements(String[] intElements) {
         for (int i = 0; i < intElements.length; i++) {
             elements.select(intElements[i]);
-           //elements.check(intElements[i]);
         }
+        elements.assertThat().values(intElements);
+
     }
 
     public void selectColors(String stringColor) {
@@ -79,6 +83,7 @@ public class MetalsAndColorsPage extends WebPage {
         for (int i = 0; i < intVegetables.length; i++) {
             vegetables.select(intVegetables[i]);
         }
+        vegetables.assertThat().values(intVegetables);
     }
 
     public void clickCalculateButton() {
