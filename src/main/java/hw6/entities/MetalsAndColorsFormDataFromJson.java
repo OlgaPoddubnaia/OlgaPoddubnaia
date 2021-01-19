@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -41,5 +44,35 @@ public class MetalsAndColorsFormDataFromJson {
 
     public MetalsAndColorsFormDataFromJson getFromJsonObject_5() {
         return gson.fromJson(readMetalsAndColors.getJsonObject_5(), MetalsAndColorsFormDataFromJson.class);
+    }
+
+    @Override
+    public String toString() {
+        return "MetalsAndColorsFormDataFromJson{" +
+                "summary=" + Arrays.toString(summary) +
+                ", elements=" + Arrays.toString(elements) +
+                ", color='" + color + '\'' +
+                ", metals='" + metals + '\'' +
+                ", vegetables=" + Arrays.toString(vegetables) +
+                ", readMetalsAndColors=" + readMetalsAndColors +
+                ", gson=" + gson +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MetalsAndColorsFormDataFromJson that = (MetalsAndColorsFormDataFromJson) o;
+        return Arrays.equals(summary, that.summary) && Arrays.equals(elements, that.elements) && Objects.equals(color, that.color) && Objects.equals(metals, that.metals) && Arrays.equals(vegetables, that.vegetables) && Objects.equals(readMetalsAndColors, that.readMetalsAndColors) && Objects.equals(gson, that.gson);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(color, metals, readMetalsAndColors, gson);
+        result = 31 * result + Arrays.hashCode(summary);
+        result = 31 * result + Arrays.hashCode(elements);
+        result = 31 * result + Arrays.hashCode(vegetables);
+        return result;
     }
 }

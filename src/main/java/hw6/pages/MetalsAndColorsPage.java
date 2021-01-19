@@ -10,6 +10,7 @@ import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.complex.DataListOptions;
 import com.epam.jdi.light.ui.html.elements.complex.MultiSelector;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
+import org.testng.Assert;
 
 
 public class MetalsAndColorsPage extends WebPage {
@@ -56,9 +57,8 @@ public class MetalsAndColorsPage extends WebPage {
     public void selectSummary(int[] intSummary) {
         for (int i = 0; i < intSummary.length; i++) {
             summary.select(intSummary[i]);
-            // summary.is().selected(intSummary[i]);
-
         }
+
     }
 
     public void selectElements(String[] intElements) {
