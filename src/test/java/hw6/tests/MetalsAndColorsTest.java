@@ -31,7 +31,7 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
         calculateSummary();
         metalsAndColorsPage.selectColors(color);
         metalsAndColorsPage.selectMetals(metals);
-        // metalsAndColorsPage.selectVegetables(vegetables);
+        metalsAndColorsPage.selectVegetables(vegetables);
         metalsAndColorsPage.selectElements(elements);
         submitMetalsAndColorsForm();
 
