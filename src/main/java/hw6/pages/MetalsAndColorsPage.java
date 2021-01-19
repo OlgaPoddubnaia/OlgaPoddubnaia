@@ -49,8 +49,28 @@ public class MetalsAndColorsPage extends WebPage {
         MetalsAndColorsPage.checkUrl("https://jdi-testing.github.io/jdi-light/metals-colors.html");
     }
 
-    public void selcetSummary(int[] intSummary){
+    public void selectSummary(int[] intSummary) {
         summary.select(intSummary);
+
     }
+
+    public void selectElements(String[] intElements) {
+        elements.select(intElements);
+    }
+
+    public void selectColors(String stringColor) {
+        colors.select(stringColor);
+        colors.is().selected(stringColor);
+    }
+
+    public void selectMetals(String stringMetals) {
+        metals.select(stringMetals);
+        metals.is().selected(stringMetals);
+    }
+
+    public void selectVegetables(String[] intVegetables) {
+        vegetables.select(intVegetables);
+    }
+
 
 }

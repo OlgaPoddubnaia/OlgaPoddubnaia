@@ -27,7 +27,11 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
     public void isMetalsAndColorsFormFilled(int[] summary, String[] elements,
                                             String color, String metals,
                                             String[] vegetables) {
-
+        metalsAndColorsPage.selectSummary(summary);
+        metalsAndColorsPage.selectColors(color);
+        metalsAndColorsPage.selectMetals(metals);
+        metalsAndColorsPage.selectVegetables(vegetables);
+        metalsAndColorsPage.selectElements(elements);
 
     }
 
