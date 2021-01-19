@@ -2,6 +2,8 @@ package hw6;
 
 import com.epam.jdi.light.elements.init.PageFactory;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
+import com.epam.jdi.light.elements.pageobjects.annotations.Title;
+import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import hw6.entities.User;
 import hw6.pages.HomePage;
 import hw6.pages.MetalsAndColorsPage;
@@ -9,7 +11,9 @@ import hw6.pages.MetalsAndColorsPage;
 @JSite("https://jdi-testing.github.io/jdi-light/")
 public class JdiSite extends PageFactory {
 
+    @Url("index.html") @Title("Home Page")
     public static HomePage homePage;
+    @Url("metals-colors.html") @Title("Metal and Colors")
     public static MetalsAndColorsPage metalsAndColorsPage;
 
     public static void open() {
@@ -31,8 +35,6 @@ public class JdiSite extends PageFactory {
     public static void checkMetalsAndColorsPageUrl() {
         metalsAndColorsPage.checkMetalsAndColorsUrl();
     }
-
-
 
 
 }

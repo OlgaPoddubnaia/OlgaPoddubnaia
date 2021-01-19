@@ -5,7 +5,7 @@ import org.testng.annotations.DataProvider;
 
 public class DataProviderForJson {
 
-    private static MetalsAndColorsFormDataFromJson metalsAndColorsFormDataFromJson =
+    public static MetalsAndColorsFormDataFromJson metalsAndColorsFormDataFromJson =
             new MetalsAndColorsFormDataFromJson();
 
     @DataProvider(name = "dataFromJson")

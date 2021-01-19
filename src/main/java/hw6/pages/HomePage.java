@@ -9,7 +9,7 @@ import hw6.entities.User;
 import hw6.forms.LoginFrom;
 import org.openqa.selenium.support.FindBy;
 
-@Url("index.html") @Title("Home Page")
+
 public class HomePage extends WebPage {
 
     public LoginFrom loginForm;

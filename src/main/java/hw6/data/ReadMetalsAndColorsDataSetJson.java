@@ -14,6 +14,7 @@ public class ReadMetalsAndColorsDataSetJson {
             .getResourceAsStream("src/test/java/hw6/data/ReadMetalsAndColorsDataSetJson.java");
     JsonParser jsonParser = new JsonParser();
     Reader reader = new InputStreamReader(inputStream);
+
     JsonElement jsonElement = jsonParser.parse(reader);
     JsonObject jsonObject = jsonElement.getAsJsonObject();
 
