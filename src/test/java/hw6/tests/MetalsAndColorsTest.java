@@ -24,7 +24,7 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
     @Test(priority = 3,
             dataProvider = "dataFromJson",
             dataProviderClass = DataProviderForJson.class)
-    public void isMetalsAndColorsFormFilled(int[] summary, String[] elements,
+    public void isMetalsAndColorsFormFilled(String[] summary, String[] elements,
                                             String color, String metals,
                                             String[] vegetables) {
         metalsAndColorsPage.selectSummary(summary);

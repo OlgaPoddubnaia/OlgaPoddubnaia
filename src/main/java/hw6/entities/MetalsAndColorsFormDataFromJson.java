@@ -17,7 +17,7 @@ import java.util.Objects;
 @AllArgsConstructor
 public class MetalsAndColorsFormDataFromJson {
 
-    protected int[] summary;
+    protected String[] summary;
     protected String[] elements;
     protected String color;
     protected String metals;
