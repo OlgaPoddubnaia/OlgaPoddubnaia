@@ -89,6 +89,18 @@
                 </suite.file>
             </properties>
         </profile>
+
+
+        <profile>
+            <id>homework6-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}src/test/resources/hw6/jdi-suite.xml
+                </suite.file>
+            </properties>
+        </profile>
     </profiles>
 
 
