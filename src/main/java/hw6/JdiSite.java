@@ -45,4 +45,6 @@ public class JdiSite extends PageFactory {
     public static void calculateSummary(){
         metalsAndColorsPage.clickCalculateButton();
     }
+
+
 }
