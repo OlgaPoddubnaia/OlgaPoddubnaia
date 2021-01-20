@@ -82,13 +82,20 @@ public class MetalsAndColorsPage extends WebPage {
 
 
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    public static ArrayList<Integer> sum = new ArrayList<>();
+
+
+    public static String[] expectedSum = new String[6];
+
+    public void convertArray(String[] summary) {
+        for (int i = 0; i < 2; i++) {
+            expectedSum[i] = String.valueOf(Integer.parseInt(summary[0]) + Integer.parseInt(summary[1]));
+        }
+    }
 
 
     public void selectSummary(String[] summary) {
         summaryTop.select(summary[0]);
         summaryBottom.select(summary[1]);
-        sum.add(Integer.parseInt(summary[0]) + Integer.parseInt(summary[1]));
         calculateButton.click();
     }
 
@@ -141,9 +148,10 @@ public class MetalsAndColorsPage extends WebPage {
     public void checkResults(String[] sum, String[] intElements,
                              String intColor, String intMetals,
                              String[] intVegetables) {
+        convertArray(sum);
 
         List<String> expectedRows = new ArrayList<>();
-        expectedRows.addAll(Collections.singleton(Arrays.toString(sum)));
+        expectedRows.add("Summary: " + expectedSum[0]);
         expectedRows.addAll(Arrays.asList(intElements));
         expectedRows.addAll(Collections.singleton(intColor));
         expectedRows.addAll(Collections.singleton(intMetals));
@@ -154,7 +162,7 @@ public class MetalsAndColorsPage extends WebPage {
         }
         for (int i = 0; i < expectedRows.size(); i++) {
             Assert.assertEquals(actualRows.get(i), expectedRows.get(i));
-
+           // Assert.assertTrue(actualRows.get(i).contains(expectedRows.get(i)));
         }
 
     }
