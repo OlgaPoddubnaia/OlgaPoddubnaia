@@ -155,7 +155,17 @@ public class MetalsAndColorsPage extends WebPage {
         expectedRows.addAll(Collections.singleton("Elements: " + intElements[0] + ", " + intElements[1]));
         expectedRows.addAll(Collections.singleton("Color: " + intColor));
         expectedRows.addAll(Collections.singleton("Metal: " + intMetals));
-        expectedRows.addAll(Arrays.asList(intVegetables));
+
+
+
+        String veg = "Vegetables: ";
+        for (int i = 0; i < intVegetables.length - 1; i++) {
+            veg += intVegetables[i] + ", ";
+        }
+        veg+=intVegetables[intVegetables.length-1];
+
+
+        expectedRows.addAll(Collections.singleton(veg));
 
         List<String> actualRows = new ArrayList<>();
         for (WebElement element : results) {
