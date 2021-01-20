@@ -1,33 +1,24 @@
 package hw6.pages;
 
 import com.epam.jdi.light.elements.complex.Checklist;
-import com.epam.jdi.light.elements.complex.WebList;
 import com.epam.jdi.light.elements.complex.dropdown.Dropdown;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.JDropdown;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
 import com.epam.jdi.light.ui.html.elements.common.Button;
-import com.epam.jdi.light.ui.html.elements.complex.DataListOptions;
-import com.epam.jdi.light.ui.html.elements.complex.MultiSelector;
+import com.epam.jdi.light.ui.html.elements.common.Checkbox;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
 public class MetalsAndColorsPage extends WebPage {
-
-    @UI("[name=custom_radio_odd]")
-    public RadioButtons summaryTop;
-
-    @UI("[name=custom_radio_even]")
-    public RadioButtons summaryBottom;
-
 
     @FindBy(css = "p.radio > input")
     public static RadioButtons summary;
@@ -56,6 +47,7 @@ public class MetalsAndColorsPage extends WebPage {
 
 
     @FindBy(css = "p.checkbox > input")
+    //@UI("[css = p.checkbox > input]")
     public static Checklist elements;
     public static Checklist elementsNoLocator;
 
@@ -68,21 +60,13 @@ public class MetalsAndColorsPage extends WebPage {
     @FindBy(css = ".results li")
     public List<WebElement> results;
 
-    @Override
-    public String toString() {
-        return "MetalsAndColorsPage{" +
-                "results=" + results +
-                '}';
-    }
+    @XPath("//input[@id='g7']")
+    public Checkbox vegetableCheckBox;
 
 
     public void checkMetalsAndColorsUrl() {
         MetalsAndColorsPage.checkUrl("https://jdi-testing.github.io/jdi-light/metals-colors.html");
     }
-
-
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
     public static String[] expectedSum = new String[6];
 
@@ -93,30 +77,19 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
 
-    public void selectSummary(String[] summary) {
-        summaryTop.select(summary[0]);
-        summaryBottom.select(summary[1]);
-        calculateButton.click();
-    }
-
-
-
-
-
-
- /*   public void selectSummary(String[] intSummary) {
+    public void selectSummary(String[] intSummary) {
         for (int i = 0; i < intSummary.length; i++) {
             summary.select(intSummary[i]);
         }
-
-    }*/
+    }
 
     public void selectElements(String[] stringElements) {
+
+
         for (int i = 0; i < stringElements.length; i++) {
             elements.select(stringElements[i]);
         }
         elements.assertThat().values(stringElements);
-
     }
 
     public void selectColors(String stringColor) {
@@ -130,6 +103,7 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
     public void selectVegetables(String[] intVegetables) {
+        clearVegetables();
         for (int i = 0; i < intVegetables.length; i++) {
             vegetables.select(intVegetables[i]);
         }
@@ -144,6 +118,11 @@ public class MetalsAndColorsPage extends WebPage {
         submitButton.click();
     }
 
+    public void clearVegetables() {
+        vegetables.expand();
+        vegetableCheckBox.click();
+    }
+
 
     public void checkResults(String[] sum, String[] intElements,
                              String intColor, String intMetals,
@@ -152,17 +131,24 @@ public class MetalsAndColorsPage extends WebPage {
 
         List<String> expectedRows = new ArrayList<>();
         expectedRows.add("Summary: " + expectedSum[0]);
-        expectedRows.addAll(Collections.singleton("Elements: " + intElements[0] + ", " + intElements[1]));
+
+        if (intElements.length == 2) {
+            expectedRows.addAll(Collections.singleton("Elements: " + intElements[0] + ", " + intElements[1]));
+        } else if (intElements.length == 4) {
+            expectedRows.addAll(Collections.singleton("Elements: " + intElements[0]
+                    + ", " + intElements[1] + ", " + intElements[2] + ", " + intElements[3]));
+        }
+
+
         expectedRows.addAll(Collections.singleton("Color: " + intColor));
         expectedRows.addAll(Collections.singleton("Metal: " + intMetals));
-
 
 
         String veg = "Vegetables: ";
         for (int i = 0; i < intVegetables.length - 1; i++) {
             veg += intVegetables[i] + ", ";
         }
-        veg+=intVegetables[intVegetables.length-1];
+        veg += intVegetables[intVegetables.length - 1];
 
 
         expectedRows.addAll(Collections.singleton(veg));
