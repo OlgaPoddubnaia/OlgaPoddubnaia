@@ -22,8 +22,6 @@ import java.util.List;
 
 public class MetalsAndColorsPage extends WebPage {
 
-    MultiCheck multiCheck = new MultiCheck();
-
     @FindBy(css = "p.radio > input")
     public static RadioButtons summary;
 
@@ -42,29 +40,14 @@ public class MetalsAndColorsPage extends WebPage {
             expand = ".caret")
     public static Dropdown metals;
 
-
     @JDropdown(root = "div[ui=droplist]",
             value = ".filter-option",
             list = "li",
             expand = ".caret")
     public static Dropdown vegetables;
 
-    //@UI("[css = p.checkbox > input]")
-    // @FindBy(css = "p.checkbox > input")
     @FindBy(css = "section[id=elements-checklist] input[type=checkbox]")
     public static Checklist checklistElements;
-   // public static Checklist elementsNoLocator;
-
-
-
- /*   @FindBy(id = "user-icon")
-    public Icon userIcon;*/
-
-
-
-
-
-
 
     @UI("[id=calculate-button]")
     public Button calculateButton;
@@ -80,15 +63,11 @@ public class MetalsAndColorsPage extends WebPage {
     @UI("[id=submit-button]")
     public Button submitButton;
 
- /*   @Css("div.logout button")
-    public Button logoutButton;*/
-
     @FindBy(css = ".results li")
     public List<WebElement> results;
 
     @XPath("//input[@id='g7']")
     public Checkbox vegetableCheckBox;
-
 
     public void checkMetalsAndColorsUrl() {
         MetalsAndColorsPage.checkUrl("https://jdi-testing.github.io/jdi-light/metals-colors.html");
@@ -101,7 +80,6 @@ public class MetalsAndColorsPage extends WebPage {
             expectedSum[i] = String.valueOf(Integer.parseInt(summary[0]) + Integer.parseInt(summary[1]));
         }
     }
-
 
     public void selectSummary(String[] intSummary) {
         for (int i = 0; i < intSummary.length; i++) {
@@ -117,7 +95,6 @@ public class MetalsAndColorsPage extends WebPage {
       }
     }
 
-
     public void selectElements(String[] stringElements) {
 
        for (int i = 0; i < stringElements.length; i++) {
@@ -125,7 +102,6 @@ public class MetalsAndColorsPage extends WebPage {
         }
         checklistElements.assertThat().values(stringElements);
     }
-
 
     public void selectColors(String stringColor) {
         colors.select(stringColor);
@@ -138,7 +114,7 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
     public void selectVegetables(String[] intVegetables) {
-        clearVegetables();
+       // clearVegetables();
         for (int i = 0; i < intVegetables.length; i++) {
             vegetables.select(intVegetables[i]);
         }
@@ -154,22 +130,10 @@ public class MetalsAndColorsPage extends WebPage {
 
     }
 
-
-/*
-public void uncheckElements(String[] strings){
-    for (int i = 0; i < strings.length; i++) {
-        if (multiCheck.selected(strings[i])) {
-            multiCheck.uncheck(strings[i]);
-
-        }
-    }}*/
-
-
     public void clearVegetables() {
         vegetables.expand();
         vegetableCheckBox.click();
     }
-
 
     public void checkResults(String[] sum, String[] intElements,
                              String intColor, String intMetals,
