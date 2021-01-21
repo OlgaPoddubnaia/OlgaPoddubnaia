@@ -87,14 +87,6 @@ public class MetalsAndColorsPage extends WebPage {
         }
     }
 
-  public void checkIsCheckboxesSelected(String[] stringElements) {
-       List<String> list= checklistElements.listEnabled();
-      System.out.println(list.toString());
-      for (int i = 0; i <list.size() ; i++) {
-          checklistElements.select(list.get(i));
-      }
-    }
-
     public void selectElements(String[] stringElements) {
 
        for (int i = 0; i < stringElements.length; i++) {
@@ -114,7 +106,7 @@ public class MetalsAndColorsPage extends WebPage {
     }
 
     public void selectVegetables(String[] intVegetables) {
-       // clearVegetables();
+       clearVegetables();
         for (int i = 0; i < intVegetables.length; i++) {
             vegetables.select(intVegetables[i]);
         }
