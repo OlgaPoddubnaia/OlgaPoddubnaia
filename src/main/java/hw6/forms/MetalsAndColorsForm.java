@@ -5,9 +5,4 @@ import hw6.entities.MetalsAndColorsFormDataFromJson;
 
 public class MetalsAndColorsForm extends Form<MetalsAndColorsFormDataFromJson> {
 
-
-
-
-
-
 }

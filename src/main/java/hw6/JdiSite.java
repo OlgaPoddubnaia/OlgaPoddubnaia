@@ -42,10 +42,7 @@ public class JdiSite extends PageFactory {
         metalsAndColorsPage.clickSubmitButton();
     }
 
-    public static void calculateSummary(){
+    public static void calculateSummary() {
         metalsAndColorsPage.clickCalculateButton();
     }
-
-
-
 }

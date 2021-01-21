@@ -8,19 +8,6 @@ import static hw6.entities.User.ROMAN;
 
 public class MetalsAndColorsTest extends AbstractBaseTest {
 
-    /*@Test(priority = 1)
-    public void loginTest() {
-        open();
-        login(ROMAN);
-        homePage.checkUserLoggedIn(ROMAN);
-    }*/
-
-   /* @Test(priority = 2)
-    public void isMetalsAndColorsPageOpenedTest() {
-        openMetalsAndColorsPage();
-        checkMetalsAndColorsPageUrl();
-    }*/
-
     @Test(dataProvider = "dataFromJson",
             dataProviderClass = DataProviderForJson.class)
     public void isMetalsAndColorsFormFilled(String[] summary, String[] elements,
@@ -39,8 +26,6 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
         metalsAndColorsPage.selectVegetables(vegetables);
         submitMetalsAndColorsForm();
         metalsAndColorsPage.checkResults(summary, elements, color, metals, vegetables);
-
-
     }
 
 }

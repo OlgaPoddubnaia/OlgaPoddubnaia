@@ -16,6 +16,4 @@ public class LoginFrom extends Form<User> {
 
     @FindBy(id = "login-button")
     public Button submit;
-
-
 }

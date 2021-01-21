@@ -1,6 +1,5 @@
 package hw6.entities;
 
-
 import com.google.gson.Gson;
 import hw6.data.ReadMetalsAndColorsDataSetJson;
 import lombok.AllArgsConstructor;
