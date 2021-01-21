@@ -4,11 +4,13 @@ import com.epam.jdi.light.elements.complex.Checklist;
 import com.epam.jdi.light.elements.complex.dropdown.Dropdown;
 import com.epam.jdi.light.elements.composite.WebPage;
 import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.JDropdown;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.XPath;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.common.Checkbox;
+import com.epam.jdi.light.ui.html.elements.common.Icon;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -19,6 +21,8 @@ import java.util.List;
 
 
 public class MetalsAndColorsPage extends WebPage {
+
+    MultiCheck multiCheck = new MultiCheck();
 
     @FindBy(css = "p.radio > input")
     public static RadioButtons summary;
@@ -45,17 +49,39 @@ public class MetalsAndColorsPage extends WebPage {
             expand = ".caret")
     public static Dropdown vegetables;
 
-
-    @FindBy(css = "p.checkbox > input")
     //@UI("[css = p.checkbox > input]")
-    public static Checklist elements;
-    public static Checklist elementsNoLocator;
+    // @FindBy(css = "p.checkbox > input")
+    @FindBy(css = "section[id=elements-checklist] input[type=checkbox]")
+    public static Checklist checklistElements;
+   // public static Checklist elementsNoLocator;
+
+
+
+ /*   @FindBy(id = "user-icon")
+    public Icon userIcon;*/
+
+
+
+
+
+
 
     @UI("[id=calculate-button]")
     public Button calculateButton;
 
+
+    @UI("[class = fa fa-sign-out]")
+    public Button toggleButton;
+
+    // @UI("[css= div.logout > button")
+    @FindBy(css = "div.logout > button]")
+    public WebElement logoutButton;
+
     @UI("[id=submit-button]")
     public Button submitButton;
+
+ /*   @Css("div.logout button")
+    public Button logoutButton;*/
 
     @FindBy(css = ".results li")
     public List<WebElement> results;
@@ -83,14 +109,23 @@ public class MetalsAndColorsPage extends WebPage {
         }
     }
 
+  public void checkIsCheckboxesSelected(String[] stringElements) {
+       List<String> list= checklistElements.listEnabled();
+      System.out.println(list.toString());
+      for (int i = 0; i <list.size() ; i++) {
+          checklistElements.select(list.get(i));
+      }
+    }
+
+
     public void selectElements(String[] stringElements) {
 
-
-        for (int i = 0; i < stringElements.length; i++) {
-            elements.select(stringElements[i]);
+       for (int i = 0; i < stringElements.length; i++) {
+            checklistElements.select(stringElements[i]);
         }
-        elements.assertThat().values(stringElements);
+        checklistElements.assertThat().values(stringElements);
     }
+
 
     public void selectColors(String stringColor) {
         colors.select(stringColor);
@@ -116,7 +151,19 @@ public class MetalsAndColorsPage extends WebPage {
 
     public void clickSubmitButton() {
         submitButton.click();
+
     }
+
+
+/*
+public void uncheckElements(String[] strings){
+    for (int i = 0; i < strings.length; i++) {
+        if (multiCheck.selected(strings[i])) {
+            multiCheck.uncheck(strings[i]);
+
+        }
+    }}*/
+
 
     public void clearVegetables() {
         vegetables.expand();
@@ -149,8 +196,6 @@ public class MetalsAndColorsPage extends WebPage {
             veg += intVegetables[i] + ", ";
         }
         veg += intVegetables[intVegetables.length - 1];
-
-
         expectedRows.addAll(Collections.singleton(veg));
 
         List<String> actualRows = new ArrayList<>();
@@ -164,5 +209,11 @@ public class MetalsAndColorsPage extends WebPage {
 
     }
 
+/*    public void logout() {
+
+           toggleButton.click();
+
+      logoutButton.click();
+    }*/
 
 }

@@ -28,15 +28,17 @@ public class HomePage extends WebPage {
     }
 
     public void login(User user) {
-        searchButton.click();
-        loginForm.login(user);
+        if (!userName.isDisplayed()) {
+            searchButton.click();
+            loginForm.login(user);
+        }
     }
 
     public void checkUserLoggedIn(User user) {
         userName.is().text(user.getFullName());
     }
 
-    public void openMetalsAndColorsPage(){
+    public void openMetalsAndColorsPage() {
         metalsAndColorsOnHeaderMenu.click();
     }
 
