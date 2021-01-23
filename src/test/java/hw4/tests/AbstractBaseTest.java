@@ -26,7 +26,11 @@ public class AbstractBaseTest {
 
     @BeforeTest
     public void setUp(ITestContext testContext) {
-        System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+        // for windows
+        //  System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+        // for mac os
+        System.setProperty("webdriver.chrome.driver",
+                "/Applications/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);

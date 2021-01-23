@@ -29,3 +29,4 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
     }
 
 }
+
