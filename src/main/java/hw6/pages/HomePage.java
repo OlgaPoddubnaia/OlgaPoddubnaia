@@ -1,22 +1,29 @@
 package hw6.pages;
 
 import com.epam.jdi.light.elements.common.Label;
+import com.epam.jdi.light.elements.common.UIElement;
 import com.epam.jdi.light.elements.composite.WebPage;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import hw6.entities.User;
 import hw6.forms.LoginFrom;
+import lombok.Getter;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.awt.*;
 
+@Getter
 public class HomePage extends WebPage {
 
     public LoginFrom loginForm;
 
-    @FindBy(id = "user-name")
-    public Label userName;
+    @Css(".profile-photo [ui=label]")
+    public static UIElement userName;
 
     @FindBy(xpath = "//a[@class='dropdown-toggle' and @href='#']")
-    public Button searchButton;
+    public WebElement searchButton;
+
 
     @FindBy(xpath = "//a[contains(text(),'Metals & Colors')]")
     public Button metalsAndColorsOnHeaderMenu;
