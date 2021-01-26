@@ -9,18 +9,27 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+
         <driver>chrome</driver>
         <domain>https://jdi-testing.github.io/jdi-light/</domain>
+
+        <!-- project settings -->
+
         <java.source.version>1.8</java.source.version>
         <java.target.version>1.8</java.target.version>
         <encouding.version>UTF-8</encouding.version>
+
+        <!-- dependency versions -->
         <testng.version>7.0.0</testng.version>
         <calculator.version>1.0</calculator.version>
-        <surefire.version>2.19.1</surefire.version>
         <aspectj.version>1.8.10</aspectj.version>
-        <allure.version>2.13.8</allure.version>
-        <allure-maven.version>2.10.0</allure-maven.version>
         <webdrivermanager.version>4.2.2</webdrivermanager.version>
+        <cucumber.version>6.9.1</cucumber.version>
+
+        <!-- plugin versions -->
+        <allure-maven.version>2.10.0</allure-maven.version>
+        <allure.version>2.13.8</allure.version>
+        <surefire.version>2.19.1</surefire.version>
     </properties>
 
     <profiles>
@@ -91,13 +100,24 @@
         </profile>
 
         <profile>
+            <id>homework5-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw5/cucumber-testng-suite.xml
+                </suite.file>
+            </properties>
+        </profile>
+
+         <profile>
             <id>homework6-tests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.file>${project.basedir}/src/test/resources/hw6/jdi-suite.xml
-                </suite.file>
+                  </suite.file>
             </properties>
         </profile>
     </profiles>
@@ -154,6 +174,7 @@
             <scope>compile</scope>
         </dependency>
 
+
         <!-- https://mvnrepository.com/artifact/com.epam.jdi/jdi-light-html -->
         <dependency>
             <groupId>com.epam.jdi</groupId>
@@ -179,6 +200,45 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.0.0</version>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber6-jvm</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-opera-driver</artifactId>
+            <version>3.141.59</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.141.59</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>3.141.59</version>
+
             <scope>compile</scope>
         </dependency>
     </dependencies>

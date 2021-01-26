@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
-public class AbstractBaseTest {
+public abstract class AbstractBaseTest {
 
     private WebDriver driver;
 
