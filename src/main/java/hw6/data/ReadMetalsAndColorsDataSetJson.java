@@ -10,7 +10,7 @@ import java.io.Reader;
 
 
 public class ReadMetalsAndColorsDataSetJson {
-    JsonParser jsonParser = new JsonParser();
+    /* JsonParser jsonParser = new JsonParser();
 
     InputStream inputStream = getClass().getClassLoader()
             .getResourceAsStream("hw6/JDI_metalsColorsDataSet.json");
@@ -19,7 +19,7 @@ public class ReadMetalsAndColorsDataSetJson {
     JsonElement jsonElement = jsonParser.parse(reader);
     JsonObject jsonObject = jsonElement.getAsJsonObject();
 
-    public JsonObject getJsonObject_1() {
+   public JsonObject getJsonObject_1() {
         return jsonObject.getAsJsonObject("data_1");
     }
 
@@ -37,5 +37,5 @@ public class ReadMetalsAndColorsDataSetJson {
 
     public JsonObject getJsonObject_5() {
         return jsonObject.getAsJsonObject("data_5");
-    }
+    }*/
 }

@@ -1,6 +1,7 @@
 package hw6.tests;
 
-import hw6.dataProvider.DataProviderForJson;
+import hw6.dataProvider.DataProviderFromJson;
+import hw6.entities.MetalsAndColors;
 import org.testng.annotations.Test;
 
 import static hw6.JdiSite.*;
@@ -8,24 +9,16 @@ import static hw6.entities.User.ROMAN;
 
 public class MetalsAndColorsTest extends AbstractBaseTest {
 
-    @Test(dataProvider = "dataFromJson",
-            dataProviderClass = DataProviderForJson.class)
-    public void isMetalsAndColorsFormFilled(String[] summary, String[] elements,
-                                            String color, String metals,
-                                            String[] vegetables) {
+    @Test(dataProvider = "getDataFromJson",
+            dataProviderClass = DataProviderFromJson.class)
+    public void isMetalsAndColorsFormFilled(MetalsAndColors metalsAndColors) {
         open();
         login(ROMAN);
         homePage.checkUserLoggedIn(ROMAN);
         openMetalsAndColorsPage();
         checkMetalsAndColorsPageUrl();
-        metalsAndColorsPage.selectSummary(summary);
-        calculateSummary();
-        metalsAndColorsPage.selectColors(color);
-        metalsAndColorsPage.selectMetals(metals);
-        metalsAndColorsPage.selectElements(elements);
-        metalsAndColorsPage.selectVegetables(vegetables);
-        submitMetalsAndColorsForm();
-        metalsAndColorsPage.checkResults(summary, elements, color, metals, vegetables);
+       fillMetalsAndColors(metalsAndColors);
+       metalsAndColorsFormHaveProperData(metalsAndColors);
     }
 
 }

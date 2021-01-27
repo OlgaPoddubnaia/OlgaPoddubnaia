@@ -4,6 +4,7 @@ import com.epam.jdi.light.elements.init.PageFactory;
 import com.epam.jdi.light.elements.pageobjects.annotations.JSite;
 import com.epam.jdi.light.elements.pageobjects.annotations.Title;
 import com.epam.jdi.light.elements.pageobjects.annotations.Url;
+import hw6.entities.MetalsAndColors;
 import hw6.entities.User;
 import hw6.pages.HomePage;
 import hw6.pages.MetalsAndColorsPage;
@@ -38,11 +39,11 @@ public class JdiSite extends PageFactory {
         metalsAndColorsPage.checkMetalsAndColorsUrl();
     }
 
-    public static void submitMetalsAndColorsForm() {
-        metalsAndColorsPage.clickSubmitButton();
+    public static void fillMetalsAndColors(MetalsAndColors metalsAndColors) {
+        metalsAndColorsPage.fillMetalsAndColorsForm(metalsAndColors);
     }
 
-    public static void calculateSummary() {
-        metalsAndColorsPage.clickCalculateButton();
+    public static void metalsAndColorsFormHaveProperData(MetalsAndColors metalsAndColors) {
+        metalsAndColorsPage.checkResults(metalsAndColors);
     }
 }
