@@ -18,6 +18,9 @@ public class MetalsAndColors {
     @JsonProperty("vegetables")
     protected String[] vegetables;
 
+    private String radio_odd;
+    private String radio_even;
+
     public MetalsAndColors(){}
 
     public MetalsAndColors( String[] elements, String color, String metals, String[] vegetables,String[] summary) {
@@ -67,6 +70,22 @@ public class MetalsAndColors {
 
     public void setVegetables(String[] vegetables) {
         this.vegetables = vegetables;
+    }
+
+    public String getRadio_odd() {
+        return this.summary[0];
+    }
+
+    public void setRadio_odd(String radio_odd) {
+        this.radio_odd = radio_odd;
+    }
+
+    public String getRadio_even() {
+        return this.summary[1];
+    }
+
+    public void setRadio_even(String radio_even) {
+        this.radio_even = radio_even;
     }
 
     @Override

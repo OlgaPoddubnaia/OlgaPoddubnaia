@@ -19,6 +19,12 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
     @FindBy(css = "p.radio > input")
     public static RadioButtons summary;
 
+    @FindBy(name = "custom_radio_odd")
+    public RadioButtons radio_odd;
+
+    @FindBy(name = "custom_radio_even")
+    public RadioButtons radio_even;
+
     @JDropdown(root = "div[ui=dropdown]",
             value = ".filter-option",
             list = "li",
@@ -56,13 +62,14 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
 
     @Override
     public void fill(MetalsAndColors metalsAndColors) {
+        radio_odd.select(metalsAndColors.getSummary()[0]);
+        radio_even.select(metalsAndColors.getSummary()[1]);
         colors.select(metalsAndColors.getColor());
         metals.select(metalsAndColors.getMetals());
         vegetables.expand();
         vegetableCheckBox.click();
         vegetables.select(metalsAndColors.getVegetables());
         elements.select(metalsAndColors.getElements());
-        summary.selected(String.valueOf(metalsAndColors.getSummary()));
         calculateButton.click();
         submitButton.click();
 
