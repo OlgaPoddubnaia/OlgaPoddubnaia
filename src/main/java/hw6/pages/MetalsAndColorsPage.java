@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class MetalsAndColorsPage extends WebPage {
@@ -31,8 +30,9 @@ public class MetalsAndColorsPage extends WebPage {
     public void checkResults(MetalsAndColors metalsAndColors) {
         List<String> expectedRows = metalsAndColors.convertedResults();
         List<String> actualRows = new ArrayList<>();
-        for (WebElement element : results) {
-            actualRows.add(element.getText().trim());
+        for (int i = 0; i < expectedRows.size(); i++) {
+            actualRows.add(results.get(i).getText().trim());
+
         }
         Assert.assertEquals(actualRows, expectedRows);
     }

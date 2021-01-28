@@ -46,7 +46,6 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
     @FindBy(css = "section[id=elements-checklist] input[type=checkbox]")
     public static Checklist elements;
 
-
     @FindBy(css = ".results li")
     public List<WebElement> results;
 
@@ -72,7 +71,5 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
         elements.select(metalsAndColors.getElements());
         calculateButton.click();
         submitButton.click();
-
     }
-
 }

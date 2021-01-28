@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.*;
 
-
 public class MetalsAndColors {
 
     @JsonProperty("summary")
@@ -21,9 +20,10 @@ public class MetalsAndColors {
     private String radio_odd;
     private String radio_even;
 
-    public MetalsAndColors(){}
+    public MetalsAndColors() {
+    }
 
-    public MetalsAndColors( String[] elements, String color, String metals, String[] vegetables,String[] summary) {
+    public MetalsAndColors(String[] elements, String color, String metals, String[] vegetables, String[] summary) {
 
         this.elements = elements;
         this.color = color;
@@ -104,7 +104,11 @@ public class MetalsAndColors {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MetalsAndColors that = (MetalsAndColors) o;
-        return Arrays.equals(summary, that.summary) && Arrays.equals(elements, that.elements) && Objects.equals(color, that.color) && Objects.equals(metals, that.metals) && Arrays.equals(vegetables, that.vegetables);
+        return Arrays.equals(summary, that.summary)
+                && Arrays.equals(elements, that.elements)
+                && Objects.equals(color, that.color)
+                && Objects.equals(metals, that.metals)
+                && Arrays.equals(vegetables, that.vegetables);
     }
 
     @Override
@@ -116,13 +120,19 @@ public class MetalsAndColors {
         return result;
     }
 
-
     public List<String> convertedResults() {
         List<String> actualRows = new ArrayList<>();
 
         String expectedSum =
-                String.valueOf( Integer.parseInt(this.summary[0]) + Integer.parseInt(this.summary[1]));
+                String.valueOf(Integer.parseInt(this.summary[0]) + Integer.parseInt(this.summary[1]));
         actualRows.add("Summary: " + expectedSum);
+
+        if (this.elements.length == 2) {
+            actualRows.add("Elements: " + this.elements[0] + ", " + this.elements[1]);
+        } else if (this.elements.length == 4) {
+            actualRows.add("Elements: " + this.elements[0]
+                    + ", " + this.elements[1] + ", " + this.elements[2] + ", " + this.elements[3]);
+        }
 
         actualRows.add("Color: " + this.color);
 
@@ -136,14 +146,6 @@ public class MetalsAndColors {
         veg += this.vegetables[this.vegetables.length - 1];
         actualRows.add(veg);
 
-
-        if (this.elements.length == 2) {
-            actualRows.add("Elements: " + this.elements[0] + ", " + this.elements[1]);
-        } else if (this.elements.length == 4) {
-            actualRows.add("Elements: " + this.elements[0]
-                    + ", " + this.elements[1] + ", " + this.elements[2] + ", " + this.elements[3]);
-        }
         return actualRows;
     }
-
 }
