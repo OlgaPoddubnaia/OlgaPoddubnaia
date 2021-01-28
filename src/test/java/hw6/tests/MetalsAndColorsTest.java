@@ -11,7 +11,7 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
 
     @Test(dataProvider = "getDataFromJson",
             dataProviderClass = DataProviderFromJson.class)
-    public void isMetalsAndColorsFormFilled(MetalsAndColors metalsAndColors) {
+    public void MetalsAndColorsFormPageTests(MetalsAndColors metalsAndColors) {
         open();
         login(ROMAN);
         homePage.checkUserLoggedIn(ROMAN);
