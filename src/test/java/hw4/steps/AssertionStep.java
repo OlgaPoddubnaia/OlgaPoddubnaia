@@ -123,7 +123,7 @@ public class AssertionStep extends AbstractStep {
     public void checkDifferentElementsUrl() {
         softAssert = new SoftAssert();
         softAssert.assertEquals(headerMenuOfHomePageAfterLoginPO
-                .getDifferentElementsPageUrl(), hw3.testLogic.ConfProperties
+                .getDifferentElementsPageUrl(), ConfProperties
                 .getProperty("DIFFERENT_ELEMENTS_URL"));
         softAssert.assertAll();
     }
