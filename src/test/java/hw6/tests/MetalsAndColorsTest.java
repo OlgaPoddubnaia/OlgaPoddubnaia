@@ -20,6 +20,5 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
        fillMetalsAndColors(metalsAndColors);
        metalsAndColorsFormHaveProperData(metalsAndColors);
     }
-
 }
 

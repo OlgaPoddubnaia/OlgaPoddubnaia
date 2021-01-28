@@ -1,23 +1,20 @@
 package hw6.pages;
 
-import com.epam.jdi.light.elements.common.UIElement;
+import com.epam.jdi.light.elements.common.Label;
 import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
+import com.epam.jdi.light.elements.pageobjects.annotations.FindBy;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import hw6.entities.User;
 import hw6.forms.LoginFrom;
-import lombok.Getter;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-
-@Getter
 public class HomePage extends WebPage {
 
     public LoginFrom loginForm;
 
-    @Css(".profile-photo [ui=label]")
-    public static UIElement userName;
+    @UI("[id = user-name]")
+    public Label userName;
 
     @FindBy(xpath = "//a[@class='dropdown-toggle' and @href='#']")
     public WebElement searchButton;
@@ -31,7 +28,7 @@ public class HomePage extends WebPage {
     }
 
     public void login(User user) {
-        if (!userName.isDisplayed()) {
+           if (!userName.isDisplayed()) {
             searchButton.click();
             loginForm.login(user);
         }

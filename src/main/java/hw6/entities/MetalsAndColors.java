@@ -124,20 +124,22 @@ public class MetalsAndColors {
         List<String> actualRows = new ArrayList<>();
 
         String expectedSum =
-                String.valueOf(Integer.parseInt(this.summary[0]) + Integer.parseInt(this.summary[1]));
+                String.valueOf(Integer.parseInt(this.summary[0])
+                        + Integer.parseInt(this.summary[1]));
         actualRows.add("Summary: " + expectedSum);
 
         if (this.elements.length == 2) {
-            actualRows.add("Elements: " + this.elements[0] + ", " + this.elements[1]);
+            actualRows.add("Elements: " + this.elements[0] + ", "
+                    + this.elements[1]);
         } else if (this.elements.length == 4) {
             actualRows.add("Elements: " + this.elements[0]
-                    + ", " + this.elements[1] + ", " + this.elements[2] + ", " + this.elements[3]);
+                    + ", " + this.elements[1] + ", " + this.elements[2]
+                    + ", " + this.elements[3]);
         }
 
         actualRows.add("Color: " + this.color);
 
         actualRows.add("Metal: " + this.metals);
-
 
         String veg = "Vegetables: ";
         for (int i = 0; i < this.vegetables.length - 1; i++) {

@@ -9,7 +9,6 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-
         <driver>chrome</driver>
         <domain>https://jdi-testing.github.io/jdi-light/</domain>
 
