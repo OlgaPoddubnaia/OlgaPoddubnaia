@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="homework6 tests">
+    <test name="homework test">
+        <classes>
+            <class name="hw6.tests.MetalsAndColorsTest"/>
+        </classes>
+    </test>
+</suite>
