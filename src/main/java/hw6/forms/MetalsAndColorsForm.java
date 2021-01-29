@@ -69,6 +69,10 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
         vegetableCheckBox.click();
         vegetables.select(metalsAndColors.getVegetables());
         elements.select(metalsAndColors.getElements());
+    }
+
+    @Override
+    public void submit() {
         calculateButton.click();
         submitButton.click();
     }

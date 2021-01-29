@@ -6,9 +6,9 @@ public class User {
 
     public static final User ROMAN = new User("Roman", "Jdi1234", "ROMAN IOVLEV");
 
-   private String name;
-   private String password;
-   private String fullName;
+    private String name;
+    private String password;
+    private String fullName;
 
     public User(String name, String password, String fullName) {
         this.name = name;

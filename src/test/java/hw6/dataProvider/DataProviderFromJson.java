@@ -10,10 +10,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DataProviderFromJson {
-    private String jsonPath="src/test/resources/hw6/JDI_metalsColorsDataSet.json";
-   private static FileInputStream fileInputStream;
+    private String jsonPath = "src/test/resources/hw6/JDI_metalsColorsDataSet.json";
+    private static FileInputStream fileInputStream;
     private static ObjectMapper objectMapper;
-   private static  Object[][] dataObject;
+    private static Object[][] dataObject;
 
     @DataProvider
     public Object[][] getDataFromJson() {
@@ -25,7 +25,7 @@ public class DataProviderFromJson {
                     new TypeReference<HashMap<String, MetalsAndColors>>() {
                     });
             int i = 0;
-            dataObject= new Object[map.size()][1];
+            dataObject = new Object[map.size()][1];
             for (Map.Entry<String, MetalsAndColors> entry : map.entrySet()) {
                 dataObject[i][0] = entry.getValue();
                 i++;

@@ -11,14 +11,14 @@ public class MetalsAndColorsTest extends AbstractBaseTest {
 
     @Test(dataProvider = "getDataFromJson",
             dataProviderClass = DataProviderFromJson.class)
-    public void MetalsAndColorsFormPageTests(MetalsAndColors metalsAndColors) {
+    public void metalsAndColorsFormTest(MetalsAndColors metalsAndColors) {
         open();
         login(ROMAN);
         homePage.checkUserLoggedIn(ROMAN);
         openMetalsAndColorsPage();
         checkMetalsAndColorsPageUrl();
-       fillMetalsAndColors(metalsAndColors);
-       metalsAndColorsFormHaveProperData(metalsAndColors);
+        fillAndSubmitMetalsAndColorsForm(metalsAndColors);
+        metalsAndColorsFormHaveProperData(metalsAndColors);
     }
 }
 

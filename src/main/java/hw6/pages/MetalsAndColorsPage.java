@@ -18,12 +18,9 @@ public class MetalsAndColorsPage extends WebPage {
     @FindBy(css = "ul.results  > li")
     private List<WebElement> results;
 
-    public void checkMetalsAndColorsUrl() {
-        MetalsAndColorsPage.checkUrl("https://jdi-testing.github.io/jdi-light/metals-colors.html");
-    }
-
-    public void fillMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
+    public void AndSubmintMetlsAndColorsForm(MetalsAndColors metalsAndColors) {
         metalsAndColorsForm.fill(metalsAndColors);
+        metalsAndColorsForm.submit();
     }
 
     public void checkResults(MetalsAndColors metalsAndColors) {

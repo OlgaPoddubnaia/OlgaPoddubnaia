@@ -36,11 +36,11 @@ public class JdiSite extends PageFactory {
     }
 
     public static void checkMetalsAndColorsPageUrl() {
-        metalsAndColorsPage.checkMetalsAndColorsUrl();
+        metalsAndColorsPage.checkOpened();
     }
 
-    public static void fillMetalsAndColors(MetalsAndColors metalsAndColors) {
-        metalsAndColorsPage.fillMetalsAndColorsForm(metalsAndColors);
+    public static void fillAndSubmitMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
+        metalsAndColorsPage.AndSubmintMetlsAndColorsForm(metalsAndColors);
     }
 
     public static void metalsAndColorsFormHaveProperData(MetalsAndColors metalsAndColors) {
